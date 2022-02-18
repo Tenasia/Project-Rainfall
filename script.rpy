@@ -10,12 +10,13 @@ init python:
     preference_page = True
     current_mode = "main"
     nvl_mod = False
+    notebook_info = None
 
 init -3:
 
     define audio.dark = "<loop 000.000 to 83.000>bgm_00"
     define audio.rainfall = "<loop 000.000 to 178.000>bgm_01"
-    define audio.flashback = "<loop 008.478 to 091.957>bgm_02"
+    define audio.window = "<loop 000.000 to 312.000>bgm_02"
     define audio.home = "<loop 000.109 to 083.587>bgm_03"
     define audio.homey = "<loop 000.000 to 097.818>bgm_04"
     define audio.prologue = "<loop 000.167 to 181.500>bgm_05"
@@ -65,7 +66,7 @@ label chapter1:
     hide screen main_menu
     $ renpy.transition(white3)
     $ renpy.pause(5, hard = True)
-    $ renpy.run(Start())
+    $ renpy.run(Start("ch1"))
 
 label chapter2:
     stop music fadeout 2.0

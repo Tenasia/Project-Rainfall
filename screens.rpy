@@ -82,7 +82,7 @@ screen say(who, what, side_image=None, two_window=False):
             background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
             id "window"
             yalign 1.0
-            ysize 285
+            ysize 300
             if who is not None:
                 hbox:
                     xalign 0.5
@@ -98,7 +98,7 @@ screen say(who, what, side_image=None, two_window=False):
             background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
             style_prefix "say"
             id "window"
-            ysize 285
+            ysize 300
             has vbox
 
             fixed:
@@ -247,153 +247,101 @@ screen quick_menu(trans = None):
     zorder 100
     
     if quick_menu:
-        if nvl_mod == True:
-            frame at trans:
-                background None
-                xalign 0.99
-                yalign 0.9999
-                yoffset 10
-                # yoffset 10
-                
-                
-                hbox:
-                    # xalign 0.975
-                    # yalign 0.9
-                    spacing 0
-                    frame:
-                        # background "gui/navbar.png"
-                        background None
-                        # yoffset -10
-                        # xoffset -460
-                        vbox:
-                            spacing 5
-                            # yoffset 7.5
-                            # xoffset 110
-                            # xoffset 550
-                            imagebutton:
-                                # xoffset 60
-                                idle "gui/gui_buttons/GUI quick_buttons/auto_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
-                                selected_idle "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action Preference("auto-forward", "toggle")
-                            # textbutton: _("SKIP") action S
-                            imagebutton:
-                                # xoffset 30
-                                idle "gui/gui_buttons/GUI quick_buttons/skip_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                                selected_idle "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                                selected_background "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action Skip()
-                            imagebutton:
-                                idle "gui/gui_buttons/GUI quick_buttons/logs_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/logs_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('history')
-                            imagebutton:
-                                # xoffset 90
-                                idle "gui/gui_buttons/GUI quick_buttons/save_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/save_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('save')
-                            imagebutton:
-                                # xoffset 80
-                                idle "gui/gui_buttons/GUI quick_buttons/load_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/load_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('load')
-                            imagebutton:
-                                # xoffset -20
-                                idle "gui/gui_buttons/GUI quick_buttons/settings_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/settings_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('preferences')
-        else:
-            frame at trans:
-                background None
-                xalign 0.99
-                yalign 0.9999
-                yoffset 10
-                # yoffset 10
-                
-                
-                hbox:
-                    # xalign 0.975
-                    # yalign 0.9
-                    spacing 0
-                    frame:
-                        # background "gui/navbar.png"
-                        background None
-                        # yoffset -10
-                        # xoffset -460
-                        vbox:
-                            spacing 5
-                            # yoffset 7.5
-                            # xoffset 110
-                            # xoffset 550
-                            imagebutton:
-                                # xoffset 60
-                                idle "gui/gui_buttons/GUI quick_buttons/auto_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
-                                selected_idle "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action Preference("auto-forward", "toggle")
-                            # textbutton: _("SKIP") action S
-                            imagebutton:
-                                # xoffset 30
-                                idle "gui/gui_buttons/GUI quick_buttons/skip_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                                selected_idle "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                                selected_background "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action Skip()
-                            imagebutton:
-                                idle "gui/gui_buttons/GUI quick_buttons/logs_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/logs_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('history')
-                            imagebutton:
-                                # xoffset 90
-                                idle "gui/gui_buttons/GUI quick_buttons/save_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/save_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('save')
-                            imagebutton:
-                                # xoffset 80
-                                idle "gui/gui_buttons/GUI quick_buttons/load_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/load_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('load')
-                            imagebutton:
-                                # xoffset -20
-                                idle "gui/gui_buttons/GUI quick_buttons/settings_idle.png"
-                                hover "gui/gui_buttons/GUI quick_buttons/settings_hover.png"
-                                hover_sound None
-                                activate_sound "audio/sfx/clickcool.wav"
-                                action ShowMenu('preferences')
-            hbox:
-                xalign 0.89
-                yalign 0.775
-                xoffset 18
+    
+        hbox:
+            xalign 0.965
+            yalign 0.765
+            xoffset 220 + 85
+            yoffset 40
+            imagebutton at quick_button_tt:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/auto_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
+                selected_idle "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
+                hover_sound None
+                activate_sound "audio/sfx/clickcool.wav"
+                action Preference("auto-forward", "toggle")
+        hbox:
+            xalign 0.965
+            yalign 0.765
+            xoffset 220 + 85
+            yoffset 80
+            imagebutton at quick_button_tt:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/skip_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                # selected_idle "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                # selected_background "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                hover_sound None
+                activate_sound "audio/sfx/clickcool.wav"
+                action Skip()
+        hbox:    
+            xalign 0.965
+            yalign 0.765
+            xoffset 219 + 85
+            yoffset 120
+            imagebutton at quick_button_tt:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/logs_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/logs_hover.png"
+                hover_sound None
+                activate_sound "audio/sfx/clickcool.wav"
+                action ShowMenu('history')
+        hbox:   
+            xalign 0.965
+            yalign 0.765
+            xoffset 218 + 85
+            yoffset 160
+            imagebutton at quick_button_tt:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/save_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/save_hover.png"
+                hover_sound None
+                activate_sound "audio/sfx/clickcool.wav"
+                action ShowMenu('save')
+        hbox: 
+            xalign 0.965
+            yalign 0.765
+            xoffset 219 + 85
+            yoffset 200      
+            imagebutton at quick_button_tt:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/load_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/load_hover.png"
+                hover_sound None
+                activate_sound "audio/sfx/clickcool.wav"
+                action ShowMenu('load')
+        hbox:   
+            xalign 0.965
+            yalign 0.765
+            xoffset 220 + 85
+            yoffset 245
+            imagebutton at quick_button_tt1:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/settings_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/settings_hover.png"
+                hover_sound None
+                activate_sound "audio/sfx/clickcool.wav"
+                action ShowMenu('preferences')
+        hbox:
+            xalign 0.965
+            yalign 0.765
+            xoffset 116 + 85
 
-                imagebutton:
-                    idle "gui/gui_buttons/GUI quick_buttons/hide_idle.png"
-                    hover "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
-                    selected "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
-                    action HideInterface()
-            
+            imagebutton:
+                xsize 200
+                ysize 50
+                idle "gui/gui_buttons/GUI quick_buttons_icon/hide_idle.png"
+                hover "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
+                selected "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
+                action HideInterface()
+     
     
 # init -2:
 
@@ -532,38 +480,10 @@ style navigation_button_text:
     xalign 0.5
     font "Swiss721LightBT.ttf"
 
-screen arc_buttons1(arc_name, alignment, trans=None):
-
-
-    frame at trans:
-        background None
-        align alignment
-        yoffset 0 
-
-        has vbox:
-            spacing 5
-        
-        hbox:
-            spacing 10
-            xalign 0.09
-            
-        textbutton arc_name: 
-            text_size 30 
-            action Jump("chapter1")
-        
-    transclude
-
-
-
-
 screen chapters():
-    
-    # $ current_screen = str(FileCurrentPage())
+    key "mouseup_3" action [Hide("chapters", dissolve), SetVariable("current_mode", "main")]
     default current_mode = "chapters"
-    # add "flickering_light"
     hbox at chapter_line_disappear(delay=0.1):
-        # add "underline" xoffset 1200 yoffset 570 xsize 425
-        # add "gui/cover_buttons.png" xoffset 1195 yoffset 640 
         add "gui/game_frames/arc_lines.png" xoffset 1250 yoffset 538 xsize 195
 
        
@@ -864,53 +784,53 @@ screen game_menu():
                
     ### The state of the notebook itself #########################################
 
-    # if notebook_people == "bloody":
-    #     add "gui/game_frames/black_image.png" xoffset 75 yoffset 140
-    # else:
-    frame:
-        background None
-        add "gui/game_frames/black_image.png" xoffset 120 yoffset 160
-
-        hbox:
-            imagebutton:
-                xoffset 530
-                yoffset 102.5
-                idle "gui/gui_buttons/GUI notebook_buttons/tips_idle.png"
-                hover "gui/gui_buttons/GUI notebook_buttons/tips_selected.png"
-                selected_idle "gui/gui_buttons/GUI notebook_buttons/tips_selected.png"
-                hover_sound None
-                activate_sound "audio/sfx/pageflip.wav"
-                action ShowMenu("tips_page", transition= None)
-            imagebutton:
-                xoffset 200
-                yoffset 102.5
-                idle "gui/gui_buttons/GUI notebook_buttons/cases_idle.png"
-                hover "gui/gui_buttons/GUI notebook_buttons/cases_selected.png"
-                selected_idle "gui/gui_buttons/GUI notebook_buttons/cases_selected.png"
-                hover_sound None
-                activate_sound "audio/sfx/pageflip.wav"
-                action ShowMenu("gallery", transition= None)
-
-### The state of the notebook page for people's page ##########################
-
+    if notebook_info == None:
+        add "gui/game_frames/closed_notebook.png" xalign 0.35 yalign 0.5
+    else:
         frame:
             background None
-            xoffset 70
-            yoffset 50
-            if person_of_interest == 0:
-                add "gui/game_frames/notebook_paper_cases.png" xoffset 60 yoffset 100.5
-            else:
-                add "gui/game_frames/notebook_paper_people.png" xoffset 60 yoffset 100.5
+            add "gui/game_frames/black_image.png" xoffset 120 yoffset 160
+
             hbox:
                 imagebutton:
-                    xoffset 127.5
-                    yoffset 42.5
-                    idle "gui/gui_buttons/GUI notebook_buttons/people_idle.png"
-                    hover "gui/gui_buttons/GUI notebook_buttons/people_selected.png"
-                    selected_idle "gui/gui_buttons/GUI notebook_buttons/people_selected.png"
+                    xoffset 530
+                    yoffset 102.5
+                    idle "gui/gui_buttons/GUI notebook_buttons/tips_idle.png"
+                    hover "gui/gui_buttons/GUI notebook_buttons/tips_selected.png"
+                    selected_idle "gui/gui_buttons/GUI notebook_buttons/tips_selected.png"
                     hover_sound None
                     activate_sound "audio/sfx/pageflip.wav"
-                    action ShowMenu("game_menu", transition= None)
+                    action ShowMenu("tips_page", transition= None)
+                imagebutton:
+                    xoffset 200
+                    yoffset 102.5
+                    idle "gui/gui_buttons/GUI notebook_buttons/cases_idle.png"
+                    hover "gui/gui_buttons/GUI notebook_buttons/cases_selected.png"
+                    selected_idle "gui/gui_buttons/GUI notebook_buttons/cases_selected.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/pageflip.wav"
+                    action ShowMenu("gallery", transition= None)
+
+    ### The state of the notebook page for people's page ##########################
+
+            frame:
+                background None
+                xoffset 70
+                yoffset 50
+                if person_of_interest == 0:
+                    add "gui/game_frames/notebook_paper_cases.png" xoffset 60 yoffset 100.5
+                else:
+                    add "gui/game_frames/notebook_paper_people.png" xoffset 60 yoffset 100.5
+                hbox:
+                    imagebutton:
+                        xoffset 127.5
+                        yoffset 42.5
+                        idle "gui/gui_buttons/GUI notebook_buttons/people_idle.png"
+                        hover "gui/gui_buttons/GUI notebook_buttons/people_selected.png"
+                        selected_idle "gui/gui_buttons/GUI notebook_buttons/people_selected.png"
+                        hover_sound None
+                        activate_sound "audio/sfx/pageflip.wav"
+                        action ShowMenu("game_menu", transition= None)
 
     ### The number of people and their profile sprites ############################################
 
@@ -3139,7 +3059,7 @@ style nvl_dialogue:
     xsize gui.nvl_text_width
     min_width gui.nvl_text_width
     text_align gui.nvl_text_xalign
-    justify True
+    justify False
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_thought:

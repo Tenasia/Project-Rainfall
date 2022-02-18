@@ -105,3 +105,23 @@ transform CF_SUSBUTTON:
         on selected_idle:
             zoom 0.3
             alpha 0.51
+
+transform quick_button_tt:
+        xoffset -100
+
+        on idle:
+            easein .2 alpha 1.0 xoffset -100
+        on hover:
+            easein .2 alpha 1.0 xoffset -150
+        on selected_idle:
+            easein .2 alpha 1.0 xoffset -200    
+
+transform quick_button_tt1:
+        xoffset -100
+
+        on idle:
+            easein .2 alpha 1.0 xoffset -100
+        on hover:
+            easein .2 alpha 1.0 xoffset -185
+        on selected_idle:
+            easein .2 alpha 1.0 xoffset -200  

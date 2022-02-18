@@ -3,9 +3,8 @@
 define char = Character(name = None, show_two_window=True)
 
 
-define narrator = nvl_narrator #(ctc="ctc", ctc_pause="ctc", ctc_position="nestled")
-define Thought = Character(" ", ctc="ctc", ctc_pause="ctc", ctc_position="fixed")
-define Thought2 = Character(" ", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind=nvl)
+define unknown = Character("???", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind=nvl)
+define narrator = Character(" ", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind=nvl)
 
 
 define Fuuji = Character("Nakamura", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)

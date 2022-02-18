@@ -2,7 +2,7 @@
 define bgm_titles = {
     "bgm_00" : _("Hour of Darkness"),
     "bgm_01" : _("Rainfall"), 
-    "bgm_02" : _("Flashback"),
+    "bgm_02" : _("The Window Overlooking All Things"),
     "bgm_03" : _("Home"),
     "bgm_04" : _("Homey"),
     "bgm_05" : _("Prologue"),
@@ -18,7 +18,7 @@ define bgm_titles = {
 
 define scenes = {
     "00" : _("Prologue"),
-    "01" : _("Home"),
+    "01" : _("Work Day"),
     "02" : _("School Day"),
     "03" : _("Fight"),
     "04" : _("Cramming Day"),
@@ -27,7 +27,7 @@ define scenes = {
 
 define locations = {
     "01" : {"name" : _("？？？"), "tip" : ""},
-    "02" : {"name" : _("Somewhere in Tokyo"), "tip" : "This is home to the Fuuji's, which was built upon many years ago. There were rumors that they were a family of heritage, with German descendants."},
+    "02" : {"name" : _("The Office"), "tip" : "The office where white collar workers are paid to death."},
     "03" : {"name" : _("Tokyo University"), "tip" : "The school was said to be only accepting Elites, but you'll see for yourself if that's true."},
     "04" : {"name" : _("School Backyard"), "tip" : "This area is reserved for the school's excess things to put on, including trashes."},
     "04" : {"name" : _("Shintaku School"), "tip" : "Rumored that this cram school is racking up to $100,000 per month just from the students this year."},
