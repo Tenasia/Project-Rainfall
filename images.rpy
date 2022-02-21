@@ -7,7 +7,7 @@ image ctc:
     "gui/ctc_icon/ctc1.png"
     xalign 0.855
     yalign 0.955
-    xoffset 50
+    xoffset 115
     yoffset 0
     xsize 40
     ysize 55

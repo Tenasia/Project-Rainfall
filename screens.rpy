@@ -82,7 +82,7 @@ screen say(who, what, side_image=None, two_window=False):
             background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
             id "window"
             yalign 1.0
-            ysize 300
+            ysize 275
             if who is not None:
                 hbox:
                     xalign 0.5
@@ -98,7 +98,7 @@ screen say(who, what, side_image=None, two_window=False):
             background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
             style_prefix "say"
             id "window"
-            ysize 300
+            ysize 275
             has vbox
 
             fixed:
@@ -107,7 +107,7 @@ screen say(who, what, side_image=None, two_window=False):
                 if who:
                     window:
                         style "say_who_window"
-                        background Transform(Frame("gui/game_frames/name_box.png", yoffset = -87.5,xoffset= 0, ysize = 82, xsize = 481), alpha=persistent.window_opacity)
+                        background Transform(Frame("gui/game_frames/name_box.png", yoffset = -61.5,xoffset= 0, ysize = 56, xsize = 481), alpha=persistent.window_opacity)
                         yoffset 16
                         xoffset 0
                         xalign 1.0
@@ -115,7 +115,7 @@ screen say(who, what, side_image=None, two_window=False):
                         #     at trans_say_label
                             
                         text who:
-                            yoffset -75
+                            yoffset -52.5
                             id "who" xalign 0.5 xoffset -685 
                             font "fonts/Poppins-Light.ttf"
                             outlines [(1, "#00000099", 0, 0)]
@@ -247,102 +247,199 @@ screen quick_menu(trans = None):
     zorder 100
     
     if quick_menu:
-    
-        hbox:
-            xalign 0.965
-            yalign 0.765
-            xoffset 220 + 85
-            yoffset 40
-            imagebutton at quick_button_tt:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/auto_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
-                selected_idle "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
-                hover_sound None
-                activate_sound "audio/sfx/clickcool.wav"
-                action Preference("auto-forward", "toggle")
-        hbox:
-            xalign 0.965
-            yalign 0.765
-            xoffset 220 + 85
-            yoffset 80
-            imagebutton at quick_button_tt:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/skip_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                # selected_idle "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                # selected_background "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
-                hover_sound None
-                activate_sound "audio/sfx/clickcool.wav"
-                action Skip()
-        hbox:    
-            xalign 0.965
-            yalign 0.765
-            xoffset 219 + 85
-            yoffset 120
-            imagebutton at quick_button_tt:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/logs_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/logs_hover.png"
-                hover_sound None
-                activate_sound "audio/sfx/clickcool.wav"
-                action ShowMenu('history')
-        hbox:   
-            xalign 0.965
-            yalign 0.765
-            xoffset 218 + 85
-            yoffset 160
-            imagebutton at quick_button_tt:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/save_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/save_hover.png"
-                hover_sound None
-                activate_sound "audio/sfx/clickcool.wav"
-                action ShowMenu('save')
-        hbox: 
-            xalign 0.965
-            yalign 0.765
-            xoffset 219 + 85
-            yoffset 200      
-            imagebutton at quick_button_tt:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/load_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/load_hover.png"
-                hover_sound None
-                activate_sound "audio/sfx/clickcool.wav"
-                action ShowMenu('load')
-        hbox:   
-            xalign 0.965
-            yalign 0.765
-            xoffset 220 + 85
-            yoffset 245
-            imagebutton at quick_button_tt1:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/settings_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/settings_hover.png"
-                hover_sound None
-                activate_sound "audio/sfx/clickcool.wav"
-                action ShowMenu('preferences')
-        hbox:
-            xalign 0.965
-            yalign 0.765
-            xoffset 116 + 85
+        if nvl_mod == True:
+            hbox:
+                xalign 0.965
+                yalign 0.765
+                xoffset 220 + 85
+                yoffset 40
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/auto_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
+                    selected_idle "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action Preference("auto-forward", "toggle")
+            hbox:
+                xalign 0.965
+                yalign 0.765
+                xoffset 220 + 85
+                yoffset 80
+                imagebutton at quick_button_tt2:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/skip_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                    selected_idle "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                    selected_background "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                    insensitive "gui/gui_buttons/GUI quick_buttons_icon/skip_insensitive.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action Skip(confirm=True)
+            hbox:    
+                xalign 0.965
+                yalign 0.765
+                xoffset 219 + 85
+                yoffset 120
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/logs_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/logs_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('history')
+            hbox:   
+                xalign 0.965
+                yalign 0.765
+                xoffset 218 + 85
+                yoffset 160
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/save_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/save_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('save')
+            hbox: 
+                xalign 0.965
+                yalign 0.765
+                xoffset 219 + 85
+                yoffset 200      
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/load_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/load_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('load')
+            hbox:   
+                xalign 0.965
+                yalign 0.765
+                xoffset 220 + 85
+                yoffset 245
+                imagebutton at quick_button_tt1:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/settings_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/settings_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('preferences')
+            hbox:
+                xalign 0.965
+                yalign 0.765
+                xoffset 56
+                yoffset 0
 
-            imagebutton:
-                xsize 200
-                ysize 50
-                idle "gui/gui_buttons/GUI quick_buttons_icon/hide_idle.png"
-                hover "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
-                selected "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
-                action HideInterface()
-     
-    
+                imagebutton:
+                    xsize 50
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/hide_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
+                    selected "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
+                    action HideInterface()
+        else:
+            hbox:
+                xalign 0.965
+                yalign 0.765
+                xoffset 220 + 85
+                yoffset 40
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/auto_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
+                    selected_idle "gui/gui_buttons/GUI quick_buttons/auto_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action Preference("auto-forward", "toggle")
+            hbox:
+                xalign 0.965
+                yalign 0.765
+                xoffset 220 + 85
+                yoffset 80
+                imagebutton at quick_button_tt2:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/skip_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                    selected_idle "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                    selected_background "gui/gui_buttons/GUI quick_buttons/skip_hover.png"
+                    insensitive "gui/gui_buttons/GUI quick_buttons_icon/skip_insensitive.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action Skip(confirm=True)
+            hbox:    
+                xalign 0.965
+                yalign 0.765
+                xoffset 219 + 85
+                yoffset 120
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/logs_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/logs_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('history')
+            hbox:   
+                xalign 0.965
+                yalign 0.765
+                xoffset 218 + 85
+                yoffset 160
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/save_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/save_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('save')
+            hbox: 
+                xalign 0.965
+                yalign 0.765
+                xoffset 219 + 85
+                yoffset 200      
+                imagebutton at quick_button_tt:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/load_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/load_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('load')
+            hbox:   
+                xalign 0.965
+                yalign 0.765
+                xoffset 220 + 85
+                yoffset 245
+                imagebutton at quick_button_tt1:
+                    xsize 200
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/settings_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/settings_hover.png"
+                    hover_sound None
+                    activate_sound "audio/sfx/clickcool.wav"
+                    action ShowMenu('preferences')
+            hbox:
+                xalign 0.965
+                yalign 0.765
+                xoffset 72.5 - 150
+                yoffset 40
+
+                imagebutton:
+                    xsize 50
+                    ysize 50
+                    idle "gui/gui_buttons/GUI quick_buttons_icon/hide_idle.png"
+                    hover "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
+                    selected "gui/gui_buttons/GUI quick_buttons/hide_hover.png"
+                    action HideInterface()
+
 # init -2:
 
 #     style quick_button is menu_button:
@@ -3037,6 +3134,8 @@ style nvl_window:
     yfill True
 
     background "gui/game_frames/nvl.png"
+    # background None
+    
     padding gui.nvl_borders.padding
 
 style nvl_entry:

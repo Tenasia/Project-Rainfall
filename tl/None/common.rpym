@@ -459,7 +459,7 @@ translate None strings:
 
     # renpy/common/00gui.rpy:391
     old "Are you sure you want to begin skipping?"
-    new "Are you sure you want to begin skipping?"
+    new "Skip seen texts?"
 
     # renpy/common/00gui.rpy:392
     old "Are you sure you want to skip to the next choice?"

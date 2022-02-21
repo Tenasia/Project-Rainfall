@@ -127,7 +127,7 @@ define config.intra_transition = None
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = Dissolve(0.3)
+# define config.end_game_transition = Dissolve(0.3)
 
 ## Used when entering the main menu after the splashscreen
 
@@ -198,7 +198,6 @@ init python:
 
 init -2 python:
     renpy.music.register_channel("music", mixer="music", loop = True, file_prefix="audio/bgm/", file_suffix=".mp3")
-
     renpy.music.register_channel("se", mixer="game_sfx", loop = False, file_prefix="audio/gsfx/", file_suffix=".wav")
     renpy.music.register_channel("ambient", mixer="game_sfx", loop=True, file_prefix="audio/gsfx/", file_suffix=".wav", tight=True)
 init -1500 python:

@@ -114,7 +114,7 @@ transform quick_button_tt:
         on hover:
             easein .2 alpha 1.0 xoffset -150
         on selected_idle:
-            easein .2 alpha 1.0 xoffset -200    
+            xoffset -150   
 
 transform quick_button_tt1:
         xoffset -100
@@ -124,4 +124,22 @@ transform quick_button_tt1:
         on hover:
             easein .2 alpha 1.0 xoffset -185
         on selected_idle:
-            easein .2 alpha 1.0 xoffset -200  
+            xoffset -185  
+
+transform quick_button_tt2:
+        xoffset -100
+
+        on idle:
+            easein .2 alpha 1.0 xoffset -100
+        on hover:
+            easein .2 alpha 1.0 xoffset -150
+        on selected_idle:
+            xoffset -150   
+
+transform basicfade:
+        on show:
+            alpha 0.0
+            linear 1.0 alpha 1.0
+        on hide:
+            linear 1.0 alpha 0.0
+
