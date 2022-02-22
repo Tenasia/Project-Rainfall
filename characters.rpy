@@ -12,13 +12,14 @@ define noname_adv = Character("???", color="fff", ctc="ctc", ctc_pause="ctc", ct
 # Named Characters
 define Takumi = Character("Takumi", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define Nakamura = Character("Nakamura", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Hiraku = Character("Hiraku", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 
 define Kikuchiyo = Character("Kikuchiyo", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define Akane = Character("Akane", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 
 # Side Characters
 define Coworker = Character("Coworker", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
-
+define Radio = Character("Radio", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 
 
 
