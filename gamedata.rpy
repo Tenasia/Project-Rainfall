@@ -19,7 +19,7 @@ define bgm_titles = {
 define scenes = {
     "00" : _("Prologue"),
     "01" : _("Work Day"),
-    "02" : _("School Day"),
+    "02" : _("The Falldown"),
     "03" : _("Fight"),
     "04" : _("Cramming Day"),
 
@@ -27,10 +27,10 @@ define scenes = {
 
 define locations = {
     "01" : {"name" : _("？？？"), "tip" : ""},
-    "02" : {"name" : _("The Office"), "tip" : "The office where white collar workers are paid to death."},
-    "03" : {"name" : _("Tokyo University"), "tip" : "The school was said to be only accepting Elites, but you'll see for yourself if that's true."},
-    "04" : {"name" : _("School Backyard"), "tip" : "This area is reserved for the school's excess things to put on, including trashes."},
-    "04" : {"name" : _("Shintaku School"), "tip" : "Rumored that this cram school is racking up to $100,000 per month just from the students this year."},
+    "02" : {"name" : _("Yasuda Office"), "tip" : "The office where white collar workers are paid to work until death. It is also Where Takumi works at, and Masashi's company"},
+    "03" : {"name" : _("Yodoyabashi Street"), "tip" : "The usual road for workers to go through, a lot of things happen here during the day, noon and night... which is everyday."},
+    "04" : {"name" : _("Hiraku's Car"), "tip" : "Hiraku's Vehicle, she uses it for chasing the bad guys and serving justice while at it."},
+    "05" : {"name" : _("Some road in Tokyo"), "tip" : "Road that is taken by any other person, be it a human or an animal."},
 
 }
 

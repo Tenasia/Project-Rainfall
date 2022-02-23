@@ -970,7 +970,7 @@ screen game_menu():
                     else:
                         action SetVariable("person_of_interest", 1)
             if person2 == True:
-                textbutton "Nakamura":
+                textbutton "Hiraku":
                     yoffset -10
                     hover_sound None
                     activate_sound "audio/sfx/pageflip.wav"
@@ -1212,23 +1212,23 @@ screen game_menu():
                     if person_info1 == "redacted":
                         vbox:
                             yoffset -55
-                            text "{color=#000}Inoue Hiraku" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.05, "#00000099", 0, 0)]
+                            text "{color=#000}Takumi" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.05, "#00000099", 0, 0)]
                         vbox:
-                            yoffset 10 xoffset -190
-                            text "{color=#000}19" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)]
+                            yoffset 10 xoffset -150
+                            text "{color=#000}19" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)] xalign 0.5
                         vbox:
                             yoffset 77.5 xoffset -220
-                            text "{color=#000}Police" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.75, "#00000099", 0, 0)]
+                            text "{color=#000}Office Worker" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.75, "#00000099", 0, 0)] xalign 0.5
                     else:
                         vbox:
                             yoffset -55
-                            text "{color=#000}Inoue Hiraku" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.05, "#00000099", 0, 0)]
+                            text "{color=#000}Takumi" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.05, "#00000099", 0, 0)]
                         vbox:
-                            yoffset 10 xoffset -190
-                            text "{color=#000}19" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)]
+                            yoffset 10 xoffset -115
+                            text "{color=#000}19" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)] xalign 0.5
                         vbox:
-                            yoffset 77.5 xoffset -220
-                            text "{color=#000}Police" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.75, "#00000099", 0, 0)]
+                            yoffset 77.5 xoffset -150
+                            text "{color=#000}Salaryman" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.75, "#00000099", 0, 0)] xalign 0.5
             if person_of_interest == 2:
                 if person_note2 == True:
                     if person_info2 == "redacted":
@@ -1237,7 +1237,7 @@ screen game_menu():
                             text "{color=#000}Inoue Hiraku" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.05, "#00000099", 0, 0)]
                         vbox:
                             yoffset 10 xoffset -190
-                            text "{color=#000}19" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)]
+                            text "{color=#000}21" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)]
                         vbox:
                             yoffset 77.5 xoffset -220
                             text "{color=#000}Police" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.75, "#00000099", 0, 0)]
@@ -1247,7 +1247,7 @@ screen game_menu():
                             text "{color=#000}Inoue Hiraku" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.05, "#00000099", 0, 0)]
                         vbox:
                             yoffset 10 xoffset -190
-                            text "{color=#000}19" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)]
+                            text "{color=#000}21" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.65, "#00000099", 0, 0)]
                         vbox:
                             yoffset 77.5 xoffset -220
                             text "{color=#000}Police" size 30 font "fonts/Kalam-Regular.ttf" outlines [(0.75, "#00000099", 0, 0)]
@@ -1445,7 +1445,7 @@ screen game_menu():
                         add None
                     if person_note1_1 == "first_note":
                         null height 20
-                        text "{color=#000}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." size 32 font "fonts/Kalam-Regular.ttf"
+                        text "{color=#000}- Works at Yasuda Farmers Company" size 32 font "fonts/Kalam-Regular.ttf"
                     elif person_note1_1 == "first_note_redacted":
                         null height 20
                         text "{color=#000}{s}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{/s}, my first iteration was wrong," size 30 font "fonts/Kalam-Regular.ttf"

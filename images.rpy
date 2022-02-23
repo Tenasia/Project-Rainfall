@@ -703,19 +703,32 @@ init:
             
         repeat
 
+
 label splashscreen:
 
-    scene black
-    with Pause(1)
+    show logo_sp with fade
+    pause (3)
+    show disclaimer_sp with fade
+    pause (3)
+    
+    return
+    # scene black
+    # with Pause(1)
 
-    show text "This story is undoubtedly nothing more than fantasy.\n It could not possibly have any relation to real persons,\norganizations, or events." with dissolve 
-    with Pause(5)
+    # show text "This story is undoubtedly nothing more than fantasy.\n It could not possibly have any relation to real persons,\norganizations, or events." with dissolve 
+    # with Pause(5)
 
-    hide text with dissolve
-    with Pause(1)
-    return 
+    # hide text with dissolve
+    # with Pause(1)
+    # return 
 
 init:
+
+    
+    image logo_sp:
+        "gui/splashscreen/logo.png"
+    image disclaimer_sp:
+        "gui/splashscreen/disclaimer.png"
 
     image flickering_light:
         "gui/bg_title/Lit.png"
@@ -737,10 +750,6 @@ init:
         
         repeat
 
-# init:
-#     image fuujia =  ConditionSwitch(
-#         "_last_say_who == 'Fuuji'", "images/Oswald/os_angry.png",
-#         "not _last_say_who == 'Fuuji'", "images/Oswald/os_angry_dark.png",)
 
 #Oswald Sprites
 image fuuji angry :

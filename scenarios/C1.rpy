@@ -7,7 +7,7 @@ label ch1:
     pause 2.0
     play music audio.dark fadein 2
     play ambient "rain" fadein 1
-    play se "thunder" fadein 0.5
+    play se1 "thunder" fadein 0.5
     scene bg a_alleyway
     with fade
     show rain_particle
@@ -25,16 +25,16 @@ label ch1:
     
     scene black
     with fade
-    stop se fadeout 0.5
+    stop se1 fadeout 0.5
     $ renpy.pause(0.5, hard = True)
-    play se "sudden_thunder" fadein 0.0 volume 1
+    play se1 "sudden_thunder" fadein 0.0 volume 1
     $ renpy.pause(0.5, hard = True)
     scene white 
     pause 1
     scene black
     with dissolve
     stop ambient
-    stop se
+    stop se1
     pause 2.0
     
     nvl show
@@ -48,14 +48,28 @@ label ch1:
     $ nvl_mod = False
 
 label ch2:
-    scene bg a_alleyway
+    $ notebook_info = True
+    scene bg office_eve
     with fade
+
     python:
         set_info_scene("01")
         set_info_location("02")
         set_info_date(10, "Sep", "thu")
         set_info_time("evening")
+
     play music audio.window fadein 3.0
+
+    $ show_date()
+    $ show_people()
+    
+    # Takumi Info
+    $ persistent.person_of_interests = 1
+    $ person_of_interest = 1
+    $ person_note1 = True
+    $ person1 = True
+    $ person_note1_1 = "first_note"
+
     n_adv "Thursday 17:53. September 10, 2012"
     n_adv "The time and date popped up as I moved the mouse cursor. I leaned back on the chair and stretched my arms wide to let my stiffened joints relax. Finally, the most awaited time of the day, the end of the work schedule."
     n_adv "I glanced around the office room. As usual, there were only a couple of guys left. Most employees in my section finish at 17:30. Those who stayed late were either backed up or took on overtime. Let’s just say I’m part of the former."
@@ -73,7 +87,7 @@ label ch2:
     n_adv "With my backpack in tow, I took the stairs to the ground floor. The building was pretty large for an office building. It was relatively new as well, acquired just last year by my employer."
     stop ambient fadeout 0.5
     play ambient "lightrain" fadein 0.5 volume 0.75
-    scene bg a_alleyway
+    scene bg office_entrance_eve
     with fade
     n_adv "At the entrance section, our security guard sat behind a wooden desk, eyes glued to his phone. Noticing me, he glanced up and gave a small nod before returning to being engrossed in his screen."
 
@@ -103,29 +117,33 @@ label ch2:
 
     stop ambient fadeout 1.0
     play ambient "rain" fadein 1.0
-    scene bg cram_hallway
+    scene bg office_outside_raining
+    show rain_particle
     with fade
     n_adv "At some point during our conversation, the sky had turned dark. The rain turned out to be lighter than expected, which was great."
     n_adv "I glanced at the bright LED signpost above the door frame. ‘Yasuda Farmers’, it read. I’ve commuted here daily for the past few months, yet today these familiar streets felt a little chillier than usual."
     Takumi "\"What am I, five?\""
     n_adv "Chiding myself, I brushed Nakamura’s words off my mind. I slowly made my way towards the busy intersection road that connected to the metro station."
 
-    scene bg road_school
-    with fade 
+    scene bg street_night
+    hide rain_particle
+    show rain_particle
+    python:
+        set_info_location("03")
+
+    with fade
+    
     n_adv "It wasn’t until I saw the headlights of passing cars and pedestrians that I let out a breath of relief. There really was a form of comfort from being surrounded by people."
     n_adv "The secluded alleyway opened up into a much larger street lined with various office buildings and the occasional eye-catching signboards of restaurant chains."
     n_adv "Every day, during rush hours, salary workers bustled around these areas, and today was no exception."
     n_adv "I shimmied my way into the flow of pedestrians towards the station. My umbrella kept bumping into others’, but that’s just how it was during rush hour."
     n_adv "Actually, it was kind of remarkable just how densely packed it was here when there was nobody just a corner away earlier."
     n_adv "Either way, now within a crowded space and a straight road ahead, I let my thoughts wander a little. What should I have for dinner tonight…"
-    # stop ambient fadeout 1.0
-    # stop music fadeout 1.0
-    # stop se fadeout 1.0
     stop ambient fadeout 1.0
     play music audio.kamikaze fadein 1.0 
-    play se "car_horn"
-    Takumi "\"...?\"" 
-    play se "watersplash"
+    play se1 "car_horn"
+    # Takumi "\"...?\"" 
+    play se2 "watersplash"
     Takumi "\"Ahk!?\""
     n_adv "Suddenly, ice-cold water blasted my legs. Bewildered, I glanced around. A black sedan rushed past me, spraying puddles of water in its wake. Several other pedestrians yelped in surprise and anger alike."
     n_adv "Oi, oi, there’s no way that’s within the speed limit! Not to mention, it was driving in the opposite lane!"
@@ -143,10 +161,25 @@ label ch2:
     stop ambient fadeout 1.0
 
 label ch3:
-    scene bg a_alleyway
+    python:
+        set_info_scene("02")
+        set_info_location("04")
+        set_info_date(10, "Sep", "thu")
+        set_info_time("evening")
+
+    $ persistent.person_of_interests = 2
+    $ person_of_interest = 2
+    $ person_note2 = True
+    $ person2 = True
+
+    scene bg car_night_rain
     with fade
+
+    $ show_date()
+    $ show_people()
+
     play music audio.tokyo
-    play ambient "rain_inside_car" fadein 1.0
+    play ambient "rain_inside_car" fadein 1.0 volume 0.25
     n_adv "A pleasant tune hummed from the radio, my feet tapping along to it. The chilly night breeze flowed in through the open window, inviting along stray drops of rainwater to trickle in."
     n_adv "A radar speed gun was propped on the window frame, supported by a makeshift harness. With each passing vehicle, the red digital numbers fluctuated slightly."
     n_adv "Munching on a biscuit, I peered into the open sky as rows upon rows of buildings gradually lit up, signaling the shift into the ever-familiar scene of a nighttime metropolis."
@@ -160,7 +193,7 @@ label ch3:
     n_adv "What an odd outfit in this day and age. Was there some kind of festival going on? Before long, they disappeared into a corner."
     Hiraku "\"Hmm..\""
     n_adv "I couldn’t quite put my finger on it, but his outfit looked familiar. Where had I seen him before? Just as I was trying to jog my memory, something else caught my attention."
-    
+    stop ambient fadeout 1.0
     stop music fadeout 1.0
     play music audio.kamikaze fadein 1.0
 
@@ -168,8 +201,8 @@ label ch3:
     n_adv "I got up to action immediately."
     n_adv "Just as a formality and for the paperwork registration later, I pointed the radar towards the car anyway. 81 — it registered — on a 60 zone freeway. Following proper procedure, I picked up the transceiver and switched the mic on."
     Hiraku "\"HQ, you there? Inoue Hiraku from patrol car 17 here.\""
+    play se1 "static" fadein 1.0
     n_adv "After a slight pause, a static voice replied."
-    play se "static" fadein 1.0
     Radio "\"Inoue-san, this is Tenma Station. What’s the matter?\""
     Hiraku "\"I’m on patrol around West Tenma, and there’s a black sedan recklessly speeding. Can I get some roadblocks assistance?\""
     Radio "\"Can you tell us the car model and license plate number?\""
@@ -183,7 +216,7 @@ label ch3:
     Hiraku "\"Then, requesting permission to engage in a pursuit.\""
     n_adv "Speeding on a country road was one thing, but on a busy street? Like hell I was about to let this guy loose. There was a pause, and then I heard a low groan from the transceiver."
     n_adv "I knew they would rather avoid a pursuit if they could help it, that’s just how our system was. However, that would mean letting the lawbreaker unpunished."    
-    play se "watersplash" fadein 0.5
+    play se1 "watersplash" fadein 0.5
     n_adv "In a blur, the sedan darted past my position, spraying water onto my windshield."
     Hiraku "\"This guy..!\""
     n_adv "The gall!"
@@ -193,21 +226,24 @@ label ch3:
     Radio "\"Pursuit authorized. We will provide directional assistance from HQ.\""
     stop music fadeout 1.0
     play music audio.blue fadein 1.0
+    play ambient "car_on_road"
     n_adv "A smirk rose to my lips."
     Hiraku "\"Roger that.\""
     n_adv "Putting the transceiver back in its slot, I flicked on one of the numerous switches in the middle compartment. In response, the speaker on the roof activated and started blaring the ever-familiar wail of police siren."
     n_adv "Without waiting for another second, I stepped on the gas pedal. The evening’s about to get a whole lot rowdier. The car skidded off as I turned the corner in pursuit of the sedan."
-    scene bg a_alleyway
+    scene bg road1_night
     with fade
+    python:
+        set_info_location("05")
     n_adv "Upon hearing the siren, the other cars began to part away, opening a clear path in the middle for me."
     Hiraku "\"Heh.\""
     n_adv "As a teen, I’ve always fantasized about this. And even after seven years, the feeling never gets old. I pressed the pedal even lower."
-    play se "gear_shift" fadein 1.0
+    play se1 "gear_shift" fadein 1.0
     play ambient "car_on_road" fadein 1.0
     n_adv "My chest tightened from the sheer pressure of inertia. Silhouettes of the city skyline flew past quicker and quicker as my car rapidly accelerated."
     Hiraku "\"...!\""
     n_adv "I could finally spot the sedan! It was quite far ahead, still swerving wildly around traffic, but I was slowly gaining ground!"
-    play se "gear_shift" fadein 1.0
+    play se1 "gear_shift" fadein 1.0
     n_adv "I kicked the clutch as I pushed for even faster. The rain blocked my vision a little, but I’ve had my fair share of similar situations. Just had to rely on familiarity."
     n_adv "Keeping my eyes focused ahead, I chased after the fleeing black sedan."
     Hiraku "\"...!\""
@@ -234,35 +270,36 @@ label ch3:
     n_adv "The sedan was still going at full speed, running headfirst into the bus! What’s it gonna do!? What should I do!?"
     n_adv "Hesitantly, I released the gas pedal. But what about the sedan?"
     n_adv "Finally noticing the rampant sedan, the bus pumped on the brakes, tires grinding into asphalt."
-    play se "car_horn"
+    play se1 "truck_horn"
     n_adv "But the sedan was already too close! It was too late!"
     Hiraku "\"!?\""
     n_adv "But instead of braking…the sedan swerved right!"
     n_adv "By a hair’s breadth, it bolted past the front of the bus…and managed to slip through! The bus ground to a halt just in the nick of time."
     n_adv "The sedan raced all the way to the other end of the intersection. Tires screeched as a whole line of cars ahead had to pump their brakes."
     Hiraku "\"Crazy bastard ...tsk!\""
-    play se "gear_shift"
+    play se1 "gear_shift"
     n_adv "My heart hammering, I banked on the clutch and stepped back on the gas pedal. Using the opening the sedan created, I barreled past the bus, past the headlights of stunned drivers, and…made it through!"
     Hiraku "\"Sorry, everyone!\""
     n_adv "My voice blared one last time before I switched the microphone off. This sedan driver was insane! It’s practically a miracle we didn’t collide into anything. I could only pray nobody else crashed back there."
-    scene bg a_alleyway
+    scene bg road2_night
     with fade
     n_adv "As we entered this relatively empty road, the sedan began to accelerate in a straight line. Trying to beat me in a contest of speed?"
     Hiraku "\"You wish.\""
-    play se "gear_shift"
+    play se1 "gear_shift"
     n_adv "I floored the pedal in response, the accelerometer needle soaring. The city skyline outside blended into a long string of blur."
     n_adv "Passing through intersection after intersection, the sedan kept going straight. Had it given up on shaking me off? The gap was gradually closing once more."
     Radio "\"Inoue-san, it looks like the sedan is trying to escape to Yodogawa Ward through Nagara Bridge. We’ve already contacted their police station. They’re prepared to intercept at their end of the bridge. We need you to lead him to that point.\""
     Hiraku "\"Nagara Bridge… Roger, I’ll keep pressuring them from this side.\""
     n_adv "The game of tag continued as our cars darted down the road at blazing speeds. Rain droplets on my windshield cascaded into parting trails, swept away by the rushing wind. Without any of the twists and turns, gripping the steering wheel almost felt…serene, peaceful."
     Hiraku "\"...\""
-    scene bg a_alleyway
+    scene bg road3_night
     with fade
     n_adv "The sedan blazed through the final intersection leading to the bridge."
     n_adv "Past this point, there was nowhere else to go. All I had to do was leisurely follow behind. I slowed down a little, wiping the sweat off my brow. My tense shoulders finally got a chance to relax."
     n_adv "I was nearing the limit of my focus. Especially after that close encounter earlier."
-    scene bg a_alleyway
+    scene bg road4_night
     with fade 
+    stop ambient fadeout 1.0
     Hiraku "\"The sedan has reached the bridge. I repeat, the sedan is on the bridge.\""
     Radio "\"Good work, Inoue-san. Standby over there in case it tries to turn around.\""
     Hiraku "\"Roger.\""
@@ -270,13 +307,15 @@ label ch3:
     n_adv "..."
     stop music fadeout 1.0
     play music audio.strike fadein 1.0
+    scene bg bridge_night
+    show rain_particle
+    with fade
     n_adv "But…the sedan wasn’t slowing down."
     Hiraku "\"...?\""
     n_adv "That’s strange. The roadblock was definitely visible from there. Was it not paying attention?"
     n_adv "The sedan flew through the bridge at full speed. What’s it trying to do? If it keeps going…there’s nothing but a crash awaiting!"
     Hiraku "\"No way...\""
-    stop ambient fadeout 1.0
-    play ambient "rain" fadein 1.0
+    play ambient "rain" fadein 2.0
     stop music fadeout 1.0
     n_adv "The officers on the other side were holding up megaphones, warning the sedan to slow down. However, their words fell on deaf ears."
     n_adv "The asphalt rattled as the sedan showed no signs of slowing."
@@ -284,7 +323,7 @@ label ch3:
     n_adv "The officers scrambled to dive out of the way, panic reflected in their eyes. Screaming ensued."
     n_adv "Time slowed down for an instant as the sedan inched nearer…nearer..!"
     n_adv "And then came the moment of impact."
-    play se "car_crash" fadein 1.0 volume 0.5
+    play se1 "car_crash" fadein 1.0
     scene black
     pause 3.0
     with fade
