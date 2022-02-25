@@ -133,6 +133,7 @@ define config.intra_transition = None
 
 
 define config.end_splash_transition = ImageDissolve("images/transitions/rain1.jpg", 1.0, 8)
+# define config.end_splash_transition = None
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
 

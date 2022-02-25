@@ -707,10 +707,9 @@ init:
 label splashscreen:
 
     show logo_sp with fade
-    pause (3)
+    pause (1.5)
     show disclaimer_sp with fade
-    pause (3)
-    
+    $ renpy.pause(2.0)
     return
     # scene black
     # with Pause(1)

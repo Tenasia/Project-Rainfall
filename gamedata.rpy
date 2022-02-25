@@ -1,18 +1,18 @@
 
 define bgm_titles = {
-    "bgm_00" : _("Hour of Darkness"),
+    "bgm_00" : _("The Door"),
     "bgm_01" : _("Rainfall"), 
     "bgm_02" : _("The Window Overlooking All Things"),
     "bgm_03" : _("Kamikaze"),
     "bgm_04" : _("Tokyo at the Night"),
     "bgm_05" : _("Blue Garnet"),
     "bgm_06" : _("Dead End Strike"),
-    "bgm_07" : _("Tension"),
-    "bgm_08" : _("Thin Purple"),
-    "bgm_09" : _("Title"),
-    "bgm_10" : _("True Home"),
-    "bgm_11" : _("Rainfall"),
-    "bgm_12" : _("Presence"),
+    "bgm_07" : _("Osmanthus"),
+    "bgm_08" : _("The Night Before"),
+    "bgm_09" : _("Feelings of a Distant Day"),
+    "bgm_10" : _("Meeting extension"),
+    "bgm_11" : _("Cold Fish"),
+    "bgm_12" : _("Fear"),
     "bgm_13" : _("Strolling")
 }
 

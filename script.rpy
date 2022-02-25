@@ -1,6 +1,6 @@
 ﻿
 define config.rollback_enabled = False
-define _dismiss_pause = True
+define _dismiss_pause = False
 
 init:
     $ config.keymap['game_menu'].remove('mouseup_3')
@@ -14,19 +14,19 @@ init python:
 
 init -3:
 
-    define audio.dark = "<loop 000.000 to 83.000>bgm_00"
+    define audio.door = "<loop 000.000 to 83.000>bgm_00"
     define audio.rainfall = "<loop 000.000 to 178.000>bgm_01"
     define audio.window = "<loop 000.000 to 312.000>bgm_02"
     define audio.kamikaze = "<loop 000.000 to 040.000>bgm_03"
     define audio.tokyo = "<loop 000.000 to 190.000>bgm_04"
     define audio.blue = "<loop 000.000 to 135.000>bgm_05"
     define audio.strike = "<loop 000.000 to 123.000>bgm_06"
-    define audio.tension = "<loop 000.167 to 097.818>bgm_07"
-    define audio.thin_purple = "<loop 000.167 to 097.818>bgm_08"
-    define audio.Title = "<loop 000.0167 to 150.019>bgm_09"
-    define audio.true_home = "<loop 000.0167 to 150.019>bgm_10"
-    define audio.urmum = "<loop 000.0167 to 150.019>bgm_11"
-    define audio.presence = "<loop 000.0167 to 150.019>bgm_12"
+    define audio.osmanthus = "<loop 000.000 to 187.000>bgm_07"
+    define audio.night = "<loop 000.000 to 202.000>bgm_08"
+    define audio.distant = "<loop 000.000 to 141.000>bgm_09"
+    define audio.meeting = "<loop 000.000 to 136.000>bgm_10"
+    define audio.cold = "<loop 000.000 to 151.000>bgm_11"
+    define audio.fear = "<loop 000.000 to 150.019>bgm_12"
     define audio.strolling = "<loop 000.0167 to 150.019>bgm_13"
 
 return

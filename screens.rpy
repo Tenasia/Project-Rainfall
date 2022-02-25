@@ -470,7 +470,6 @@ style quick_button_text:
 
 screen navigation():
 
-
     python:
 
         newest_slot = renpy.newest_slot()
@@ -1501,13 +1500,15 @@ screen game_menu():
     frame:
         xoffset 135
         yoffset 895
-        text "Playtime:" size 35 xoffset 51 yoffset 0 color "#000" font "fonts/Kalam-Regular.ttf"
         background None
-        hbox:
-            yoffset 0
-            xoffset 200
-            text "[hours_played]:[minutes_played]:[seconds_played]" color "#000" font "fonts/Kalam-Regular.ttf" size 35 
-    
+        if notebook_info == True:
+            text "Playtime:" size 35 xoffset 51 yoffset 0 color "#000" font "fonts/Kalam-Regular.ttf"
+            hbox:
+                yoffset 0
+                xoffset 200
+                text "[hours_played]:[minutes_played]:[seconds_played]" color "#000" font "fonts/Kalam-Regular.ttf" size 35
+        else:
+            text ""    
     imagebutton:
         xalign 0.95
         yalign 0.925
