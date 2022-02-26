@@ -28,4 +28,10 @@ define Supervisor = Character("Supervisor", color ="fff", ctc="ctc", ctc_pause="
 define Phone = Character("Phone", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define U_Man = Character("Unknown Man", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define T_Brute = Character("Tall Brute", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
-
+define B_Brute = Character("Bald Brute", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Empress = Character("Empress", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Voice = Character("Voice", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Odawara = Character("Odawara", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Advisor = Character("Advisor", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Advisors = Character("Advisors", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define E_Advisor = Character("Elderly Advisor", color ="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)

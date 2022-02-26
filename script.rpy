@@ -14,7 +14,7 @@ init python:
 
 init -3:
 
-    define audio.door = "<loop 000.000 to 83.000>bgm_00"
+    define audio.door = "<loop 000.000 to 083.000>bgm_00"
     define audio.rainfall = "<loop 000.000 to 178.000>bgm_01"
     define audio.window = "<loop 000.000 to 312.000>bgm_02"
     define audio.kamikaze = "<loop 000.000 to 040.000>bgm_03"
@@ -27,7 +27,18 @@ init -3:
     define audio.meeting = "<loop 000.000 to 136.000>bgm_10"
     define audio.cold = "<loop 000.000 to 151.000>bgm_11"
     define audio.fear = "<loop 000.000 to 150.019>bgm_12"
-    define audio.strolling = "<loop 000.0167 to 150.019>bgm_13"
+    define audio.tactics = "<loop 000.000 to 141.000>bgm_13"
+    define audio.utopia = "<loop 000.000 to 081.000>bgm_14"
+    define audio.passion = "<loop 000.000 to 068.000>bgm_15"
+    define audio.quiet = "<loop 000.000 to 117.000>bgm_16"
+    define audio.flame = "<loop 000.000 to 069.000>bgm_17"
+    # define audio.osmanthus = "<loop 000.000 to 187.000>bgm_07"
+    # define audio.night = "<loop 000.000 to 202.000>bgm_08"
+    # define audio.distant = "<loop 000.000 to 141.000>bgm_09"
+    # define audio.meeting = "<loop 000.000 to 136.000>bgm_10"
+    # define audio.cold = "<loop 000.000 to 151.000>bgm_11"
+    # define audio.fear = "<loop 000.000 to 150.019>bgm_12"
+    # define audio.tactics = "<loop 000.000 to 141.000>bgm_13"
 
 return
 
@@ -55,6 +66,14 @@ label _hide_windows_override:
 
         _windows_hidden = False
 
+    return
+
+label splashscreen:
+
+    show logo_sp with fade
+    pause (1.5)
+    show disclaimer_sp with fade
+    $ renpy.pause(2.0)
     return
 
 label chapter1:

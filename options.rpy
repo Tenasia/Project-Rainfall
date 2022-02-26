@@ -199,9 +199,9 @@ init python:
 
 init -2 python:
     renpy.music.register_channel("music", mixer="music", loop = True, file_prefix="audio/bgm/", file_suffix=".mp3")
-    renpy.music.register_channel("se1", mixer="game_sfx", loop = False, file_prefix="audio/gsfx/ogg/", file_suffix=".ogg")
-    renpy.music.register_channel("se2", mixer="game_sfx", loop = False, file_prefix="audio/gsfx/ogg/", file_suffix=".ogg")
-    renpy.music.register_channel("ambient", mixer="game_sfx", loop=True, file_prefix="audio/gsfx/ogg/", file_suffix=".ogg", tight=True)
+    renpy.music.register_channel("se1", mixer="game_sfx", loop = False, file_prefix="audio/gsfx/ogg/se/", file_suffix=".ogg")
+    renpy.music.register_channel("se2", mixer="game_sfx", loop = False, file_prefix="audio/gsfx/ogg/se/", file_suffix=".ogg")
+    renpy.music.register_channel("ambient", mixer="game_sfx", loop=True, file_prefix="audio/gsfx/ogg/ambient/", file_suffix=".ogg", tight=True)
 init -1500 python:
     config.window_opacity_default = 0.85
     config.default_game_sfx_volume = 0.50

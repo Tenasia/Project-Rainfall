@@ -156,6 +156,15 @@ style window:
 
     background Image("gui/game_frames/textbox.png", xalign=0.5, yalign=1.0)
 
+style block2_multiple2_say_window:
+    xalign 0.5
+    xfill True
+    yalign 1.0
+    yoffset 150
+    ysize gui.textbox_height
+    background None
+    # background Image("gui/game_frames/textbox.png", xalign=0.5, yalign=1.0)
+
 # style namebox:
 #     xpos gui.name_xpos
 #     xanchor gui.name_xalign

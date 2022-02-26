@@ -13,7 +13,14 @@ define bgm_titles = {
     "bgm_10" : _("Meeting extension"),
     "bgm_11" : _("Cold Fish"),
     "bgm_12" : _("Fear"),
-    "bgm_13" : _("Strolling")
+    "bgm_13" : _("Tactics"),
+    "bgm_14" : _("In Pursuit of Utopia"),
+    "bgm_15" : _("Passion of Sorrow"),
+    "bgm_16" : _("Quiet Rain"),
+    "bgm_17" : _("Flame Podium"),
+    "bgm_18" : _(""),
+    "bgm_19" : _(""),
+    "bgm_20" : _(""),
 }
 
 define scenes = {

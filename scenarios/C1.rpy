@@ -369,7 +369,6 @@ label ch4:
     stop ambient fadeout 2.0
     scene bg a_alleyway
     with fade 
-    pause 1.0
     show rain_particle
     play ambient "rain" fadein 2.0
     n_adv "The exit opened up to a spacious but dimly-lit street I’ve been through a million times." 
@@ -556,11 +555,12 @@ label ch6:
     with fade
     n_adv "The voice belonged to none other than the man playing the piano. Even as he greeted me, he made no motions to leave the seat. Instead, the piece continued on as his visage subtly swayed alongside the tune."
     n_adv "His face wore a serene expression, his eyes lost in a distant world. His fingers flowed through the keys effortlessly, creating beautiful melodies with each passing stroke."
-    n_adv "Enraptured by the sight, my feet slowed to a halt. I couldn’t find it within me to reply and disturb the moment. I remained motionless, captivated by the tranquility of the scene. For a while, everything was frozen in place, save for the man’s elegant movements."
+    n_adv "Enraptured by the sight, my feet slowed to a halt. I couldn’t find it within me to reply and disturb the moment."
+    n_adv "I remained motionless, captivated by the tranquility of the scene. For a while, everything was frozen in place, save for the man’s elegant movements."
     n_adv "..."
     n_adv "..."
     n_adv "..."
-    stop ambient fadeout 2.0
+    stop ambient fadeout 5.0
     n_adv "Alas, all good things must come to an end. Eventually, the final note was struck, and the hum of the melody faded from the air. He rose up and softly closed the piano lid."
     play se1 "gear_shift"
     play music audio.night fadein 2.0
@@ -812,7 +812,9 @@ label ch8:
     scene bg a_alleyway
     with fade 
     play music audio.rainfall fadein 2.0
-    n_adv "I stared at the plain, white wall absentmindedly. Occasionally, the minute hand on the clock ticked away. They had never felt as excruciatingly slow. Murmurs and clicking sounds from my coworkers filled the room, but they served as little more than background noise."
+    play ambient "crowd_inside" fadein 2.0 volume 0.5
+    n_adv "I stared at the plain, white wall absentmindedly. Occasionally, the minute hand on the clock ticked away. They had never felt as excruciatingly slow." 
+    n_adv "Murmurs and clicking sounds from my coworkers filled the room, but they served as little more than background noise."
     n_adv "My fingers rested on the computer keyboard, motionless. The text cursor blinked repeatedly on the computer screen, awaiting further input."
     Hiraku "\"{i}Sigh.{/i}\""
     n_adv "Even after a warm shower and a fresh set of clothes, my body remained listless. I hadn’t moved from my desk for at least half an hour now."
@@ -914,13 +916,14 @@ label ch8:
     with fade
     play ambient "lightrain" fadein 0.5
     n_adv "—and into my car."
-    play ambient "rain_inside_car" fadein 0.5
+    play ambient "rain_inside_car" fadein 0.5 volume 0.25
     n_adv "A new message popped up. It was an image sent by the unknown caller."
     Hiraku "\"...!\""
     n_adv "I recognized the place. Placing the phone down, I turned on the ignition."
     Phone "\"I pray that you will make it in time.\""
     Hiraku "\"Ten minutes. Just hold out for ten minutes.\""
     n_adv "No rest for the weary. Whatever lies ahead, I’ll face it head-on."
+    stop ambient
     scene black
     with fade
     pause 2.0
@@ -930,8 +933,10 @@ label ch9:
     with fade
     play music audio.cold fadein 2.0
     play ambient "lightrain" fadein 1.0
-    #play se1 clack
+    play se1 "atm"
+    n_adv "{i}Clack clack clack.{i}"    
     n_adv "A faint rhythm of clicking buttons entered my ears, breaking the monotony of the rain. It came from the lone ATM machine in front of me, sheltered under a flimsy roof. Another person was currently using it, with me waiting behind for my turn."
+    stop se1
     n_adv "Rats scurried along the sidewalks, casting shadows onto the ground. Puddles filled with scraps of trash lined the edge of the gutters. The dying bulbs in the lampposts flickered uncertainly. "
     Takumi "\"{i}-hic-{/i}\""
     n_adv "The hiccup caused me to stumble, stepping on a pebble and nearly losing my balance."
@@ -965,15 +970,18 @@ label ch9:
     n_adv "This was my chance! Breaking free of my daze, I sprinted away in a mad dash."
     scene bg a_alleyway
     with fade 
+    play ambient "running_on_rain"
     n_adv "Anywhere was fine, as long as I could escape! Puddles splashed all over my trousers, but I couldn’t care less. I had to keep running!"
     n_adv "Was he chasing me? I glanced back for a split second, but the man hadn’t moved an inch from the ATM. I could make it out! Adrenaline pumping throughout my body, I didn’t dare slow down even a bit."
     n_adv "I didn’t know why he wasn’t chasing, but it’s a stroke of luck. The residential area wasn’t too far away now. Once I reach there, I could report—"
+    stop ambient fadeout 1.0
     play se1 "thud"
     n_adv "{i}Thud.{/i}"
     Takumi "\"Gh!?\""
     n_adv "While my head was turned, I bumped into someone. Thank god, another person!"
     Takumi "\"Help! Someone’s trying to kill me and...\""
-    n_adv "My voice trailed off as I peered into the person I bumped into. It was a large, bald brute in a tank top. Right beside him was another man with even taller stature and just as intimidating. They stood unmoving, unbothered by the thunderstorm in the least."
+    n_adv "My voice trailed off as I peered into the person I bumped into. It was a large, bald brute in a tank top." 
+    n_adv "Right beside him was another man with even taller stature and just as intimidating. They stood unmoving, unbothered by the thunderstorm in the least."
     n_adv "My momentary relief was quickly snuffed, replaced by heightened fear. I staggered back several steps, my mouth agape in terror."
     n_adv "No… This can’t be happening! I was too afraid to utter another word."
     U_Man "\"I said ‘don’t move’, didn’t I?\""
@@ -990,8 +998,10 @@ label ch9:
     U_Man "\"Do you know how hard we’ve been trying to find you? Our boss is gonna love this. I might even get a promotion, khahahaha!\""
     n_adv "He added, with a burst of shrill laughter."
     n_adv "I kept my eyes on the knife as it traced a slow arc straight to my neck. It grazed my hair and hovered there, almost touching my skin. One wrong move and I’d be dead."
+    play ambient "heartbeat"
     n_adv "{i}Ba-dump. Ba-dump. Ba-dump.{/i}"
     n_adv "I could hear my hammering heartbeat."
+    stop ambient fadeout 2.0
     Takumi "\"Hk...!\""
     n_adv "The blade touched my skin. I winced, imagining the worst."
     n_adv "..."
@@ -1009,14 +1019,17 @@ label ch9:
     Takumi "\"...!\""
     stop ambient fadeout 1.0
     stop music fadeout 1.0
-    scene bg a_alleyway
+    scene ito_genji
     with fade
     pause 3.0
     play ambient "rain" fadein 1.0
     play music audio.fear fadein 2.0
+    scene bg a_alleyway
+    with fade
     n_adv "..."
-    n_adv "\"Only the sound of the pounding rain and my own breathing reached my ears. Trapped within this deadlock where no answer would save me, I could only pray for a miracle.\""
+    n_adv "Only the sound of the pounding rain and my own breathing reached my ears. Trapped within this deadlock where no answer would save me, I could only pray for a miracle."
     stop music fadeout 1.0
+    stop ambient fadeout 2.0
     scene black
     with fade 
     pause 2.0
@@ -1029,6 +1042,7 @@ label ch10:
     with fade
     show rain_particle
     play ambient "rain" fadein 2.0
+    play music audio.fear fadein 2.0
     n_adv "I was pressed against the edge of the wall, straining my ears for all sounds."
     U_Man "\"—Who do you work for, Ito Genji?\""
     n_adv "The rain muffled most of the voice. Even with my excellent hearing, I could barely pick it up."
@@ -1062,4 +1076,313 @@ label ch10:
     n_adv "I clipped the radio back to my belt and returned to my initial position."
     Takumi "\"—have to believe me! I-I don’t know what you’re talking about!\""
     n_adv "This time it was the victim’s voice. That’s right, just keep them talking."
-    
+    B_Brute "\"You still playin’ around, huh!?\""
+    Takumi "\"K-arggh!\""
+    n_adv "Alerted by the scream, I took another peek."
+    scene bg a_alleyway
+    with fade
+    n_adv "...They’re still in the same position, but it’s hard to make out what was exactly happening."
+    T_Brute "\"Three months ago, in—\""
+    U_Man "\"Wait!\""
+    n_adv "The main assailant walked closer to the victim."
+    U_Man "\"This a sting operation? Are you being wiretapped?\""
+    Hiraku "\"...!\""
+    n_adv "I didn’t know where the unknown caller got his information from, but could it be because he was tapping the victim? I cursed under my breath. If the assailants figure it out, it could put the whole operation in jeopardy."
+    n_adv "As if to prove my fears, the assailant suddenly shouted."
+    U_Man "\"If anyone steps out, this man is dead! You hear me, any cops in hiding!?\""
+    scene bg a_alleyway
+    with fade
+    n_adv "Was I spotted!? My breath stuck in my throat, my heart hammering. I stayed stock-still, whole body tensed up."
+    U_Man "\"Search his body.\""
+    n_adv "I heard feet shuffling from the other side."
+    n_adv "..."
+    T_Brute "\"There’s a wallet and a phone, but nothing else.\""
+    n_adv "A sigh escaped from my lips, my muscles relaxing. The worst didn’t come to pass. I stayed put, doubly careful not to make unnecessary movements."
+    U_Man "\"Let’s take him to a safehouse.\""
+    Hiraku "!!!"
+    n_adv "My body tensed up again."
+    U_Man "\"You guys wait here, I’ll take my stuff first.\""
+    B_Brute "\"Alright.\""
+    U_Man "\"If you try to escape... You’ll regret it, got it?\""
+    Takumi "\"...Yes\""
+    stop music fadeout 2.0
+    n_adv "As the sound of footsteps began to fade, I took another peek. The main assailant was walking away, and everyone’s backs were turned on me. Was this…an opportunity?"
+    play music audio.tactics fadein 2.0
+    n_adv "For an instant, time slowed down to a crawl. So much so that I could see individual raindrops falling to the ground."
+    n_adv "If they’re taking the victim away…that’s bad news. Once that happens, it’ll be much more difficult to rescue him."
+    n_adv "The proper procedure was to wait for reinforcements, but was there enough time for that? …Should I strike now?"
+    Hiraku "\"...\""
+    n_adv "Look, their backs are turned! They’re practically begging to be ambushed. It might get a little tough if they also have weapons, but…"
+    n_adv "That kind of fight was just right up my alley, wasn't it?"
+    Hiraku "\"{i}Inhale...{/i}\""
+    n_adv "Just focus on one thing. You came here to save the victim. Do what you need to achieve that."
+    Hiraku "\"{i}Exhale...{/i}\""
+    n_adv "By the time the next raindrop touched the ground, I'd made my decision. The world around me started moving again."
+    stop ambient fadeout 2.0
+    stop music fadeout 2.0
+
+label ch11:
+    scene bg a_alleyway
+    with fade
+    play ambient "rain" fadein 2.0
+    show rain_particle
+    n_adv "The unknown man had walked some distance away. Was this my chance to escape?"
+    n_adv "..."
+    n_adv "No, I couldn’t even escape the grip of one of these brutes, let alone both. I need something else! Think, Takumi, think! This was probably the only chance I would ever get."
+    n_adv "Bribe? ...No, they were out for my blood, and I didn’t have the money for that in the first place."
+    n_adv "Try to join them? …No, they already hate my guts."
+    n_adv "Fuck, was there anything else I could do!?"
+    n_adv "No matter how hard I racked my brain, I couldn’t figure a way out of this predicament. I cursed my own weaknesses. If only I was a little stronger, smarter, or quicker..."
+    n_adv "I watched the unknown man’s back as he approached the ATM machine. With each step he took, my death sentence loomed nearer and nearer."
+    n_adv "But suddenly—"
+    play music audio.utopia fadein 2.0
+    T_Brute "\"Wh—\""
+    Takumi "\"...?\""
+    n_adv "A flash of shadow moved at lightning speed from behind the tall brute. It twisted its body, and in one graceful motion, landed a perfect roundhouse kick on his head. He immediately collapsed."
+    B_Brute "\"You..!\""
+    n_adv "Without wasting another second, the silhouette switched their aim to the bald brute holding me hostage. They thrust their arms forwards, and in their clasped wrists I spotted a flicker of electricity."
+    Takumi "\"...!\""
+    n_adv "A taser gun! Also realizing this, the brute held me even tighter, guarding himself against the taser’s trajectory."
+    n_adv "For a moment, the silhouette and the brute glared at each other, neither willing to make the first move. It was only then that I got a good look at the figure. It was a woman in a dark blue garb."
+    n_adv "This was it! This was my chance at escaping. Whoever you are, I will put my faith in you. Now or never!"
+    n_adv "I bent my torso forwards, and mustering what strength I had left, jerked it back upwards to headbutt him straight on the nose."
+    B_Brute "\"Gh!\""
+    n_adv "It didn’t hit particularly hard, but his grip weakened for a split second. I struggled with everything I had and slipped out under his arms."
+    n_adv "Next thing I knew, the air crackled with electricity as the prongs launched from the taser and instantly closed the gap between them. It landed squarely on the brute’s arm."
+    B_Brute "\"Aghhgkkk!\""
+    n_adv "His body convulsed for a second before crumpling."
+    n_adv "My heart was pounding."
+    Hiraku "\"I’m with the police! Follow me, I’m gonna get you out of here!\""
+    n_adv "The woman quickly explained as she detached the used cartridge from the taser."
+    Takumi "\"R-right!\""
+    n_adv "She glanced in the direction of the unknown man. I followed her gaze. He was running back at full speed, having noticed the situation."
+    n_adv "The officer immediately pulled my arm as she began to run."
+    Takumi "\"!?\""
+    n_adv "My left foot tripped! I doubled over, weighing the officer down with me. I glanced behind. The tall brute who fell earlier was still conscious and had his arm outstretched, gripping my foot."
+    Takumi "\"Fuck!\""
+    n_adv "I kicked as hard as I could, but he had my foot in a vice grip."
+    T_Brute "\"Eughkhkk!?\""
+    n_adv "The air crackled once again as the taser prongs landed onto the brute’s torso. His body convulsed on the ground and I was finally released."
+    n_adv "However, that was enough to buy time for the unknown man to arrive."
+    stop music fadeout 2.0
+    Takumi "...!" (multiple=2)
+    Hiraku "...!" (multiple=2)
+    play music audio.passion fadein 2.0
+    U_Man "\"Heaaaarghhh!\""
+    n_adv "Like a bullet, he charged straight towards the police officer."
+    Hiraku "\"Tsk!\""
+    n_adv "She tossed the taser gun to dodge the incoming attack."
+    n_adv "A flurry of punches ensued. Front jab, another jab, uppercut. She deflected all of them with precision and countered with her own jab, landing squarely on his chest."
+    U_Man "\"Hk!\""
+    n_adv "The guy leapt backwards to get some distance. The officer took this opportunity to move in front of me, barricading his path. I took several steps back."
+    Takumi "\"...!\""
+    n_adv "My palms touched the rough surface of concrete. We were pinned against the wall. Like it or not, we had to get past him to escape."
+    U_Man "\"Kheh, not bad.\""
+    Hiraku "\"...\""
+    n_adv "He slowly circled around, scoping out his opponent. The officer remained still and steadfast."
+    U_Man "\"Normally, I woulda just bailed. But officer, you know what that guy did?\""
+    Hiraku "\"...\""
+    Unknown Man "\"What he did ain’t something that could be—\""
+    n_adv "He launched a surprise attack. A front jab aimed straight at the officer’s head."
+    Hiraku "\"!\""
+    n_adv "She expertly dodged it and countered with a side hook, but the man ducked and leapt back once more, unharmed."
+    U_Man "\"—forgiven! Do us a favor and turn a blind eye to our business, will you? Just this once?\""
+    Hiraku "\"I don’t know what’s between you two, but all I saw was three people ganging up on one. Whatever it was, you should settle it in court.\""
+    U_Man "\"Khahaha, he’s a murderer, you know? He might backstab you from behind.\""
+    n_adv "\"The officer threw a quick side glance at me.\""
+    Takumi "\"No! He’s lying!\""
+    n_adv "\"In that instant, he closed the gap once more. But this time, I spotted a glint of steel in his right hand. It was the knife from before!\""
+    Hiraku "\"...!?\""
+    n_adv "Time halted to a near standstill. The knife drew a thin arc straight to the officer’s stomach, slicing through trailing droplets of water. A hint of madness underneath his wicked grin as he lunged forwards."
+    n_adv "The officer began to twist her body in an attempt to dodge, but was her reaction too late? As the blade sailed through the air, dread filled my vision. It didn’t look like she'd make it in time."
+    n_adv "Please, if there’s a god out there, let her make it in time!"
+    n_adv "However... when I glanced at her face, there was a glimmer of confidence in her eyes."
+    Takumi "\"...?\"" 
+    Takumi "\"...Ah!\""
+    n_adv "That’s when I finally noticed. Her fist was raised high, ready to pounce. Her feet weren’t standing still either, they were moving to sidestep. She was ready for the surprise attack! The glance earlier must’ve been a feint!"
+    n_adv "Gradually, the scene unraveled. The knife continued on its trajectory. It approached closer and closer…"
+    n_adv "But it only grazed her vest!"
+    n_adv "She managed to slip away in the nick of time. The grin on the unknown man gradually morphed to one of stupefaction."
+    n_adv "Meanwhile, the officer’s fist was right above the man’s head, swinging down forcefully. It couldn’t miss at that range! This was the end!"
+    Hiraku "Good night."
+    play se1 "thud"
+    n_adv "{i}Thud.{/i}"
+    scene black
+    with fade 
+    pause 1.0
+    stop music fadeout 2.0
+    stop ambient fadeout 2.0
+
+label ch12:
+    scene bg a_alleyway
+    with fade
+    play ambient "rain_inside_car" fadein 2.0 volume 0.25
+    play music audio.quiet fadein 1.0
+    n_adv "The constant pulse of red lights filled my peripherals. I sat cross-legged inside one of the police cars, wrapped under a thick layer of blanket. While it did little to ease my worries, it did help stave off the piercing cold."
+    n_adv "I peered through the misty windows. Several uniformed officers were huddled together under a canopy of umbrellas, probably discussing the incident. Within that group, I spotted the brown-haired officer who saved me earlier."
+    n_adv "After that decisive blow, the unknown man was knocked out cold. Immediately after, my knees collapsed from exhaustion. I couldn’t remember how long I knelt on the ground."
+    n_adv "Eventually, the paramedics arrived to perform a checkup on me and ask some questions. For the most part, the conversation went past as a blur. Next thing I knew, I was handed a blanket and escorted here where I’ve remained since."
+    n_adv "..."
+    n_adv "I recalled the attacker’s words."
+    n_adv "\"Ito Genji\"... Someone with my family surname, and looked identical enough to be mistaken for me. There’s no mistaking it…right? Had I, at last, remembered…my twin brother’s name?"
+    n_adv "..."
+    n_adv "Looks like the officers finished their discussion. They dispersed and entered their individual cars. The brown-haired officer approached this car."
+    stop ambient fadeout 1.0
+    play se1 "car_door"
+    play ambient "rain" fadein 1.0
+    n_adv "Cold air seeped in as she pried the door open, her clothes dripping wet. She draped a towel over the driver’s seat before climbing on. Her face wore a solemn expression."
+    stop ambient fadeout 1.0
+    play ambient "rain_inside_car" fadein 2.0 volume 0.25
+    play se1 "car_door"
+    Takumi "\"Thank you for saving me earlier, officer...\""
+    Hiraku "\"Inoue. And, you’re welcome.\""
+    Takumi "\"Really, thank you so much. If you weren’t there, I…don’t even want to imagine what they would’ve done to me.\""
+    Hiraku "\"...I’m just doing my job as a police officer.\""
+    n_adv "So she said, but her face softened a little."
+    Hiraku "\"Anyway, Ito-san, how are you feeling right now?\""
+    Takumi "\"Nothing too bad, thanks to you. It’s just a little cold.\""
+    Hiraku "\"I see, that’s good.\""
+    n_adv "One by one, the red flashes around us began to fade away. The other vehicles had departed from the scene, leaving ours as the last remaining one. She turned on the car’s ignition."
+    Hiraku "\"We’ll leave the questioning for tomorrow, I’ll drive you home for now. Where do you live?\""
+    n_adv "I gave her the directions to my apartment."
+    Hiraku "\"Oh, that’s unexpectedly close. You live around here, huh?\""
+    Takumi "\"Yeah.\""
+    play se1 "car_rev"
+    n_adv "She stepped on the pedal and the car began to move."
+    n_adv "I took one last look at the alleyway where it all happened. It still hadn’t fully sunk in yet. Under the light of the crescent moon, it looked just like any other alleyway around here. No trace of the earlier incident."
+    n_adv "I touched the bandage on my cheek. It was the only injury I sustained. Without it…I might’ve been able to convince myself that it was all just a nightmare."
+    n_adv "Those three earlier... I wonder who they were."
+    Takumi "\"Inoue-san, about those three...\""
+    Hiraku "\"Hm?\""
+    Hiraku "\"They’re under arrest and being taken to jail right now.\""
+    n_adv "She paused and drew a sharp breath."
+    Hiraku "\"Actually, something’s been bugging me. They seemed to hold a grudge on you. Are you related to them in any way?\""
+    Takumi "\"I’m…still not sure, honestly. I need some time to process my thoughts.\""
+    Hiraku "\"Hmm… Well, take your time. Think things through tonight. I’m going to ask you again tomorrow.\""
+    Takumi "\"Haha, will do.\""
+    n_adv "I chuckled weakly as the conversation trailed away. My mind began to wander."
+    n_adv "My long lost brother…Genji. So you are alive. Where have you been, and what are you doing right now? What did those men want with you? These questions and worries festered in my mind, yet only the whistle of the wind and clatter of rain answered me."
+    scene black
+    with fade
+    pause 1.0
+    scene bg a_alleyway
+    with fade 
+    n_adv "Before long, we arrived at my apartment."
+    Hiraku "\"Here, your belongings.\""
+    n_adv "She handed me a ziplock bag. Inside were my phone and wallet."
+    Takumi "\"Is it ok for me to take them?\""
+    Hiraku "\"Yeah. I don’t think we’ll need them as evidence. Not yet, anyway.\""
+    n_adv "I checked to see if my phone was still working. It turned on normally."
+    Hiraku "\"Ah, right. One more thing, add my work number to your contacts.\""
+    n_adv "We exchanged phone numbers."
+    Hiraku "\"Call it if you need anything.\""
+    play se1 "car_door"
+    scene bg a_alleyway
+    pause 2.0
+    play se1 "car_door"
+    stop ambient fadeout 2.0
+    play ambient "rain" fadein 2.0
+    Hiraku "\"Keep the blanket if you want. Or return it tomorrow, either way is fine by me. See you tomorrow.\""
+    Takumi "\"Thank you again, Inoue-san.\""
+    n_adv "\"We bid our farewells. As the car lights slowly faded away, I turned around to face the front steps. Rainwater trickled down from the roof, forming puddles at the foot of the railing. After all’s said and done, I was back at this old apartment once again.\""
+    n_adv "No... Something was different this time. After years of evading me, I finally, finally regained my brother’s name."
+    Takumi "\"Genji...\""
+    n_adv "It had a nice ring to it."
+    Takumi "\"Ito Genji.\""
+    n_adv "Savoring how the name rolled off the tongue, I burned it into my memory. A soft, hopeful smile formed on my lips."
+    n_adv "While a mountain of questions lingered in my mind, I was glad to at least have the first and most important piece of the puzzle."
+    stop ambient fadeout 2.0
+    n_adv "Was this the wind of change I sought? Who knows, but it’s better than nothing."
+    play se1 "door_open"
+    n_adv "{i}Click.{/i}"
+    scene bg a_alleyway
+    with fade
+    n_adv "Unlocking the door, a bright-lit corridor greeted me. Even this normally depressing space radiated a trace of warmth now. Almost like…"
+    Takumi "\"I’m home.\""
+    n_adv "Only the silence replied. Perhaps one day, if Genji ever returns..."
+    Takumi "\"{i}Yaaaawn.{/i}\""
+    n_adv "As if on cue, the moment I stepped inside, my eyelids grew weary. I’ll head to bed early tonight. I had a feeling that tomorrow…there will be yet more winds of change to come."
+    play se1 "door_open"
+    n_adv "{i}Click.{/i}"
+    scene black
+    with fade 
+    pause 2.0
+
+label ch13:
+    scene bg a_alleyway
+    with fade
+    play music audio.meeting fadein 2.0
+    n_adv "Seated inside one of the sofas, the bartender brought the glass to his lips. Inside it was a sliver of pale white liquid. He had poured himself just a sip of his favorite white wine in celebration."
+    TBD "\"It worked out well, didn’t it?\""
+    n_adv "He whispered, seemingly to no one."
+    n_adv "In response, however, the air stirred, gradually growing denser. The peculiar presence appeared once more."
+    noname_adv "\"A fluke, that’s what it was.\""
+    TBD "\"A success nonetheless.\""
+    noname_adv "\"What would’ve happened if she refused?\""
+    n_adv "He paused in thought for a moment."
+    TBD "\"Then... The next approach would be due.\""
+    noname_adv "\"Tsk, that again… Fine, struggle as much as you want. Just know that when you inevitably fail, I’ll be right around the corner.\""
+    n_adv "The voice echoed away as the air dissipated. The room regained its tranquility as the bartender was once again left alone."
+    TBD "\"...\""
+    n_adv "He brought the tip of the glass to his lips and tilted it, but only a single drop of wine remained, sliding down the surface. Perhaps he ought to pour a little more, he caught himself thinking."
+    TBD "\"...No, there’s still more to do.\""
+    n_adv "With a light groan, he pushed himself off the sofa. The ordeal was far from over."
+    scene black
+    with fade
+    pause 2.0
+
+label ch14:
+    scene bg a_alleyway
+    with fade
+    play music audio.flame fadein 2.0
+    n_adv "Inside a majestic oriental hall decorated with golden ornaments and the finest quality of wooden sculptures, an assembly of solemn figures had been gathered."
+    n_adv "These people each commanded their own dignity and authority, yet their expressions remained respectful. Their reverent gazes were directed at the throne at the center of the chamber."
+    Empress "\"Is that true, Lieutenant Odawara?\""
+    n_adv "From atop the throne, the empress’s voice resounded throughout the hall. Even though she was young, her voice possessed such dignity befitting of the room that none dared to question her."
+    n_adv "Upon being addressed, the subordinate who had been kneeling before her finally raised his head."
+    Empress "\"Yes, your excellency. At around eight thirty p.m. earlier today, they were arrested by the police.\""
+    Voice "\"Do you have anything to say on the matter?\""
+    Odawara "\"I..have nothing to offer but my deepest apology for their mistakes, your excellency.\""
+    n_adv "The subordinate lowered his head once more, bowing deeply."
+    Voice "\"Very well, apology accepted. You are dismissed.\""
+    n_adv "She waved her hand in dismissal. However, the lieutenant made no motions to stand up."
+    Odawara "\"Your excellency, if I may be allowed to ask…\""
+    Advisor "\"Lieutenant, are you defying—\""
+    n_adv "A middle-aged man began to admonish the lieutenant, but the empress raised a hand to halt his words. He reluctantly backed off from his fervor."
+    Empress "\"Continue.\""
+    Odawara "\"Thank you very much, your excellency. If I may ask, what will happen to my men?\""
+    Empress "\"...Do not worry. They will be given the usual treatment.\""
+    Odawara "\"Thank you very much, your excellency.\""
+    Empress "You are dismissed."
+    n_adv "This time, her tone left no room for negotiations The lieutenant swiftly stood up, bowed deeply, and left the room. The giant double doors creaked softly as they slid shut."
+    n_adv "Silence returned to the hall. Only the empress and her closest confidants remained."
+    n_adv "..."
+    Empress "\"Your men have been observing them, correct? What of the experiment?\""
+    n_adv "With her chin, she gestured towards one of the several advisors lined by her side. The one she picked, an elderly man in white robes, replied gravely."
+    E_Advisor "\"A complete failure, unfortunately...\""
+    Empress "\"So we need the key after all.\""
+    E_Advisor "\"Yes…\""
+    n_adv "The empress contemplated for a moment before rising from her throne. The hems of her kimono brushed against the tatami mats as she strode across the hall. Her steps soundless, her every movement performed with grace befitting of a ruler. "
+    n_adv "The advisors’ eyes followed her as she approached the large window at the end of the chamber."
+    scene bg a_alleyway
+    with fade
+    pause 1.0
+    play ambient "longrain" fadein 1.0
+    n_adv "Her gaze peered through the veil of rain, to the crescent moon that lay beyond. She then turned around to face her confidants once more."
+    n_adv "Their expressions tensed in anticipation. The empress’s eyes burned with sharp determination, and they recognized it."
+    Empress "\"Prepare our men. Begin the operation tomorrow.\""
+    Advisor "\"But your excellency... Isn’t it a little early?\""
+    Empress "\"The longer we wait, the larger his advantage grows. We mustn’t permit that.\""
+    Advisors "\"...\""
+    n_adv "She returned her gaze to the moon."
+    n_adv "Soon, when it shines the brightest, it would be a fitting time to declare their successorship. But now, when it was nearing its darkest, it was the perfect time to strike under the shadows."
+    Empress "\"Soon, we will regain our former glory. So long as you follow me, our rise will be as certain as the moon in the night sky. Never forget that.\""
+    n_adv "She had the determination and ability to turn their goals into reality, and her followers recognized that. By the oath of the coiling dragon around their arms, they would sooner lay their own life than let their empress into harm’s way."
+    Advisors "\"Understood, your excellency.\""
+    n_adv "The advisors bowed in unison."
+    n_adv "And so, the shadow of the moon began its descent on the city."
+    scene black
+    with fade
+    stop music fadeout 1.0
+    stop ambient fadeout 1.0
+    pause 2.0

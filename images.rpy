@@ -704,22 +704,7 @@ init:
         repeat
 
 
-label splashscreen:
 
-    show logo_sp with fade
-    pause (1.5)
-    show disclaimer_sp with fade
-    $ renpy.pause(2.0)
-    return
-    # scene black
-    # with Pause(1)
-
-    # show text "This story is undoubtedly nothing more than fantasy.\n It could not possibly have any relation to real persons,\norganizations, or events." with dissolve 
-    # with Pause(5)
-
-    # hide text with dissolve
-    # with Pause(1)
-    # return 
 
 init:
 
@@ -749,7 +734,10 @@ init:
         
         repeat
 
-
+#character cards
+init:
+    image ito_genji:
+        "images/chapter_cards/ito_genji.png"
 #Oswald Sprites
 image fuuji angry :
     "images/Oswald/os_angry.png" with renpy.transition(Dissolve(0.25), layer="master")
