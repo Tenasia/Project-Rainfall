@@ -50,14 +50,14 @@ define locations = {
     "06" : {"name" : _("Nagara Bridge"), "tip" : "The bridge that connects this and that."},
     "07" : {"name" : _("Train"), "tip" : "The bridge that connects this and that."},
     "08" : {"name" : _("Train station"), "tip" : "The bridge that connects this and that."},
-    "09" : {"name" : _("pH9"), "tip" : "The bridge that connects this and that."},
-    "10" : {"name" : _("pH10"), "tip" : "The bridge that connects this and that."},
-    "11" : {"name" : _("pH11"), "tip" : "The bridge that connects this and that."},
-    "12" : {"name" : _("pH12"), "tip" : "The bridge that connects this and that."},
-    "13" : {"name" : _("pH13"), "tip" : "The bridge that connects this and that."},
-    "14" : {"name" : _("pH14"), "tip" : "The bridge that connects this and that."},
-    "15" : {"name" : _("pH15"), "tip" : "The bridge that connects this and that."},
-    "16" : {"name" : _("pH16"), "tip" : "The bridge that connects this and that."},
+    "09" : {"name" : _("Exit place after train"), "tip" : "The bridge that connects this and that."},
+    "10" : {"name" : _("Takumi's House"), "tip" : "The bridge that connects this and that."},
+    "11" : {"name" : _("Airin Street"), "tip" : "The bridge that connects this and that."},
+    "12" : {"name" : _("Abandoned Alleyway"), "tip" : "The bridge that connects this and that."},
+    "13" : {"name" : _("Z-Bar"), "tip" : "The bridge that connects this and that."},
+    "14" : {"name" : _("Police Office"), "tip" : "The bridge that connects this and that."},
+    "15" : {"name" : _("Abandoned Alleyway (2)"), "tip" : "The bridge that connects this and that."},
+    "16" : {"name" : _("Oriental Hall"), "tip" : "The bridge that connects this and that."},
 }
 
 
