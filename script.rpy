@@ -32,6 +32,8 @@ init -3:
     define audio.passion = "<loop 000.000 to 068.000>bgm_15"
     define audio.quiet = "<loop 000.000 to 117.000>bgm_16"
     define audio.flame = "<loop 000.000 to 069.000>bgm_17"
+    define audio.suspicious = "<loop 000.000 to 264.000>bgm_18"
+    define audio.answer = "<loop 000.000 to 156.000>bgm_19"
     # define audio.osmanthus = "<loop 000.000 to 187.000>bgm_07"
     # define audio.night = "<loop 000.000 to 202.000>bgm_08"
     # define audio.distant = "<loop 000.000 to 141.000>bgm_09"
@@ -96,7 +98,7 @@ label chapter2:
     hide screen main_menu 
     $ renpy.transition(white3)
     $ renpy.pause(5, hard = True)
-    $ renpy.run(Start("prologue"))
+    $ renpy.run(Start("ch16"))
 
 label chapter3: 
     stop music fadeout 2.0
@@ -107,7 +109,7 @@ label chapter3:
     hide screen main_menu 
     $ renpy.transition(white3)
     $ renpy.pause(5, hard = True)
-    $ renpy.run(Start("prologue"))
+    $ renpy.run(Start("ch32"))
 
 
 

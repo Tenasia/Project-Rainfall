@@ -736,8 +736,12 @@ init:
 
 #character cards
 init:
+    image placeholder:
+        "images/chapter_cards/placeholder.png"
+
     image ito_genji:
         "images/chapter_cards/ito_genji.png"
+
 #Oswald Sprites
 image fuuji angry :
     "images/Oswald/os_angry.png" with renpy.transition(Dissolve(0.25), layer="master")

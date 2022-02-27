@@ -18,18 +18,27 @@ define bgm_titles = {
     "bgm_15" : _("Passion of Sorrow"),
     "bgm_16" : _("Quiet Rain"),
     "bgm_17" : _("Flame Podium"),
-    "bgm_18" : _(""),
-    "bgm_19" : _(""),
+    "bgm_18" : _("Suspicious (Temp)"),
+    "bgm_19" : _("Answer (Temp)"),
     "bgm_20" : _(""),
 }
 
 define scenes = {
-    "00" : _("Prologue"),
-    "01" : _("Work Day"),
-    "02" : _("The Falldown"),
-    "03" : _("Fight"),
-    "04" : _("Cramming Day"),
-
+    "01" : _("???"),
+    "02" : _("Work Day"),
+    "03" : _("The Falldown"),
+    "04" : _("CH4"),
+    "05" : _("CH5"),
+    "06" : _("CH6"),
+    "07" : _("CH7"),
+    "08" : _("CH8"),
+    "09" : _("CH9"),
+    "10" : _("CH10"),
+    "11" : _("CH11"),
+    "12" : _("CH12"),
+    "13" : _("CH13"),
+    "14" : _("CH14"),
+    "15" : _("CH15"),
 }
 
 define locations = {
@@ -38,7 +47,17 @@ define locations = {
     "03" : {"name" : _("Yodoyabashi Street"), "tip" : "The usual road for workers to go through, a lot of things happen here during the day, noon and night... which is everyday."},
     "04" : {"name" : _("Hiraku's Car"), "tip" : "Hiraku's Vehicle, she uses it for chasing the bad guys and serving justice while at it."},
     "05" : {"name" : _("Some road in Tokyo"), "tip" : "Road that is taken by any other person, be it a human or an animal."},
-
+    "06" : {"name" : _("Nagara Bridge"), "tip" : "The bridge that connects this and that."},
+    "07" : {"name" : _("Train"), "tip" : "The bridge that connects this and that."},
+    "08" : {"name" : _("Train station"), "tip" : "The bridge that connects this and that."},
+    "09" : {"name" : _("pH9"), "tip" : "The bridge that connects this and that."},
+    "10" : {"name" : _("pH10"), "tip" : "The bridge that connects this and that."},
+    "11" : {"name" : _("pH11"), "tip" : "The bridge that connects this and that."},
+    "12" : {"name" : _("pH12"), "tip" : "The bridge that connects this and that."},
+    "13" : {"name" : _("pH13"), "tip" : "The bridge that connects this and that."},
+    "14" : {"name" : _("pH14"), "tip" : "The bridge that connects this and that."},
+    "15" : {"name" : _("pH15"), "tip" : "The bridge that connects this and that."},
+    "16" : {"name" : _("pH16"), "tip" : "The bridge that connects this and that."},
 }
 
 

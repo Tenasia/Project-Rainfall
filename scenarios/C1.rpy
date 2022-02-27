@@ -1,4 +1,5 @@
 label ch1:
+    
     $ notebook_info = None
     $ nvl_mod = True
     stop music fadeout 1.0
@@ -48,11 +49,15 @@ label ch1:
     $ nvl_mod = False
 
 label ch2:
+    scene placeholder
+    with fade
+    pause 2.0
+    $ _history_list = []
     scene bg office_eve
     with fade
 
     python:
-        set_info_scene("01")
+        set_info_scene("02")
         set_info_location("02")
         set_info_date(10, "Sep", "thu")
         set_info_time("evening")
@@ -153,8 +158,12 @@ label ch2:
     stop ambient fadeout 1.0
 
 label ch3:
+
+    scene placeholder
+    with fade
+    pause 2.0
     python:
-        set_info_scene("02")
+        set_info_scene("03")
         set_info_location("04")
         set_info_date(10, "Sep", "thu")
         set_info_time("evening")
@@ -280,11 +289,17 @@ label ch3:
     n_adv "Passing through intersection after intersection, the sedan kept going straight. Had it given up on shaking me off? The gap was gradually closing once more."
     Radio "\"Inoue-san, it looks like the sedan is trying to escape to Yodogawa Ward through Nagara Bridge. We’ve already contacted their police station. They’re prepared to intercept at their end of the bridge. We need you to lead him to that point.\""
     Hiraku "\"Nagara Bridge… Roger, I’ll keep pressuring them from this side.\""
-    n_adv "The game of tag continued as our cars darted down the road at blazing speeds. Rain droplets on my windshield cascaded into parting trails, swept away by the rushing wind. Without any of the twists and turns, gripping the steering wheel almost felt…serene, peaceful."
+    n_adv "The game of tag continued as our cars darted down the road at blazing speeds." 
+    n_adv "Rain droplets on my windshield cascaded into parting trails, swept away by the rushing wind. Without any of the twists and turns, gripping the steering wheel almost felt…serene, peaceful."
     Hiraku "\"...\""
+
     scene bg road3_night
     show rain_particle
     with fade
+
+    python:
+        set_info_location("06")
+
     n_adv "The sedan blazed through the final intersection leading to the bridge."
     n_adv "Past this point, there was nowhere else to go. All I had to do was leisurely follow behind. I slowed down a little, wiping the sweat off my brow. My tense shoulders finally got a chance to relax."
     n_adv "I was nearing the limit of my focus. Especially after that close encounter earlier."
@@ -310,6 +325,7 @@ label ch3:
     play ambient "rain" fadein 2.0
     stop music fadeout 1.0
     n_adv "The officers on the other side were holding up megaphones, warning the sedan to slow down. However, their words fell on deaf ears."
+    
     n_adv "The asphalt rattled as the sedan showed no signs of slowing."
     n_adv "My face morphed into one of horror. My eyes couldn’t avert the scene as the crash quickly became imminent."
     n_adv "The officers scrambled to dive out of the way, panic reflected in their eyes. Screaming ensued."
@@ -318,16 +334,25 @@ label ch3:
     play se1 "car_crash" fadein 1.0
     scene black
     with fade
-    pause 3.0
+    pause 2.0
     
     stop ambient
 
-
 label ch4:
-
+    scene placeholder
+    with fade
+    pause 2.0
+    scene black
+    with fade
+    pause 2.0
+    python:
+        set_info_scene("04")
+        set_info_location("07")
+        set_info_date(10, "Sep", "thu")
+        set_info_time("night")
     play se1 "gear_shift"
     n_adv "{i}Thud{/i}"
-    scene bg a_alleyway
+    scene bg train large
     with white3
     play ambient "inside_train" fadein 1.0
     n_adv "My water bottle fell over sideways. That jolted me awake."
@@ -342,10 +367,12 @@ label ch4:
     n_adv "Eventually, the train reached a complete halt and the doors slid open."
     stop ambient fadeout 1.0
 
-    scene bg a_alleyway
+    scene bg station01 night
     with fade
     play ambient "lightrain" fadein 2.0
     play music audio.osmanthus fadein 1.0
+    python:
+        set_info_location("08")
 
     n_adv "I was greeted with the blanketing clatter of rainwater once again, shattering what respite I had inside the enclosed train car."
     n_adv "The doors slid shut behind me as I stepped off. It quickly accelerated again, the rails rattling along. I gazed listlessly as it gradually drifted out of sight to carry on with its nightly duties. In its place, only empty tracks remained."
@@ -353,10 +380,10 @@ label ch4:
     play se1 "clap"
     n_adv "{i}Clap{/i}"
     n_adv "What am I doing? I shouldn’t be zoning out right now. Perhaps the exhaustion was getting to me."
-    scene bg a_alleyway
+    scene bg station01 staircase
     with fade
     n_adv "The staircase led to the station lobby."
-    scene bg a_alleyway
+    scene bg train_entrance
     with fade 
     n_adv "As I was about to reach the exit, a peculiar sound entered my ears. My feet halted. It was a faint hymn of a...violin?" 
     n_adv "Even through the patter of rain, the melody carried over distinctly. It was a simple tune, yet something about it carried a hint of nostalgia."
@@ -367,10 +394,11 @@ label ch4:
     n_adv "On a better day, I might’ve joined the audience. But today…I was quite exhausted. My freezing ankles and grumbling stomach protested."
     n_adv "…Yeah, it’s a shame, but let’s head home straight away."
     stop ambient fadeout 2.0
-    scene bg a_alleyway
+    scene bg road night large
     with fade 
     show rain_particle
     play ambient "rain" fadein 2.0
+    
     n_adv "The exit opened up to a spacious but dimly-lit street I’ve been through a million times." 
     n_adv "My apartment was only five minutes away by foot, but that’s about the only good thing it had going for it. The neighborhood I lived in wasn’t particularly well-cared for."
     n_adv "I glanced at the streetside opposite of the station, beyond the crosswalk I normally use. As if to prove my point, garbage bags were littered around the pavement."
@@ -395,7 +423,7 @@ label ch4:
     n_adv "Of course, they’re nothing more than rumors. However, each time a loud noise jolts me awake in the dead of night, those rumors would float to my mind."
     Takumi "\"...Ah\""
     n_adv "Without realizing it, I’d reached my destination."
-    scene bg a_alleyway
+    scene bg takumi_house
     with fade
     show rain_particle
     n_adv "This dingy little building with stained walls and crooked handrail was my home. I’ve lived here almost my whole life."
@@ -418,18 +446,25 @@ label ch4:
     play se1 "door_open"
     play ambient "longrain" fadein 1.0
     n_adv "{i}Click{/i}"
-    scene bg a_alleyway
+    scene bg takumi_inside
     with fade
     n_adv "A familiar dark corridor opened up before me, beckoning me into its solitary darkness once more, as it had always done countless times before."
     Takumi "\"...One day.\""
     n_adv "One day, perhaps the winds of change will arrive. Until then…"
     stop se1 fadeout 1.0
     play se1 "door_open"
+    scene black
+    with fade
+    stop music fadeout 2.0
+    stop ambient fadeout 2.0
     n_adv "{i}Click{/i}"
     n_adv "I shut the door behind me."
 
 label ch5: 
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg bridge_night
     with fade
     play ambient "rain" fadein 2.0 volume 0.50
     play music audio.rainfall fadein 1.0
@@ -468,7 +503,7 @@ label ch5:
     n_adv "I replied hesitantly."
     n_adv "It didn’t sit right with me, but maybe he wasn’t completely wrong. I needed to sort through my feelings. Exchanging salutes, I returned to my car, completely soaked to the bone."
     
-    scene bg a_alleyway
+    scene bg car_night_rain
     with fade
     play ambient "rain_inside_car" fadein 2.0 volume 0.25
     n_adv "The ride back to the police HQ was one in silence. All the while, the same question repeated itself in my mind."
@@ -480,11 +515,11 @@ label ch5:
     n_adv "My fingers subconsciously drifted towards the police badge attached to my vest. I gently wrapped it inside my palm."
     stop ambient fadeout 2.0
     Hiraku "\"Nee-san...\""
-    scene bg a_alleyway
+    scene placeholder
     with fade 
     n_adv "You always knew what to do in every situation. If only you were here, I’m sure you would be able to guide me…"
     n_adv "Tears threatened to drip from my eyes. Seven years later, and I still miss you so much."
-    scene bg a_alleyway
+    scene bg car_night_rain
     with fade
     play ambient "rain_inside_car" fadein 2.0 volume 0.25
     n_adv "..."
@@ -502,8 +537,10 @@ label ch5:
     n_adv "The ride continued in silence as my inner turmoil ate away at my mind."
 
 label ch6:
-
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg airin_night
     with fade
     play ambient "lightrain" fadein 2.0
     play music audio.osmanthus fadein 1.0
@@ -519,7 +556,7 @@ label ch6:
     n_adv "And if I had to eat outside anyway, why not a place I was familiar with? With that feeble justification, I had set out on my way."
     n_adv "Although, now that I was actually here, I was starting to have second thoughts. The empty alleyways leading to the bar had always been a little shady, but under the veil of rain, it felt even more…isolated than usual."
     n_adv "Passing by another homeless person sleeping on the floor, I tucked my head low and hastened my pace. I was even beginning to doubt whether I was going the right way."
-    scene bg a_alleyway
+    scene bg z_bar outside
     with fade 
     show rain_particle
     Takumi "\"Ah…there it is.\""
@@ -534,6 +571,7 @@ label ch6:
     n_adv "My memory must’ve been getting fuzzier from all the stress from work. Oh well, it’s nothing new. I brushed it away before approaching the door. The handle was cold to the touch from the damp air."
     hide rain_particle
     stop ambient fadeout 1.0
+    scene bg z_bar_entrance
     play ambient "longrain" fadein 1.0
     play se1 "door_jingle"
     n_adv "A tiny entrance greeted me. It was a small, bare-walled room, decorated with several canvases of antique paintings. Warm incandescent lights hung from the ceiling, highlighting the thin layer of dust on the frames."
@@ -541,17 +579,20 @@ label ch6:
     n_adv "If that doesn’t look suspicious, I don’t know what does. I shook my head lightly. How this bar manages to keep running was beyond me."
     n_adv "Next to the doorframe, a black bin was provided to hold umbrellas. I placed mine inside. Before continuing any further, I took my phone out and added a line to my notes."
     Takumi "\"Went to the bar at 19:20... There\""
+    scene black
+    with fade
     n_adv "My footsteps rang on the metal steps as I descended the stairs."
     play se1 "metal_stairs" fadein 1.0
     n_adv "{size=15}Clank...{/size}{size=20}Clank...{/size}{size=30}Clank.{/size}"
     stop music fadeout 2.0
+    stop se1 fadeout 3.0
     n_adv "The staircase continued for nearly two stories. Halfway through, I could make out a faint but distinct melody of piano keys from below."
     stop ambient fadeout 1.0
     play ambient "Clair_de_Lune" fadein 15.0
     n_adv "A pleasant fragrance of musty wood like you’d find in a library tickled my nose. After several turns, a spacious room with atmospheric lighting opened before me."
     noname_adv "\"Welcome to my humble establishment, dear customer.\""
     n_adv "A deep, pleasant voice addressed me."
-    scene bg a_alleyway
+    scene bg piano_scene
     with fade
     n_adv "The voice belonged to none other than the man playing the piano. Even as he greeted me, he made no motions to leave the seat. Instead, the piece continued on as his visage subtly swayed alongside the tune."
     n_adv "His face wore a serene expression, his eyes lost in a distant world. His fingers flowed through the keys effortlessly, creating beautiful melodies with each passing stroke."
@@ -562,6 +603,8 @@ label ch6:
     n_adv "..."
     stop ambient fadeout 5.0
     n_adv "Alas, all good things must come to an end. Eventually, the final note was struck, and the hum of the melody faded from the air. He rose up and softly closed the piano lid."
+    scene bg bar_inside_lounge
+    with fade
     play se1 "gear_shift"
     play music audio.night fadein 2.0
     n_adv "Only then did he turn to look at me."
@@ -569,14 +612,12 @@ label ch6:
     Takumi "\"That was…simply breathtaking, TBD-san.\""
     TBD "\"Haha, I’m glad to hear that.\""
     n_adv "Broken from my trance, I finally took in my surroundings."
-    scene bg a_alleyway
-    with fade
     n_adv "Beneath the facade of the entrance, it was a proper and well-maintained establishment. Hanging pot plants and grapevines adorned the ceiling."
     n_adv "Several velvet sofas were arranged around the room nonuniformly, creating a perfect blend of comfort and style."
     Takumi "\"The bar, too, looks amazing as usual.\""
     TBD "\"Thank you. I take pride in maintaining this place.\""
     n_adv "He circled around the room and into the centerpiece of the bar."
-    scene bg a_alleyway
+    scene bg bar_inside
     with fade 
     n_adv "A rustic and polished wooden bar with glossy countertop, decked in rows and rows of liquor racks attached to the wall. And of course, it wouldn’t be complete without the bartender, claiming his place behind the counter."
     TBD "\"Please, have a seat.\""
@@ -611,21 +652,21 @@ label ch6:
     TBD "\"Certainly. Please wait for fifteen minutes.\""
     n_adv "He disappeared into the back corridor."
     n_adv "I clasped the menu shut and set it on the counter. With nothing else to do, I let my eyes wander around the room."
-    scene bg a_alleyway
+    scene bg bar_inside_lounge
     n_adv "Near the back, a wooden billboard table was set up under a large spotlight. And just behind that, a vintage gramophone set in the corner, the vinyl disc inside spinning. The whole room radiated rusticness and coziness."
     stop music fadeout 5.0
     n_adv "It’s so comforting, I could almost fall asleep. In fact, my eyelids were getting heavier by the second…"
     scene black
     with white3
     n_adv "..."
-    scene bg a_alleyway
+    scene bg bar_inside
     with white3
     play music audio.night fadein 5.0
     TBD "\"Takumi-sama? The meal is ready.\""
     Takumi "\"A—ah, sorry. I almost fell asleep. Just a little tired.\""
     TBD "\"Haha, I’ll take that as a compliment.\""
     n_adv "He set down a steaming platter of stew on the counter. The savory smell entered my nose, rousing me from the drowsiness."
-    scene bg a_alleyway
+    scene bg food_soup
     with fade
     Takumi "\"Ooh, this looks amazing.\""
     TBD "\"It uses high quality beef, simmered in my house blend of spices.\""
@@ -637,7 +678,7 @@ label ch6:
     Takumi "\"Mmf.\""
     n_adv "The warmth and juiciness of the meat permeated my mouth. Flavor burst out of the sauce, wrapping my tongue in a sweet-savory sensation." 
     n_adv "A little strong, but just perfect for this cold weather. As I swallowed, the warmth spread throughout my stomach, rejuvenating my whole body."
-    scene bg a_alleyway
+    scene bg bar_inside
     with fade
     TBD "\"Is the taste to your liking?\""
     Takumi "\"It’s, mmf, amazing as usual.\""
@@ -696,11 +737,11 @@ label ch6:
     scene black
     with fade
     pause 1.0
-    scene bg a_alleyway
+    scene bg funeral
     with fade
     nvl show
     n_nvl "At her funeral, my brother stood right beside me and comforted me. Despite being younger, he had always been the more mature of us twins."
-    scene bg a_alleyway
+    scene bg funeral
     with dissolve
     n_nvl "As people slowly drifted away, we were the only two remaining ones after the procession ended."
     ▊▊▊▊▊ "\"It’s gonna be ok, Takumi.\""
@@ -710,7 +751,7 @@ label ch6:
     ▊▊▊▊▊ "\"We’re still here. Both of us.\""
     n_nvl "Our father passed away before we were born, and we had no family left to adopt us. They put us in separate orphanages."
     n_nvl "At first, I was allowed to visit him once a week. And then…once a month. Until…"
-    scene bg a_alleyway
+    scene bg funeral
     with dissolve
     n_nvl "One day, I wasn’t allowed to visit him anymore. I protested and protested, but to no avail. From that day onwards, I would never see him anymore. He had drifted away from my reach."
     t_nvl "\"▊▊▊▊▊…\""
@@ -719,7 +760,7 @@ label ch6:
     n_nvl "Over the years, memories of him began to drift away."
     nvl clear
     nvl hide
-    scene bg a_alleyway
+    scene bg bar_inside
     with fade
     $ nvl_mod = False
     play music audio.distant fadein 2.0
@@ -757,11 +798,11 @@ label ch6:
     TBD "\"Thank you for coming today. I will be waiting for your next visit, perhaps with another piano piece.\""
     Takumi "\"Yeah, until next time.\""
     stop music fadeout 2.0
-    scene bg a_alleyway
+    scene bg z_bar_entrance
     with fade 
     play se1 "door_jingle"
     $ renpy.pause(2.0, hard=True)
-    scene bg a_alleyway
+    scene bg z_bar outside
     with fade
     play ambient "rain" fadein 2.0
     show rain_particle
@@ -769,9 +810,15 @@ label ch6:
     n_adv "Where could you be right now, my long-lost brother? Are we facing the same rainy sky at this very moment? For a little while, I pictured him standing under the rain, staring at the sky and wondering the same about me."
     n_adv "And then I unfurled the umbrella and walked on my way."
     stop ambient fadeout 2.0
+    scene black
+    with fade
+    pause 2.0
 
 label ch7:
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg bar_inside_lounge
     with fade
     play music audio.meeting fadein 2.0
     noname_adv "\"Why didn’t you tell him?\""
@@ -789,16 +836,22 @@ label ch7:
     noname_adv "\"Anyway, looks like it’s about time. I’ll leave you to deal with it. Let’s see just how good this insurance you keep talking about is.\""
     n_adv "A small gust of wind churned inside the room, ruffling his hair. A moment later, the presence could no longer be felt. Vanished, alongside the dispersal of the gust."
     n_adv "The bartender sighed tiredly and drifted his eyes downwards, onto a monitor set up underneath the counter."
-    scene bg a_alleyway
+    scene bg cctv
     with fade
     n_adv "He scanned each of the boxes displayed for any movement."
     TBD "\"...!\""
     n_adv "His eyes halted and lingered on one spot. Like clockwork, they’ve arrived, exactly as he expected."
     n_adv "Uneasiness reflected in his eyes, he took out his flip phone and dialed a number."
     stop music fadeout 2.0
+    scene black
+    with fade
+    pause 2.0
 
 label ch8:
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg police_office
     with fade
     Supervisor "\"So, only those guys from Yodogawa are there right now?\""
     Hiraku "\"Yes, sir.\""
@@ -809,7 +862,7 @@ label ch8:
     Hiraku "\"Yes, sir.\""
     n_adv "That was all I could reply with."
     n_adv "..."
-    scene bg a_alleyway
+    scene bg police_office
     with fade 
     play music audio.rainfall fadein 2.0
     play ambient "crowd_inside" fadein 2.0 volume 0.5
@@ -824,6 +877,7 @@ label ch8:
     n_adv "I didn’t know if I agreed with my supervisor’s words, but I was definitely regretting backing out so easily. Even now, I was contemplating driving back to the scene."
     Hiraku "\"And then what, run again?\""
     n_adv "I chuckled in self-derision. These pristine white walls that I used to admire so much now seemed suffocating."
+    stop ambient fadeout 1.0
     play ambient "phone_vibrate"
     n_adv "{i}Bzzt, bzzt.{/i}"
     n_adv "It came from my phone on the desk. I'd put it on silence mode earlier. I wasn’t in a mood to answer calls, but at the same time, it could be something important."
@@ -833,14 +887,17 @@ label ch8:
     Hiraku "\"...?\""
     n_adv "An unidentified number was displayed. This was my work-issued phone, and I do occasionally get unidentified calls when I was assigned with people I’ve never met. However, my supervisor hadn’t mentioned anything this time."
     n_adv "My curiosity was piqued. For an inexplicable reason, I had a feeling that I wouldn’t want my coworkers to overhear. I switched the computer to sleep mode, then grabbed the phone and walked outside."
-    scene bg a_alleyway
+    scene bg white_corridor
     with fade
     pause 2.0
-    scene bg a_alleyway
+    scene bg plain_room
+    with fade
+    pause 2.0
+    scene bg police_office
     with fade
     n_adv "Sitting on a bench, I clicked on the accept button and held my breath."
     Hiraku "\"...\""
-    play music audio.osmanthus fadein 2.0
+    play music audio.suspicious fadein 2.0
     Phone "\"Hello, is this Officer Inoue?\""
     n_adv "A deep voice spoke from the other side."
     Hiraku "\"Who is this?\""
@@ -888,31 +945,32 @@ label ch8:
     stop music fadeout 2.0
     Hiraku "\"{i}Inhale… Exhale…{i}\""
     n_adv "..."
-    play music audio.night
+    play music audio.answer
     n_adv "Was it fake? Likely. A trap? Possibly. But after what happened today…do I even have the right to refuse? If another person dies because of me, I…"
     n_adv "That’s…that’s too much to bear. I can’t let that happen."
     n_adv "As my mind cleared, the answer presented itself, clear as day. It might not be enough for atonement, but…I have to take this chance."
     n_adv "It’s as simple as that, wasn’t it? What did I even hesitate for? After all, this was the path I pursued, wasn’t it?"
-    scene bg a_alleyway
+    scene placeholder
     with fade 
     Hiraku "\"...\""
-    n_adv "Pushing all doubts to the back of my mind, I made my decision."
-    scene bg a_alleyway
+    scene bg police_office
     with fade
+    n_adv "Pushing all doubts to the back of my mind, I made my decision."
+    
     Hiraku "\"Fine… I’ll trust you.\""
     n_adv "A breath of relief came from the other side."
     Phone "\"Thank you, Inoue-san. You need to hurry, there isn’t much time left.\""
     n_adv "I rose to my feet and strode for the door, my steps firm. As it swung open, lights flooded my eyes once more."
-    scene bg a_alleyway
+    scene bg white_corridor
     with fade
     n_adv "I rushed towards the lobby, past my coworkers’ questioning glances."
     Supervisor "\"Inoue-san? Where are you—\""
     Hiraku "\"Sorry, chief! I’ll explain later!\""
-    scene bg a_alleyway
+    scene bg police_office
     with fade
     play ambient "longrain" fadein 0.5
     n_adv "To the parking lot—"
-    scene bg a_alleyway
+    scene bg parking_lot
     with fade
     play ambient "lightrain" fadein 0.5
     n_adv "—and into my car."
@@ -923,16 +981,22 @@ label ch8:
     Phone "\"I pray that you will make it in time.\""
     Hiraku "\"Ten minutes. Just hold out for ten minutes.\""
     n_adv "No rest for the weary. Whatever lies ahead, I’ll face it head-on."
-    stop ambient
+    play se1 "car_rev"
+    stop ambient fadeout 2.0
+    stop music fadeout 2.0
     scene black
     with fade
     pause 2.0
+
 label ch9:
-    
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg atm_close
     with fade
     play music audio.cold fadein 2.0
     play ambient "lightrain" fadein 1.0
+    show rain_particle
     play se1 "atm"
     n_adv "{i}Clack clack clack.{i}"    
     n_adv "A faint rhythm of clicking buttons entered my ears, breaking the monotony of the rain. It came from the lone ATM machine in front of me, sheltered under a flimsy roof. Another person was currently using it, with me waiting behind for my turn."
@@ -946,6 +1010,9 @@ label ch9:
     n_adv "I looked around the dark, empty alleyway. There was no other person in sight aside from the two of us. Uneasiness began to crawl up my skin. Should I leave now after all?"
     n_adv "Just as I was wondering, the machine whirred, signaling the completion of the process. Finally. I stepped forwards."
     stop music fadeout 2.0
+    scene bg atm_far
+    with fade
+    show rain_particle
     n_adv "As the person ahead turned around, he made eye contact with me."
     play music audio.fear fadein 1.0
     U_Man "\"Genji!?\""
@@ -970,6 +1037,7 @@ label ch9:
     n_adv "This was my chance! Breaking free of my daze, I sprinted away in a mad dash."
     scene bg a_alleyway
     with fade 
+    show rain_particle
     play ambient "running_on_rain"
     n_adv "Anywhere was fine, as long as I could escape! Puddles splashed all over my trousers, but I couldn’t care less. I had to keep running!"
     n_adv "Was he chasing me? I glanced back for a split second, but the man hadn’t moved an inch from the ATM. I could make it out! Adrenaline pumping throughout my body, I didn’t dare slow down even a bit."
@@ -1026,6 +1094,7 @@ label ch9:
     play music audio.fear fadein 2.0
     scene bg a_alleyway
     with fade
+    show rain_particle
     n_adv "..."
     n_adv "Only the sound of the pounding rain and my own breathing reached my ears. Trapped within this deadlock where no answer would save me, I could only pray for a miracle."
     stop music fadeout 1.0
@@ -1035,10 +1104,10 @@ label ch9:
     pause 2.0
 
 label ch10:
-    scene bg a_alleyway
+    scene placeholder
     with fade
     pause 2.0
-    scene bg a_alleyway
+    scene bg a_alleyway_corner
     with fade
     show rain_particle
     play ambient "rain" fadein 2.0
@@ -1052,8 +1121,9 @@ label ch10:
     with fade 
     show rain_particle
     n_adv "…Four people. Three of them — including the victim — had their backs turned on me. The one who spoke earlier was facing this way, but he hadn’t noticed me yet."
-    scene bg a_alleyway
+    scene bg a_alleyway_corner
     with fade
+    show rain_particle
     n_adv "I carefully retraced several steps backwards and took out my radio."
     Hiraku "\"This is Inoue Hiraku from Patrol Car 17, currently on foot. HQ, do you copy?\""
     n_adv "I spoke in a half-whisper."
@@ -1081,6 +1151,7 @@ label ch10:
     n_adv "Alerted by the scream, I took another peek."
     scene bg a_alleyway
     with fade
+    show rain_particle
     n_adv "...They’re still in the same position, but it’s hard to make out what was exactly happening."
     T_Brute "\"Three months ago, in—\""
     U_Man "\"Wait!\""
@@ -1090,8 +1161,9 @@ label ch10:
     n_adv "I didn’t know where the unknown caller got his information from, but could it be because he was tapping the victim? I cursed under my breath. If the assailants figure it out, it could put the whole operation in jeopardy."
     n_adv "As if to prove my fears, the assailant suddenly shouted."
     U_Man "\"If anyone steps out, this man is dead! You hear me, any cops in hiding!?\""
-    scene bg a_alleyway
+    scene bg a_alleyway_corner
     with fade
+    show rain_particle
     n_adv "Was I spotted!? My breath stuck in my throat, my heart hammering. I stayed stock-still, whole body tensed up."
     U_Man "\"Search his body.\""
     n_adv "I heard feet shuffling from the other side."
@@ -1106,6 +1178,9 @@ label ch10:
     U_Man "\"If you try to escape... You’ll regret it, got it?\""
     Takumi "\"...Yes\""
     stop music fadeout 2.0
+    scene bg a_alleyway
+    with fade
+    show rain_particle
     n_adv "As the sound of footsteps began to fade, I took another peek. The main assailant was walking away, and everyone’s backs were turned on me. Was this…an opportunity?"
     play music audio.tactics fadein 2.0
     n_adv "For an instant, time slowed down to a crawl. So much so that I could see individual raindrops falling to the ground."
@@ -1120,8 +1195,14 @@ label ch10:
     n_adv "By the time the next raindrop touched the ground, I'd made my decision. The world around me started moving again."
     stop ambient fadeout 2.0
     stop music fadeout 2.0
+    scene black 
+    with fade
+    pause 2.0
 
 label ch11:
+    scene placeholder
+    with fade
+    pause 2.0
     scene bg a_alleyway
     with fade
     play ambient "rain" fadein 2.0
@@ -1182,7 +1263,7 @@ label ch11:
     n_adv "He slowly circled around, scoping out his opponent. The officer remained still and steadfast."
     U_Man "\"Normally, I woulda just bailed. But officer, you know what that guy did?\""
     Hiraku "\"...\""
-    Unknown Man "\"What he did ain’t something that could be—\""
+    U_Man "\"What he did ain’t something that could be—\""
     n_adv "He launched a surprise attack. A front jab aimed straight at the officer’s head."
     Hiraku "\"!\""
     n_adv "She expertly dodged it and countered with a side hook, but the man ducked and leapt back once more, unharmed."
@@ -1214,7 +1295,10 @@ label ch11:
     stop ambient fadeout 2.0
 
 label ch12:
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg car_night_rain
     with fade
     play ambient "rain_inside_car" fadein 2.0 volume 0.25
     play music audio.quiet fadein 1.0
@@ -1261,12 +1345,13 @@ label ch12:
     Hiraku "\"Hmm… Well, take your time. Think things through tonight. I’m going to ask you again tomorrow.\""
     Takumi "\"Haha, will do.\""
     n_adv "I chuckled weakly as the conversation trailed away. My mind began to wander."
-    n_adv "My long lost brother…Genji. So you are alive. Where have you been, and what are you doing right now? What did those men want with you? These questions and worries festered in my mind, yet only the whistle of the wind and clatter of rain answered me."
+    n_adv "My long lost brother... Genji. So you are alive. Where have you been, and what are you doing right now? What did those men want with you? These questions and worries festered in my mind, yet only the whistle of the wind and clatter of rain answered me."
     scene black
     with fade
     pause 1.0
-    scene bg a_alleyway
+    scene bg car_night_rain
     with fade 
+
     n_adv "Before long, we arrived at my apartment."
     Hiraku "\"Here, your belongings.\""
     n_adv "She handed me a ziplock bag. Inside were my phone and wallet."
@@ -1277,8 +1362,9 @@ label ch12:
     n_adv "We exchanged phone numbers."
     Hiraku "\"Call it if you need anything.\""
     play se1 "car_door"
-    scene bg a_alleyway
+    scene bg takumi_house
     pause 2.0
+    show rain_particle
     play se1 "car_door"
     stop ambient fadeout 2.0
     play ambient "rain" fadein 2.0
@@ -1295,21 +1381,27 @@ label ch12:
     n_adv "Was this the wind of change I sought? Who knows, but it’s better than nothing."
     play se1 "door_open"
     n_adv "{i}Click.{/i}"
-    scene bg a_alleyway
+    scene bg takumi_inside
     with fade
     n_adv "Unlocking the door, a bright-lit corridor greeted me. Even this normally depressing space radiated a trace of warmth now. Almost like…"
     Takumi "\"I’m home.\""
     n_adv "Only the silence replied. Perhaps one day, if Genji ever returns..."
     Takumi "\"{i}Yaaaawn.{/i}\""
     n_adv "As if on cue, the moment I stepped inside, my eyelids grew weary. I’ll head to bed early tonight. I had a feeling that tomorrow…there will be yet more winds of change to come."
+    
     play se1 "door_open"
-    n_adv "{i}Click.{/i}"
+    stop ambient fadeout 2.0
+    stop music fadeout 2.0
     scene black
     with fade 
+    n_adv "{i}Click.{/i}"
     pause 2.0
 
 label ch13:
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg bar_inside_lounge
     with fade
     play music audio.meeting fadein 2.0
     n_adv "Seated inside one of the sofas, the bartender brought the glass to his lips. Inside it was a sliver of pale white liquid. He had poured himself just a sip of his favorite white wine in celebration."
@@ -1327,12 +1419,16 @@ label ch13:
     n_adv "He brought the tip of the glass to his lips and tilted it, but only a single drop of wine remained, sliding down the surface. Perhaps he ought to pour a little more, he caught himself thinking."
     TBD "\"...No, there’s still more to do.\""
     n_adv "With a light groan, he pushed himself off the sofa. The ordeal was far from over."
-    scene black
+    stop music fadeout 2.0
+    scene black 
     with fade
     pause 2.0
 
 label ch14:
-    scene bg a_alleyway
+    scene placeholder
+    with fade
+    pause 2.0
+    scene bg orientall_hall
     with fade
     play music audio.flame fadein 2.0
     n_adv "Inside a majestic oriental hall decorated with golden ornaments and the finest quality of wooden sculptures, an assembly of solemn figures had been gathered."
@@ -1364,16 +1460,20 @@ label ch14:
     E_Advisor "\"Yes…\""
     n_adv "The empress contemplated for a moment before rising from her throne. The hems of her kimono brushed against the tatami mats as she strode across the hall. Her steps soundless, her every movement performed with grace befitting of a ruler. "
     n_adv "The advisors’ eyes followed her as she approached the large window at the end of the chamber."
-    scene bg a_alleyway
+    scene bg moon
     with fade
     pause 1.0
     play ambient "longrain" fadein 1.0
     n_adv "Her gaze peered through the veil of rain, to the crescent moon that lay beyond. She then turned around to face her confidants once more."
     n_adv "Their expressions tensed in anticipation. The empress’s eyes burned with sharp determination, and they recognized it."
+    scene bg orientall_hall
+    with fade
     Empress "\"Prepare our men. Begin the operation tomorrow.\""
     Advisor "\"But your excellency... Isn’t it a little early?\""
     Empress "\"The longer we wait, the larger his advantage grows. We mustn’t permit that.\""
     Advisors "\"...\""
+    scene bg moon
+    with fade
     n_adv "She returned her gaze to the moon."
     n_adv "Soon, when it shines the brightest, it would be a fitting time to declare their successorship. But now, when it was nearing its darkest, it was the perfect time to strike under the shadows."
     Empress "\"Soon, we will regain our former glory. So long as you follow me, our rise will be as certain as the moon in the night sky. Never forget that.\""

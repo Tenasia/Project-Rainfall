@@ -67,6 +67,7 @@ define config.has_voice = True
 # define config.fade_music = 1.0
 define config.main_menu_music = audio.rainfall
 
+define config.default_music_volume = 0.5
 
 ## Transitions #################################################################
 ##
@@ -87,7 +88,6 @@ init -2 python:
     config.default_music_volume = 0.50
     config.default_sfx_volume = 0.50
     config.fade_music = 1.0
-    
 
 
 
@@ -204,6 +204,6 @@ init -2 python:
     renpy.music.register_channel("ambient", mixer="game_sfx", loop=True, file_prefix="audio/gsfx/ogg/ambient/", file_suffix=".ogg", tight=True)
 init -1500 python:
     config.window_opacity_default = 0.85
-    config.default_game_sfx_volume = 0.50
+
 
     

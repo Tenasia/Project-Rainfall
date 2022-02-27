@@ -848,8 +848,10 @@ screen info_panel(label_text, message_text, icon_d, alignment, trans=None):
             
             xsize 510
 
-
-            text message_text size 24 yoffset 10
+            if message_text == None:
+                text "N/A" size 24 yoffset 10
+            else:
+                text message_text size 24 yoffset 10
 
         transclude
 
