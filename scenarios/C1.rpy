@@ -397,6 +397,9 @@ label ch4:
     scene bg train large
     with white3
     play ambient "inside_train" fadein 1.0
+    
+    $ show_date()
+
 
     n_adv "My water bottle fell over sideways. That jolted me awake."
     Takumi "\"...\""
@@ -549,6 +552,8 @@ label ch5:
     play ambient "rain" fadein 2.0 volume 0.50
     play music audio.rainfall fadein 1.0
     
+    $ show_date()
+
     n_adv "…Why? Why did they throw away their life? I pondered as red lights flashed all around me."
     n_adv "Standing under the callous rain, my legs remained rooted in place. Droplets of rainwater slid off my hair, creating ripples as they fell to the ground. In front of my eyes…lay the scene of the terrible accident."
     n_adv "The sedan had crashed into the police cruiser at full speed. It combusted almost instantaneously, despite the heavy rain. The resulting fire was too intense and suffocating for anyone to attempt an immediate rescue."
@@ -647,6 +652,8 @@ label ch6:
     play ambient "lightrain" fadein 2.0
     play music audio.osmanthus fadein 1.0
     
+    $ show_date()
+
     n_adv "Between the dim lights of sparsely placed lampposts, my steps rang alongside the clatter of rain. Holding my umbrella low, I tried to keep my fresh pair of trousers dry, although that was quickly proving to be an impossible task."
     n_adv "There was hardly anybody outside, and those I encountered were either the homeless seeking shelter under shallow eaves or drunkards with far more alcohol in their bodies than common sense."
     n_adv "Avoiding eye contact, I strode along the street briskly. My destination lay somewhere in the outskirts of the area, in an even more remote part of the district."
@@ -999,6 +1006,8 @@ label ch7:
     with fade
     play music audio.meeting fadein 2.0
 
+    $ show_date()
+
     noname_adv "\"Why didn’t you tell him?\""
     n_adv "A frail, raspy voice resounded from the back of the lounge. Right against the wall sat a majestic gold-framed sofa, larger and more comfortable than the rest."
     n_adv "It looked more like a throne than anything else. And sat inside it was...nothing. Yet, a presence was definitely there."
@@ -1041,6 +1050,8 @@ label ch8:
 
     scene bg police_office
     with fade
+
+    $ show_date()
 
     Supervisor "\"So, only those guys from Yodogawa are there right now?\""
     Hiraku "\"Yes, sir.\""
@@ -1174,8 +1185,8 @@ label ch8:
     n_adv "I rose to my feet and strode for the door, my steps firm. As it swung open, lights flooded my eyes once more."
     
     scene bg white_corridor
-    pause 2.0
     with fade
+    pause 2.0
 
     scene bg police_office
     with fade
@@ -1233,6 +1244,8 @@ label ch9:
     play ambient "lightrain" fadein 1.0
     play se1 "atm"
 
+    $ show_date()
+
     n_adv "{i}Clack clack clack.{i}"    
     n_adv "A faint rhythm of clicking buttons entered my ears, breaking the monotony of the rain. It came from the lone ATM machine in front of me, sheltered under a flimsy roof. Another person was currently using it, with me waiting behind for my turn."
     
@@ -1280,13 +1293,12 @@ label ch9:
     scene bg a_alleyway
     show rain_particle
     with fade 
-    play ambient "running_on_rain"
+    play se1 "running_on_rain"
 
     n_adv "Anywhere was fine, as long as I could escape! Puddles splashed all over my trousers, but I couldn’t care less. I had to keep running!"
     n_adv "Was he chasing me? I glanced back for a split second, but the man hadn’t moved an inch from the ATM. I could make it out! Adrenaline pumping throughout my body, I didn’t dare slow down even a bit."
     n_adv "I didn’t know why he wasn’t chasing, but it’s a stroke of luck. The residential area wasn’t too far away now. Once I reach there, I could report—"
     
-    stop ambient fadeout 1.0
     play se1 "thud"
 
     n_adv "{i}Thud.{/i}"
@@ -1312,13 +1324,14 @@ label ch9:
     n_adv "He added, with a burst of shrill laughter."
     n_adv "I kept my eyes on the knife as it traced a slow arc straight to my neck. It grazed my hair and hovered there, almost touching my skin. One wrong move and I’d be dead."
     
+    stop ambient fadeout 2.0
     play ambient "heartbeat"
 
     n_adv "{i}Ba-dump. Ba-dump. Ba-dump.{/i}"
     n_adv "I could hear my hammering heartbeat."
     
     stop ambient fadeout 2.0
-
+    play ambient "lightrain" fadein 1.0
     Takumi "\"Hk...!\""
     n_adv "The blade touched my skin. I winced, imagining the worst."
     n_adv "..."
@@ -1372,6 +1385,8 @@ label ch10:
     with fade
     play ambient "rain" fadein 2.0
     play music audio.fear fadein 2.0
+
+    $ show_date()
 
     n_adv "I was pressed against the edge of the wall, straining my ears for all sounds."
     U_Man "\"—Who do you work for, Ito Genji?\""
@@ -1493,6 +1508,8 @@ label ch11:
     with fade
     play ambient "rain" fadein 2.0
     
+    $ show_date()
+
     n_adv "The unknown man had walked some distance away. Was this my chance to escape?"
     n_adv "..."
     n_adv "No, I couldn’t even escape the grip of one of these brutes, let alone both. I need something else! Think, Takumi, think! This was probably the only chance I would ever get."
@@ -1502,9 +1519,9 @@ label ch11:
     n_adv "No matter how hard I racked my brain, I couldn’t figure a way out of this predicament. I cursed my own weaknesses. If only I was a little stronger, smarter, or quicker..."
     n_adv "I watched the unknown man’s back as he approached the ATM machine. With each step he took, my death sentence loomed nearer and nearer."
     n_adv "But suddenly—"
-
+    stop ambient fadeout 2.0
     play music audio.utopia fadein 2.0
-
+    
     T_Brute "\"Wh—\""
     Takumi "\"...?\""
     n_adv "A flash of shadow moved at lightning speed from behind the tall brute. It twisted its body, and in one graceful motion, landed a perfect roundhouse kick on his head. He immediately collapsed."
@@ -1540,7 +1557,7 @@ label ch11:
     Hiraku "...!" (multiple=2)
 
     play music audio.passion fadein 2.0
-
+    
     U_Man "\"Heaaaarghhh!\""
     n_adv "Like a bullet, he charged straight towards the police officer."
     Hiraku "\"Tsk!\""
@@ -1606,6 +1623,8 @@ label ch12:
     play ambient "rain_inside_car" fadein 2.0 volume 0.25
     play music audio.quiet fadein 1.0
 
+    $ show_date()
+
     n_adv "The constant pulse of red lights filled my peripherals. I sat cross-legged inside one of the police cars, wrapped under a thick layer of blanket. While it did little to ease my worries, it did help stave off the piercing cold."
     n_adv "I peered through the misty windows. Several uniformed officers were huddled together under a canopy of umbrellas, probably discussing the incident. Within that group, I spotted the brown-haired officer who saved me earlier."
     n_adv "After that decisive blow, the unknown man was knocked out cold. Immediately after, my knees collapsed from exhaustion. I couldn’t remember how long I knelt on the ground."
@@ -1657,9 +1676,11 @@ label ch12:
     n_adv "I chuckled weakly as the conversation trailed away. My mind began to wander."
     n_adv "My long lost brother... Genji. So you are alive. Where have you been, and what are you doing right now? What did those men want with you? These questions and worries festered in my mind, yet only the whistle of the wind and clatter of rain answered me."
     
+    stop ambient fadeout 1.0
     scene black
     with fade
     pause 1.0
+    play ambient "rain_inside_car" fadein 1.0 volume 0.25
 
     scene bg car_night_rain
     with fade 
@@ -1676,10 +1697,12 @@ label ch12:
     
     stop ambient fadeout 2.0
     play se1 "car_door"
-    show rain_particle
+
     scene bg takumi_house
-    pause 1.0
     show rain_particle
+    with fade
+    pause 1.0
+    
     play se1 "car_door"
     play ambient "rain" fadein 2.0
 
@@ -1742,6 +1765,8 @@ label ch13:
     with fade
     play music audio.meeting fadein 2.0
 
+    $ show_date()
+
     n_adv "Seated inside one of the sofas, the bartender brought the glass to his lips. Inside it was a sliver of pale white liquid. He had poured himself just a sip of his favorite white wine in celebration."
     TBD "\"It worked out well, didn’t it?\""
     n_adv "He whispered, seemingly to no one."
@@ -1777,6 +1802,8 @@ label ch14:
     scene bg orientall_hall
     with fade
     play music audio.flame fadein 2.0
+
+    $ show_date()
 
     n_adv "Inside a majestic oriental hall decorated with golden ornaments and the finest quality of wooden sculptures, an assembly of solemn figures had been gathered."
     n_adv "These people each commanded their own dignity and authority, yet their expressions remained respectful. Their reverent gazes were directed at the throne at the center of the chamber."
