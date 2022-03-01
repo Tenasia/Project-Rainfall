@@ -57,7 +57,7 @@ label ch2:
         set_info_date(10, "Sep", "thu")
         set_info_time("evening")
 
-    scene placeholder
+    scene ito_takumi
     with fade
     pause 2.0
     
@@ -173,7 +173,7 @@ label ch3:
         set_info_date(10, "Sep", "thu")
         set_info_time("evening")
 
-    scene placeholder
+    scene inoue_hiraku
     with fade
     pause 2.0
     
@@ -368,10 +368,11 @@ label ch3:
     n_adv "And then came the moment of impact."
     
     stop ambient fadeout 2.0
-    play se1 "car_crash" fadein 1.0
     scene black
-    with fade
-    pause 2.0
+    play se1 "car_crash" fadein 1.0
+    pause 5.0
+    
+    
     
 
 label ch4:
@@ -382,7 +383,7 @@ label ch4:
         set_info_date(10, "Sep", "thu")
         set_info_time("night")
 
-    scene placeholder
+    scene ito_takumi
     with fade
     pause 2.0
 
@@ -542,7 +543,7 @@ label ch5:
         set_info_date(10, "Sep", "thu")
         set_info_time("night")
 
-    scene placeholder
+    scene inoue_hiraku
     with fade
     pause 2.0
 
@@ -642,7 +643,7 @@ label ch6:
         set_info_date(10, "Sep", "thu")
         set_info_time("night")
 
-    scene placeholder
+    scene ito_takumi
     with fade
     pause 2.0
 
@@ -998,7 +999,7 @@ label ch7:
         set_info_date(10, "Sep", "thu")
         set_info_time("night")
 
-    scene placeholder
+    scene tbd
     with fade
     pause 2.0
 
@@ -1044,7 +1045,7 @@ label ch8:
         set_info_date(11, "Sep", "fri")
         set_info_time("night")
 
-    scene placeholder
+    scene inoue_hiraku
     with fade
     pause 2.0
 
@@ -1233,7 +1234,7 @@ label ch9:
         set_info_date(11, "Sep", "fri")
         set_info_time("night")
 
-    scene placeholder
+    scene ito_takumi
     with fade
     pause 2.0
 
@@ -1376,7 +1377,7 @@ label ch10:
         set_info_date(11, "Sep", "fri")
         set_info_time("night")
 
-    scene placeholder
+    scene inoue_hiraku
     with fade
     pause 2.0
 
@@ -1499,7 +1500,7 @@ label ch11:
         set_info_date(11, "Sep", "fri")
         set_info_time("night")
 
-    scene placeholder
+    scene ito_takumi
     with fade
     pause 2.0
 
@@ -1614,7 +1615,7 @@ label ch12:
         set_info_date(11, "Sep", "fri")
         set_info_time("night")
 
-    scene placeholder
+    scene inoue_hiraku
     with fade
     pause 2.0
 
@@ -1757,7 +1758,7 @@ label ch13:
         set_info_date(11, "Sep", "fri")
         set_info_time("night")
 
-    scene placeholder
+    scene tbd
     with fade
     pause 2.0
 
@@ -1795,7 +1796,7 @@ label ch14:
         set_info_date(12, "Sep", "sat")
         set_info_time("night")
 
-    scene placeholder
+    scene ukn
     with fade
     pause 2.0
 
@@ -1867,3 +1868,5 @@ label ch14:
     scene black
     with fade
     pause 2.0
+
+    jump ch15

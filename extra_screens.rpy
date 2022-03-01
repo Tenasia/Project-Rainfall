@@ -337,11 +337,43 @@ screen tips_page():
 
                 if tip_of_interest == 1:
                     null height 20
-                    text "{color=#000}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." size 30 font "fonts/Kalam-Regular.ttf"
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
 
                 if tip_of_interest == 2:
                     null height 20
-                    text "{color=#000}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." size 30 font "fonts/Kalam-Regular.ttf"
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+
+                if tip_of_interest == 3:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+
+                if tip_of_interest == 4:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+                
+                if tip_of_interest == 5:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+
+                if tip_of_interest == 6:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+                
+                if tip_of_interest == 7:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+
+                if tip_of_interest == 8:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+                
+                if tip_of_interest == 9:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
+
+                if tip_of_interest == 10:
+                    null height 20
+                    text "{color=#000}Lorem ipsum dolor sit amet" size 30 font "fonts/Kalam-Regular.ttf"
 
 ### INFO PANEL ####################
     
@@ -369,18 +401,20 @@ screen tips_page():
     use info_panel(_(" Info"), get_location_tip(), "gui/game_menu_icons/comment-bubble_w.png", (0.925, 0.775))
     
     frame:
-        # ysize 48
         xoffset 135
         yoffset 895
+        background None
+        
         if notebook_info == True:
             text "Playtime:" size 35 xoffset 51 yoffset 0 color "#000" font "fonts/Kalam-Regular.ttf"
         else:
             text ""
-        background None
+        
         hbox:
             yoffset 0
             xoffset 200
             text "[hours_played]:[minutes_played]:[seconds_played]" color "#000" font "fonts/Kalam-Regular.ttf" size 35
+    
     imagebutton:
         xalign 0.95
         yalign 0.925
@@ -391,6 +425,7 @@ screen tips_page():
         hover_sound None
         activate_sound "audio/sfx/clickcool.wav"
         action Return()
+
 # screen cardbook
 
 screen gallery():

@@ -742,6 +742,17 @@ init:
     image ito_genji:
         "images/chapter_cards/ito_genji.png"
 
+    image ito_takumi:
+        "images/chapter_cards/takumi.png"
+
+    image inoue_hiraku:
+        "images/chapter_cards/inoue.png"
+
+    image tbd:
+        "images/chapter_cards/tbd.png"
+
+    image ukn:
+        "images/chapter_cards/no_name.png"
 #Oswald Sprites
 image fuuji angry :
     "images/Oswald/os_angry.png" with renpy.transition(Dissolve(0.25), layer="master")
