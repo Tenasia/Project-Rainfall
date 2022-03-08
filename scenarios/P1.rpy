@@ -737,9 +737,10 @@ label ch6:
 
     n_adv "Alas, all good things must come to an end. Eventually, the final note was struck, and the hum of the melody faded from the air. He rose up and softly closed the piano lid."
     
+    play se1 "gear_shift"
     scene bg bar_inside_lounge
     with fade
-    play se1 "gear_shift"
+    
     play music audio.night fadein 2.0
 
     n_adv "Only then did he turn to look at me."
