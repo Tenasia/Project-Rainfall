@@ -30,7 +30,9 @@ init:
     $ white2 = ImageDissolve("images/transitions/whitefade2.png", 3.75, 100, 0.5)
     $ white3 = ImageDissolve("images/transitions/whitefade3.png", 3.75, 100, 0.5)
     $ smallimage = ImageDissolve("images/transitions/whitefade3.png",  3.75, 100, 0.5)
-
+    $ blink = ImageDissolve("images/transitions/blink.png", 2, 100, 0.5)
+    $ blink_close = ImageDissolve("images/transitions/blink_open.png", 2, 100, 0.5)
+    $ blink_open = ImageDissolve("images/transitions/blink_close.png", 2, 100, 0.5)
 
     $ w1 = ImageDissolve("images/transitions/1.jpg", 1.0, 8)
     $ w2 = ImageDissolve("images/transitions/2.png", 1.0, 8)

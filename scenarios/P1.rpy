@@ -14,7 +14,9 @@ label ch1:
     show rain_particle
 
     nvl show
+    
     n_nvl "Thunder streaked across the dull, pitch-black sky over the outskirts of an urban city. It overpowered all other sounds for an instant, but soon the clatter of rainwater against pavement blanketed the area once again. Even amongst the heavy downpour at night, bustles of pedestrians from the major streets could still be heard."
+   
     n_nvl "However, no human presence resided within this small alleyway. There were little more than rat-infested decrepit buildings and the occasional ruffian fights inside. Because of that, the average person would find no reason to ever enter. And during this downpour, even the unsavory people would rather avoid causing trouble unnecessarily."
     n_nvl "Amidst this desolate space, the patter of rainwater was the only sign of motion. They collect into small crevices on the ground and eventually plunge into the gutter. However, they were not clear in color but contaminated in hues of crimson."
     nvl clear
@@ -75,6 +77,7 @@ label ch2:
     play ambient "longrain" fadein 0.5
     
     n_adv "{i}Tap tap tap{/i}"
+    with circlewipe
     n_adv "Misty droplets knocked on the windowpanes. It was drizzling outside."
     n_adv "Dark orange hues casted shadows on the sky. By the time I finished preparing to leave, the sun had completely dipped under the horizon."
     Takumi "\"I’m going ahead, see you on Monday.\""
@@ -396,7 +399,8 @@ label ch4:
     n_adv "{i}Thud{/i}"
 
     scene bg train large
-    with white3
+    with blink_open
+
     play ambient "inside_train" fadein 1.0
     
     $ show_date()
@@ -801,12 +805,13 @@ label ch6:
     n_adv "It’s so comforting, I could almost fall asleep. In fact, my eyelids were getting heavier by the second…"
     
     scene black
-    with white3
+    with blink_close
 
     n_adv "..."
 
     scene bg bar_inside
-    with white3
+    with blink_open
+
     play music audio.night fadein 5.0
 
     TBD "\"Takumi-sama? The meal is ready.\""
