@@ -80,13 +80,21 @@ label ch2:
     with circlewipe
     n_adv "Misty droplets knocked on the windowpanes. It was drizzling outside."
     n_adv "Dark orange hues casted shadows on the sky. By the time I finished preparing to leave, the sun had completely dipped under the horizon."
-    Takumi "\"I’m going ahead, see you on Monday.\""
-    Coworker "\"Good work, Ito-san. Going home a bit early today?\""
-    Takumi "\"Yeah, got a nasty headache.\""
-    Coworker "\"I see, alright. Get some rest, and don't forget anything.\""
-    Takumi "\"Sure, sure.\""
-    n_adv "With my backpack in tow, I took the stairs to the ground floor. The building was pretty large for an office building. It was relatively new as well, acquired just last year by my employer."
     
+    show takumi neutral
+    Takumi "\"I’m going ahead, see you on Monday.\""
+    show takumi neutral_dark
+    Coworker "\"Good work, Ito-san. Going home a bit early today?\""
+    show takumi neutral
+    Takumi "\"Yeah, got a nasty headache.\""
+    show takumi neutral_dark
+    Coworker "\"I see, alright. Get some rest, and don't forget anything.\""
+    show takumi neutral
+    Takumi "\"Sure, sure.\""
+    show takumi neutral_dark
+    n_adv "With my backpack in tow, I took the stairs to the ground floor. The building was pretty large for an office building. It was relatively new as well, acquired just last year by my employer."
+    hide takumi with Dissolve(0.25)
+
     stop ambient fadeout 0.5
     play ambient "lightrain" fadein 0.5 volume 0.75
     scene bg office_entrance_eve
@@ -94,27 +102,43 @@ label ch2:
     
     n_adv "At the entrance section, our security guard sat behind a wooden desk, eyes glued to his phone. Noticing me, he glanced up and gave a small nod before returning to being engrossed in his screen."
     n_adv "As I reached the front door, the noise of the rain had grown considerably louder."
+    
+    show takumi neutral
     Takumi "\"{i}Sigh{/i}\""
+    
+    show takumi neutral_dark
     n_adv "It’s not that I disliked rain in general, but walking around puddles was annoying. On these occasions, I silently thanked the company for picking a location only a few blocks away from the metro station."
     n_adv "But there was still another problem. It wasn’t currently the rainy season, so I didn’t prepare an umbrella."
+    
+    show takumi neutral
     Takumi "\"...Ah, right.\""
+    show takumi neutral_dark
     n_adv "Fortunately, they kept a stock of spare umbrellas employees can borrow for these situations."
+    show takumi neutral
     Takumi "\"Nakamura-san, can I borrow an umbrella?\""
+    show takumi neutral_dark
     n_adv "The security guard glanced up again."
     Nakamura "\"Sure\""
     n_adv "Without even turning, he extended an arm and rummaged around the cabinet behind him. Grabbing one at random, he handed it to me."
     Nakamura "\"Return it by Monday, yeah?\""
     n_adv "I gratefully accepted the umbrella."
+    show takumi neutral
     Takumi "\"Will do, thanks.\""
+    show takumi neutral_dark
     n_adv "Just as I was about to pull the doorknob, he called out again."
     Nakamura "\"Also, be careful on your way home.\""
+    show takumi neutral
     Takumi "\"Why, what happened?\""
+    show takumi neutral_dark
     n_adv "After a pause, he set his phone down on the table."
     Nakamura "\"Apparently, crimes have been increasing recently.\""
     n_adv "My eyebrows raised at his words. Japan was one of the safest countries in the world, everyone knew that. If Nakamura was saying that…do I need to be worried?"
     Nakamura "\"Well, probably just some drunken scuffles. Those happen all the time. Don’t worry about it too much as long as you don’t go looking for trouble.\""
+    show takumi neutral
     Takumi "\"...I’ll keep that in mind, thanks for the heads up.\""
+    show takumi neutral_dark
     n_adv "I took my phone out and noted the info down. I forget things easily, so noting things down helps a lot. Once finished, I bid him a good evening and stepped out."
+    hide takumi with Dissolve(0.25)
 
     stop ambient fadeout 1.0
     scene bg office_outside_raining
@@ -124,8 +148,11 @@ label ch2:
 
     n_adv "At some point during our conversation, the sky had turned dark. The rain turned out to be lighter than expected, which was great."
     n_adv "I glanced at the bright LED signpost above the door frame. ‘Yasuda Farmers’, it read. I’ve commuted here daily for the past few months, yet today these familiar streets felt a little chillier than usual."
+    show takumi neutral
     Takumi "\"What am I, five?\""
+    show takumi neutral_dark
     n_adv "Chiding myself, I brushed Nakamura’s words off my mind. I slowly made my way towards the busy intersection road that connected to the metro station."
+    hide takumi with Dissolve(0.25)
 
     scene bg street_night
     show rain_particle
@@ -146,22 +173,30 @@ label ch2:
     play se1 "car_horn"
     play se2 "watersplash"
 
+
+    show takumi neutral
     Takumi "\"Ahk!?\""
+    show takumi neutral_dark
     n_adv "Suddenly, ice-cold water blasted my legs. Bewildered, I glanced around. A black sedan rushed past me, spraying puddles of water in its wake. Several other pedestrians yelped in surprise and anger alike."
     n_adv "Oi, oi, there’s no way that’s within the speed limit! Not to mention, it was driving in the opposite lane!"
     n_adv "I suppressed the urge to curse out loud as it zipped through traffic, much to the dismay of the other drivers who honked in protest. Eventually, it made a sharp turn onto a bridge and swerved out of vision."
-    
+
     stop music fadeout 1.0
     play music audio.window fadein 1.0
     play ambient "rain" fadein 2.0
     
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "Man, some people shouldn’t be allowed a driving license. Damned irresponsible drivers."
     n_adv "I assessed the damage done. My shoes were completely drenched and my trousers soaked up to the knees. And if the weight of the patter on my umbrella was any indication, the rain was only getting more intense."
     n_adv "The evening had barely just begun and it already got a whole lot worse."
+    show takumi neutral
     Takumi "\"{i}...Sigh.{/i}\""
+    show takumi neutral_dark
     n_adv "Begrudgingly, I walked the rest of the way with damp, near-freezing soles. And this time, I had to be cautious of idiots behind steering wheels too."
-    
+    hide takumi with Dissolve(0.25)
+
     stop music fadeout 1.0
     stop ambient fadeout 1.0
     scene black
@@ -195,10 +230,15 @@ label ch3:
     n_adv "I peeked inside the box of biscuits strewn on the passenger seat. Yeah... five pieces wouldn’t last me through the remaining two hours of my shift. These packaging sizes were getting more and more outrageously misleading."
     n_adv "I know I said patrolling was relaxed and nice, but there was still one major challenge present. Namely, boredom. There’s only so many passing vehicles you can stare at before your mind starts to get numb."
     n_adv "I stretched my palm out the window, letting the raindrops revitalize my sore muscles. Maybe I should stop by a convenience store, I thought as I grabbed another biscuit. Either that, or I hope something interesting happens tonight."
+    
+    show hiraku neutral
     Hiraku "\"...?\""
+    show hiraku neutral_dark 
     n_adv "Out of the corner of my vision, I spotted a young man sporting a red traditional hakama walking by the roadside. Accompanied by several men in black suits, he turned heads wherever he passed."
     n_adv "What an odd outfit in this day and age. Was there some kind of festival going on? Before long, they disappeared into a corner."
+    show hiraku neutral
     Hiraku "\"Hmm..\""
+    show hiraku neutral_dark
     n_adv "I couldn’t quite put my finger on it, but his outfit looked familiar. Where had I seen him before? Just as I was trying to jog my memory, something else caught my attention."
     
     stop ambient fadeout 1.0
@@ -208,29 +248,40 @@ label ch3:
     n_adv "Through the rearview mirror, I noticed a sedan bolting through the street at high speed, swerving around oncoming traffic. That...didn’t even require a radar confirmation. It was clearly far above the speed limit!"
     n_adv "I got up to action immediately."
     n_adv "Just as a formality and for the paperwork registration later, I pointed the radar towards the car anyway. 81 — it registered — on a 60 zone freeway. Following proper procedure, I picked up the transceiver and switched the mic on."
+    show hiraku neutral
     Hiraku "\"HQ, you there? Inoue Hiraku from patrol car 17 here.\""
-    
+    show hiraku neutral_dark
     play se1 "static" fadein 1.0
     
     n_adv "After a slight pause, a static voice replied."
     Radio "\"Inoue-san, this is Tenma Station. What’s the matter?\""
+    show hiraku neutral
     Hiraku "\"I’m on patrol around West Tenma, and there’s a black sedan recklessly speeding. Can I get some roadblocks assistance?\""
+    show hiraku neutral_dark
     Radio "\"Can you tell us the car model and license plate number?\""
     n_adv "I squinted to get a better look, but the glare was too bright and the sedan was swerving too much."
+    show hiraku neutral
     Hiraku "\"I can’t get a good look.\""
+    show hiraku neutral_dark
     n_adv "Even as it approached the intersection, it showed no signs of slowing down."
+    show hiraku neutral
     Hiraku "\"...!\""
+    show hiraku neutral_dark
     n_adv "The sedan nearly brushed against another car as it switched lanes. My body tensed up. That’s just too reckless! Soon it would overtake my position."
     Radio "\"Negative. The nearest available cruiser is five kilometers to your southeast.\""
     n_adv "Huh. Normally, there should’ve been at least another patrol unit in this area. Were they all occupied? Either way, boredom was about to become the least of my worries tonight."
+    show hiraku neutral
     Hiraku "\"Then, requesting permission to engage in a pursuit.\""
+    show hiraku neutral_dark
     n_adv "Speeding on a country road was one thing, but on a busy street? Like hell I was about to let this guy loose. There was a pause, and then I heard a low groan from the transceiver."
     n_adv "I knew they would rather avoid a pursuit if they could help it, that’s just how our system was. However, that would mean letting the lawbreaker unpunished."    
     
     play se1 "watersplash" fadein 0.5
     
     n_adv "In a blur, the sedan darted past my position, spraying water onto my windshield."
+    show hiraku neutral
     Hiraku "\"This guy..!\""
+    show hiraku neutral_dark
     n_adv "The gall!"
     n_adv "With a loud skid, it sharply turned left on the intersection ahead, leaving behind a messy scene of honking and braking cars."
     n_adv "I unclasped the speed gun and threw it onto the passenger seat. Revving the engine up, I waited in bated breath. Cmon, say the magic word already."
@@ -242,10 +293,12 @@ label ch3:
     play ambient "car_on_road"
     
     n_adv "A smirk rose to my lips."
+    show hiraku neutral
     Hiraku "\"Roger that.\""
+    show hiraku neutral_dark
     n_adv "Putting the transceiver back in its slot, I flicked on one of the numerous switches in the middle compartment. In response, the speaker on the roof activated and started blaring the ever-familiar wail of police siren."
     n_adv "Without waiting for another second, I stepped on the gas pedal. The evening’s about to get a whole lot rowdier. The car skidded off as I turned the corner in pursuit of the sedan."
-    
+    hide hiraku with Dissolve(0.25)
     scene bg road1_night
     show rain_particle
     with fade
@@ -313,8 +366,7 @@ label ch3:
     with fade
     
     n_adv "As we entered this relatively empty road, the sedan began to accelerate in a straight line. Trying to beat me in a contest of speed?"
-    Hiraku "\"You wish.\""
-    
+    Hiraku "\"You wish.\""    
     play se1 "gear_shift"
     
     n_adv "I floored the pedal in response, the accelerometer needle soaring. The city skyline outside blended into a long string of blur."
@@ -354,10 +406,14 @@ label ch3:
         set_info_location("06")
 
     n_adv "But…the sedan wasn’t slowing down."
+    show hiraku neutral
     Hiraku "\"...?\""
+    show hiraku neutral_dark
     n_adv "That’s strange. The roadblock was definitely visible from there. Was it not paying attention?"
     n_adv "The sedan flew through the bridge at full speed. What’s it trying to do? If it keeps going…there’s nothing but a crash awaiting!"
+    show hiraku neutral
     Hiraku "\"No way...\""
+    show hiraku neutral_dark
     
     play ambient "rain" fadein 2.0
     stop music fadeout 1.0
@@ -368,16 +424,14 @@ label ch3:
     n_adv "My face morphed into one of horror. My eyes couldn’t avert the scene as the crash quickly became imminent."
     n_adv "The officers scrambled to dive out of the way, panic reflected in their eyes. Screaming ensued."
     n_adv "Time slowed down for an instant as the sedan inched nearer…nearer..!"
+    hide hiraku with Dissolve(0.25)
     n_adv "And then came the moment of impact."
     
     stop ambient fadeout 2.0
     scene black
     play se1 "car_crash" fadein 1.0
     pause 5.0
-    
-    
-    
-
+     
 label ch4:
 
     python:
@@ -407,7 +461,9 @@ label ch4:
 
 
     n_adv "My water bottle fell over sideways. That jolted me awake."
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "Did I fall asleep? I picked the bottle up and rubbed my eyes. I was seated inside a train, my body swaying with the train’s rhythm. I retraced my steps to clear away the drowsiness."
     
     play se1 "train_passing" fadein 1.0
@@ -420,7 +476,8 @@ label ch4:
     
     Announcer "\"Attention, passengers. We have arrived at Shin-Imamiya Station. Please do not forget to take your belongings.\""
     n_adv "Eventually, the train reached a complete halt and the doors slid open."
-    
+    hide takumi with Dissolve(0.25)
+
     stop ambient fadeout 1.0
     scene bg station01 night
     with fade
@@ -430,15 +487,17 @@ label ch4:
     python:
         set_info_location("08")
 
+    show takumi neutral_dark
     n_adv "I was greeted with the blanketing clatter of rainwater once again, shattering what respite I had inside the enclosed train car."
     n_adv "The doors slid shut behind me as I stepped off. It quickly accelerated again, the rails rattling along. I gazed listlessly as it gradually drifted out of sight to carry on with its nightly duties. In its place, only empty tracks remained."
+    show takumi neutral
     Takumi "\"...\""
-    
+    show takumi neutral_dark
     play se1 "clap"
     
     n_adv "{i}Clap{/i}"
     n_adv "What am I doing? I shouldn’t be zoning out right now. Perhaps the exhaustion was getting to me."
-    
+    hide takumi with Dissolve(0.25)
     scene bg station01 staircase
     with fade
     
@@ -447,15 +506,18 @@ label ch4:
     scene bg train_entrance
     with fade 
     
+    show takumi neutral_dark
     n_adv "As I was about to reach the exit, a peculiar sound entered my ears. My feet halted. It was a faint hymn of a...violin?" 
     n_adv "Even through the patter of rain, the melody carried over distinctly. It was a simple tune, yet something about it carried a hint of nostalgia."
     n_adv "My eyes searched for the source of the music and spotted a tiny crowd at the corner of the otherwise empty lobby. A busker? And a skilled one too, judging by the number of people listening."
     n_adv "Street performers weren’t uncommon in parks or near tourist spots. On occasions where time permitted, I’d let myself be enraptured by their melodies. There was something soothing about a gathering of strangers brought together by music."
     n_adv "The piece gradually concluded as the crowd softly applauded. A moment later, another melody began as the performer moved on to the next piece."
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "On a better day, I might’ve joined the audience. But today…I was quite exhausted. My freezing ankles and grumbling stomach protested."
     n_adv "…Yeah, it’s a shame, but let’s head home straight away."
-    
+    hide takumi with Dissolve(0.25)
     stop ambient fadeout 2.0
     scene bg road night large
     show rain_particle
@@ -465,30 +527,42 @@ label ch4:
     python:
         set_info_location("09")
     
+    show takumi neutral_dark
     n_adv "The exit opened up to a spacious but dimly-lit street I’ve been through a million times." 
     n_adv "My apartment was only five minutes away by foot, but that’s about the only good thing it had going for it. The neighborhood I lived in wasn’t particularly well-cared for."
     n_adv "I glanced at the streetside opposite of the station, beyond the crosswalk I normally use. As if to prove my point, garbage bags were littered around the pavement."
+    show takumi neutral
     Takumi "\"{i}...Sigh.{/i}\""
+    show takumi neutral_dark
     n_adv "On days leading up to the cleaning day, it’s always like this. Repulsed by the rancid smell it would’ve no doubt been oozing, I decided to walk further in search of another crosswalk."
     n_adv "I let my thoughts wander aimlessly as my legs skirted around puddles on the walkway."
     n_adv "There’s a reason I disliked my apartment despite the convenient location, and it’s one I could never stop worrying about. Namely, because it was located within one of the shadiest districts in the prefecture."
     n_adv "Historically, this district has one the highest crime rates across the whole country. Well, it’s not like I couldn’t understand the reason. One glance at the neighborhood and you could tell the living conditions of its inhabitants."
     n_adv "At night, there were even occasions where I could hear gunshots and—"
     n_adv "My thoughts were interrupted by the sound of snoring. I looked around to find a person laying on a bench nearby with a raincoat on."
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "As much as I wanted to be disgusted by it, I’d grown numb to the sight of the homeless. Though, how they were able to sleep under heavy rain was beyond me. I heaved a sigh and continued walking."
     n_adv "I reached the next crosswalk and pressed the pedestrian crossing button absentmindedly. The light instantly flickered green."
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "Under the dim lamppost, I peered into the furthest reaches of the street. It was devoid of even the faintest vehicle light."
     n_adv "…Was there even a point in pressing it? As I crossed the desolate street, my mind drifted to the conversation I had with Nakamura earlier at work."
+    show takumi neutral
     Takumi "\"Increasing crime rates, huh...\""
+    show takumi neutral_dark
     n_adv "When he mentioned it, I couldn’t help but be worried. It reminded me of an old rumor I heard from the elderly folk."
     n_adv "Long ago, this district used to be a yakuza group’s home turf. They controlled everything, from the entirety of the land to the lives of the residents themselves."
     n_adv "Over the years, following stricter and stricter laws, they dwindled away and the residents regained their freedom. However, they didn’t disappear without leaving their mark."
     n_adv "Many blamed the current state of the district on the yakuzas of old. Some radicals even believed that there were active yakuza insurgents."
     n_adv "Of course, they’re nothing more than rumors. However, each time a loud noise jolts me awake in the dead of night, those rumors would float to my mind."
+    show takumi neutral
     Takumi "\"...Ah\""
+    show takumi neutral_dark
     n_adv "Without realizing it, I’d reached my destination."
+    hide takumi with Dissolve(0.25)
     
     scene bg takumi_house
     show rain_particle
@@ -500,19 +574,25 @@ label ch4:
     n_adv "This dingy little building with stained walls and crooked handrail was my home. I’ve lived here almost my whole life."
     n_adv "Near my feet lay a broken mailbox post, rusted and collapsed. It hadn’t been repaired for nearly five years. Nor was there any need to."
     n_adv "Physical mails were slowly fading away, replaced by digital mails. It’s a testament of the shifting ages we lived in."
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "This building, too, had seen better days. I pictured it exactly as it looked a decade ago, fresh coat of paint and glossy steel."
     n_adv "As a kid, I used to roam these streets a lot. Alongside my brother, we played with the other neighborhood kids. At noon, mom would welcome us home with a warm plate of food."
+    show takumi neutral
     Takumi "\"...\""
+    show takumi neutral_dark
     n_adv "The harsh patter of rain on my umbrella brought me back to reality."
     n_adv "Those days were long gone. The place remained, yet the people inside changed. My family were no longer with me. I lived alone."
     n_adv "I’ve thought about moving out before, but…"
     n_adv "I tilted my umbrella and stared at the dilapidated roof, emotions swirling in my chest. This apartment…was the last remnant of my family’s memories."
     n_adv "Too uneasy to stay, yet too wistful to part."
+    show takumi neutral
     Takumi "\"Haha...\""
+    show takumi neutral_dark
     n_adv "I chuckled weakly. Even as I wallowed in this dilemma, my life continued on in perpetuity."
     n_adv "Stepping towards the door, I pulled out my keys."
-    
+    hide takumi with Dissolve(0.25)
     stop ambient fadeout 1.0
     scene black
     with fade
@@ -523,11 +603,14 @@ label ch4:
 
     scene bg takumi_inside
     with fade
-
+    show takumi neutral_dark
     n_adv "A familiar dark corridor opened up before me, beckoning me into its solitary darkness once more, as it had always done countless times before."
+    show takumi neutral
     Takumi "\"...One day.\""
+    show takumi neutral_dark
     n_adv "One day, perhaps the winds of change will arrive. Until then..."
-    
+    hide takumi with Dissolve(0.25)
+
     stop music fadeout 2.0
     stop ambient fadeout 2.0
     stop se1 fadeout 1.0
@@ -559,37 +642,52 @@ label ch5:
     
     $ show_date()
 
+    show hiraku neutral_dark
     n_adv "…Why? Why did they throw away their life? I pondered as red lights flashed all around me."
     n_adv "Standing under the callous rain, my legs remained rooted in place. Droplets of rainwater slid off my hair, creating ripples as they fell to the ground. In front of my eyes…lay the scene of the terrible accident."
     n_adv "The sedan had crashed into the police cruiser at full speed. It combusted almost instantaneously, despite the heavy rain. The resulting fire was too intense and suffocating for anyone to attempt an immediate rescue."
     n_adv "As the rain battered on my shoulders, I desperately hoped for a miracle to occur for the driver to escape alive."
     n_adv "By the time the sirens of the paramedics arrived, I finally realized how naive my lingering hope was."
     n_adv "I felt terrible. This isn’t what I wanted."
+    show hiraku neutral
     Hiraku "\"I’m sorry…\""
+    show hiraku neutral_dark
     n_adv "I whispered to no one in particular. Even if the driver’s soul could hear me, I’m sure I had no right to be forgiven. No matter what kind of person they were, the loss of a life wasn’t something that could be justified by human laws."
     n_adv "I could only watch in silence, cursing my own powerlessness as the firefighters extinguished the flame. By then, all that remained inside was a corpse burnt beyond recognition."
     n_adv "..."
     n_adv "There’s nothing to be accomplished by beating myself up any further."
+    show hiraku neutral
     Hiraku "\"Ah...\""
+    show hiraku neutral_dark
     n_adv "I finally noticed how much my body was shivering. Wrapping my arms around my chest, I scanned the personnel on scene. I spotted a senior-looking officer calmly instructing the paramedics. With unsteady legs, approached him."
     n_adv "Despite my years in this profession, I was inexperienced in dealing with deaths."
     S_Officer "\"You’re...the one from Kita Ward, correct—\""
     n_adv "He paused for a second to recall my name."
     S_Officer "\"Officer Inoue?\""
+    show hiraku neutral
     Hiraku "\"Yes.\""
+    show hiraku neutral_dark
     n_adv "I was startled at how weak my voice sounded."
+    show hiraku neutral
     Hiraku "\"What can I do to help?\""
+    show hiraku neutral_dark
     n_adv "He sized me up for a second."
     S_Officer "\"It’s ok, you can go back and report to your supervisor. We’ll handle the scene over here.\""
     n_adv "He refused the offer."
+    show hiraku neutral
     Hiraku "\"But sir, I can also help.\""
+    show hiraku neutral_dark
     n_adv "I was adamant, desperate to get a chance to atone for my mistake in any way."
     S_Officer "\"I said just go home. You’re clearly in no shape to help.\""
     n_adv "Realizing how harsh that sounded, he added while scratching his head."
     S_Officer "\"What I mean is, I’ve been through your experience. I know how traumatizing it can be. Don’t push yourself.\""
+    show hiraku neutral
     Hiraku "\"But...\""
+    show hiraku neutral_dark
     n_adv "I was at a loss for words for a moment. Was I so shaken that even a stranger could tell? In the end, I decided to swallow it in."
+    show hiraku neutral
     Hiraku "\"Yes, sir. Thank you…very much.\""
+    show hiraku neutral_dark
     n_adv "I replied hesitantly."
     n_adv "It didn’t sit right with me, but maybe he wasn’t completely wrong. I needed to sort through my feelings. Exchanging salutes, I returned to my car, completely soaked to the bone."
     
@@ -601,13 +699,17 @@ label ch5:
         set_info_location("04")
 
     n_adv "The ride back to the police HQ was one in silence. All the while, the same question repeated itself in my mind."
+    show hiraku neutral
     Hiraku "\"...Why?\""
+    show hiraku neutral_dark
     n_adv "Abandoning their own life like that… I couldn’t wrap my head around it. Was there something wrong with the driver? Was there something wrong with me for not understanding?"
     n_adv "I couldn’t understand. It all seemed so bizarre to me."
+    show hiraku neutral
     Hiraku "\"What should I do? What…can I do?\""
+    show hiraku neutral_dark
     n_adv "I was lost."
     n_adv "My fingers subconsciously drifted towards the police badge attached to my vest. I gently wrapped it inside my palm."
-    
+    hide hiraku with Dissolve(0.25)
     stop ambient fadeout 2.0
     
     Hiraku "\"Nee-san...\""
@@ -621,15 +723,21 @@ label ch5:
     scene bg car_night_rain
     with fade
     play ambient "rain_inside_car" fadein 2.0 volume 0.25
-    
+    show hiraku neutral_dark
     n_adv "..."
+    show hiraku neutral
     Hiraku "\"Stop...\""
+    show hiraku neutral_dark
     n_adv "I whispered to myself, wiping the tears away. I promised I’d stop relying on you, didn’t I? When will I learn…that I need to be independent?"
+    show hiraku neutral
     Hiraku "\"{i}Sigh...{i}\""
+    show hiraku neutral_dark
     n_adv "I gripped the steering wheel tightly. Guilt welled up within me. For taking a life. For abandoning the scene. For fleeing from my responsibility."
     n_adv "But more than anything else…for the fact that I could shed a tear for my sister, after all these years, yet not for the life I just took with my bare hands."
     n_adv "Within this suffocating space, only the bite of the cold provided any distraction, a sensation I welcomed. It was nothing compared to what I deserved, but even if just a tiny bit…"
+    show hiraku neutral
     Hiraku "\"...\""
+    hide hiraku with Dissolve(0.25)
     
     stop ambient fadeout 2.0
     stop music fadeout 1.0
@@ -1613,7 +1721,6 @@ label ch11:
     with fade 
     pause 2.0
   
-
 label ch12:
     python:
         set_info_scene("12")
