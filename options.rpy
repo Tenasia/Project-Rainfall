@@ -99,11 +99,11 @@ init -1 python hide:
 
     config.label_overrides = {"_hide_windows" : "_hide_windows_override"}
 
-    config.after_load_transition = ComposedTransition(Dissolve(2.0))
+    config.after_load_transition = ComposedTransition(Dissolve(1.0))
 
     config.default_fullscreen = True
 
-    config.game_main_transition = ComposedTransition(Dissolve(2.0))
+    config.game_main_transition = ComposedTransition(Dissolve(1.0))
 
     config.default_afm_time = 5
 
