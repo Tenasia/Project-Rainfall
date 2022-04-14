@@ -16,7 +16,7 @@ define noname_adv = Character("???", color="fff", ctc="ctc", ctc_pause="ctc", ct
 define Takumi = Character("Takumi", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define Nakamura = Character("Nakamura", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define Hiraku = Character("Hiraku", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
-define TBD = Character("TBD", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define Genji = Character("Genji", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 
 
 # Side Characters

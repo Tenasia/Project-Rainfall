@@ -662,8 +662,8 @@ init:
     image inoue_hiraku:
         "images/chapter_cards/inoue.png"
 
-    image tbd:
-        "images/chapter_cards/tbd.png"
+    image genji:
+        "images/chapter_cards/genji.png"
 
     image ukn:
         "images/chapter_cards/no_name.png"
@@ -671,17 +671,30 @@ init:
 
 ### Sprites #################################
 
+
+### TAKUMI ###
+
 image takumi neutral:
     "images/Takumi/takumi_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
 
 image takumi neutral_dark:
     "images/Takumi/takumi_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
 
+### HIRAKU ###
+
 image hiraku neutral:
     "images/Hiraku/hiraku_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
 
 image hiraku neutral_dark:
     "images/Hiraku/hiraku_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
+
+### GENJI ###
+
+image genji neutral:
+    "images/Genji/genji_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
+
+image genji neutral_dark:
+    "images/Genji/genji_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
 
 ### Cases Page ##############################
 

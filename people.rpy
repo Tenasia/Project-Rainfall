@@ -125,7 +125,7 @@ screen game_menu():
                     else:
                         action SetVariable("person_of_interest", 3) 
             if person4 == True:
-                textbutton "TBD":
+                textbutton "Genji":
                     yoffset -20
                     hover_sound None
                     activate_sound "audio/sfx/pageflip.wav"
@@ -229,7 +229,7 @@ screen game_menu():
                     else:
                         action SetVariable("person_of_interest", 13) 
             if person14 == True:
-                textbutton "TBD":
+                textbutton "Genji":
                     yoffset -20
                     hover_sound None
                     activate_sound "audio/sfx/pageflip.wav"

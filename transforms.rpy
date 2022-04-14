@@ -8,6 +8,11 @@ transform game_menu_info_appear(delay=0):
         pause delay
         ease_back .5 alpha 1.0 xoffset 0
 
+transform someleft:
+        xalign 0.15
+
+transform someright:
+        xalign 0.0
 
 transform chapters_appear(delay=0):
         # alpha 0

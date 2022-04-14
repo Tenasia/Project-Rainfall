@@ -111,7 +111,7 @@ screen tips_page():
                     else:
                         action SetVariable("tip_of_interest", 3) 
             if tip4 == True:
-                textbutton "TBD":
+                textbutton "Genji":
                     yoffset -20
                     hover_sound None
                     activate_sound "audio/sfx/pageflip.wav"
@@ -215,7 +215,7 @@ screen tips_page():
                     else:
                         action SetVariable("tip_of_interest", 13) 
             if tip14 == True:
-                textbutton "TBD":
+                textbutton "Genji":
                     yoffset -20
                     hover_sound None
                     activate_sound "audio/sfx/pageflip.wav"
