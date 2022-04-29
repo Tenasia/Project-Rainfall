@@ -20,7 +20,7 @@ define Nakamura = Character("Nakamura", color="fff", ctc="ctc", ctc_pause="ctc",
 
 define Hiraku = Character("Hiraku", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 define sHiraku = Character("Hiraku", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char, image="hiraku")
-define sHirakuN = Character(" ", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", image="hiraku")
+define sHirakuN = Character(None, ctc="ctc", ctc_pause="ctc", ctc_position="fixed", image="hiraku")
 define rHirakuN = Character("Radio", color="fff",  ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind= char, image="hiraku")
 define Genji = Character("Genji", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 

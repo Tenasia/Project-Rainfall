@@ -96,7 +96,7 @@ screen say(who, what, side_image=None, two_window=False):
                 ysize 34
                 
                 xalign 0.5
-                if who != " ":
+                if who != None:
                     window:
                         style "say_who_window"
                         background Transform(Frame("gui/game_frames/name_box.png", yoffset = -61.5,xoffset= 125, ysize = 56, xsize = 481), alpha=persistent.window_opacity)
@@ -105,7 +105,6 @@ screen say(who, what, side_image=None, two_window=False):
                         xalign 1.0
                         # if (len(_history_list) == 0) or (len(_history_list) > 0 and _history_list[-1].who != who):
                         #     at trans_say_label
-                            
                         text who:
                             yoffset -52.5
                             id "who" xalign 0.5 xoffset -560 
@@ -113,6 +112,8 @@ screen say(who, what, side_image=None, two_window=False):
                             outlines [(1, "#00000099", 0, 0)]
                             # if (len(_history_list) == 0) or (len(_history_list) > 0 and _history_list[-1].who != who):
                             #     at trans_say_label
+                        # else:
+                        #     text ""
                                 
             frame:
                 background None
