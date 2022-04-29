@@ -14,8 +14,14 @@ define noname_adv = Character("???", color="fff", ctc="ctc", ctc_pause="ctc", ct
 
 # Named Characters
 define Takumi = Character("Takumi", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define sTakumi = Character("Takumi", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char, image = "takumi")
+
 define Nakamura = Character("Nakamura", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+
 define Hiraku = Character("Hiraku", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
+define sHiraku = Character("Hiraku", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char, image="hiraku")
+define sHirakuN = Character(" ", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", image="hiraku")
+define rHirakuN = Character("Radio", color="fff",  ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind= char, image="hiraku")
 define Genji = Character("Genji", color="fff", ctc="ctc", ctc_pause="ctc", ctc_position="fixed", kind = char)
 
 

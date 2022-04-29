@@ -75,8 +75,68 @@ screen say(who, what, side_image=None, two_window=False):
 
     key "mousedown_4" action ShowMenu("history")
     key "mouseup_3" action ShowMenu("game_menu", transition= Dissolve(0.2))
-    
-    if not two_window:
+    # $ side_picture = False
+
+    if side_picture == True:
+        
+        # define gui.dialogue_xpos = 440  
+        # define gui.dialogue_ypos = -25
+        # define gui.dialogue_width = 1450
+
+        add SideImage() xalign 0.0 yalign 1.0
+        window:
+            background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
+            style_prefix "say"
+            id "window"
+            # xsize 1450
+            ysize 275
+            has vbox
+
+            fixed:
+                ysize 34
+                
+                xalign 0.5
+                if who != " ":
+                    window:
+                        style "say_who_window"
+                        background Transform(Frame("gui/game_frames/name_box.png", yoffset = -61.5,xoffset= 125, ysize = 56, xsize = 481), alpha=persistent.window_opacity)
+                        yoffset 16
+                        xoffset 0
+                        xalign 1.0
+                        # if (len(_history_list) == 0) or (len(_history_list) > 0 and _history_list[-1].who != who):
+                        #     at trans_say_label
+                            
+                        text who:
+                            yoffset -52.5
+                            id "who" xalign 0.5 xoffset -560 
+                            font "fonts/Poppins-Light.ttf"
+                            outlines [(1, "#00000099", 0, 0)]
+                            # if (len(_history_list) == 0) or (len(_history_list) > 0 and _history_list[-1].who != who):
+                            #     at trans_say_label
+                                
+            frame:
+                background None
+                xsize 1250
+                ysize 275
+                text what id "what" yoffset 25 xoffset -45 font "fonts/Poppins-Light.ttf" outlines [(1, "#00000099", 0, 0)]
+    elif side_picture == True and not two_window:
+
+        window:
+            style_prefix "say"
+            background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
+            id "window"
+            yalign 1.0
+            ysize 275
+            if who is not None:
+                hbox:
+                    xalign 0.5
+                    yalign 0.5
+                    yoffset -125
+                    text who id "who" font "fonts/Poppins-Light.ttf" outlines [(1, "#00000099", 0, 0)]
+            hbox:
+                text what id "what" yoffset 65 xoffset -45 font"fonts/Poppins-Light.ttf" outlines [(1, "#00000099", 0, 0)]
+
+    elif not two_window:
         window:
             style_prefix "say"
             background Transform(Frame("gui/game_frames/textbox.png"), alpha=persistent.window_opacity)
@@ -91,7 +151,7 @@ screen say(who, what, side_image=None, two_window=False):
                     text who id "who" font "fonts/Poppins-Light.ttf" outlines [(1, "#00000099", 0, 0)]
             hbox:
                 text what id "what" yoffset 65 xoffset -170 font"fonts/Poppins-Light.ttf" outlines [(1, "#00000099", 0, 0)]
-       
+
     else:
         
         window:
@@ -129,6 +189,7 @@ screen say(who, what, side_image=None, two_window=False):
         add side_image
     else:
         add SideImage() xalign 0.0 yalign 1.0
+        
 
 
     use quick_menu

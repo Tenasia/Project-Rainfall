@@ -108,6 +108,8 @@ init -1 python hide:
     config.default_afm_time = 5
 
 
+
+
 ## Between screens of the game menu.
 
 define config.intra_transition = None

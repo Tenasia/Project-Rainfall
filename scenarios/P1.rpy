@@ -33,7 +33,7 @@ label ch1:
     $ renpy.pause(0.5, hard = True)
     play se1 "sudden_thunder" fadein 0.0 volume 1
     $ renpy.pause(0.5, hard = True)
-    scene white 
+    scene white with Dissolve(0.01)
     pause 1
     scene black
     with dissolve
@@ -58,22 +58,24 @@ label ch2:
         set_info_location("02")
         set_info_date(10, "Sep", "thu")
         set_info_time("evening")
-
-    scene ito_takumi
+        
+    scene bg office_eve
+    show takumi_cc
     with fade
     pause 2.0
-    
+
+    show takumi_cc
     scene bg office_eve
-    with fade
     play music audio.window fadein 3.0
 
     $ show_date()
-    
+    show takumi neutral at someleft
+    # show takumi1 neutral at left
     n_adv "Thursday 17:53. September 10, 2012"
     n_adv "The time and date popped up as I moved the mouse cursor. I leaned back on the chair and stretched my arms wide to let my stiffened joints relax. Finally, the most awaited time of the day, the end of the work schedule."
     n_adv "I glanced around the office room. As usual, there were only a couple of guys left. Most employees in my section finish at 17:30. Those who stayed late were either backed up or took on overtime. Let’s just say I’m part of the former."
     n_adv "Usually, I would’ve lingered even longer, but a nasty headache assaulted me earlier. I’ll take it a little easier today."
-    
+    hide takumi
     play ambient "longrain" fadein 0.5
     
     n_adv "{i}Tap tap tap{/i}"
@@ -205,6 +207,7 @@ label ch2:
 
 label ch3:
 
+    $ side_picture = True
     python:
         set_info_scene("03")
         set_info_location("04")
@@ -221,84 +224,85 @@ label ch3:
     play ambient "rain_inside_car" fadein 1.0 volume 0.25
     
     $ show_date()
- 
-    n_adv "A pleasant tune hummed from the radio, my feet tapping along to it. The chilly night breeze flowed in through the open window, inviting along stray drops of rainwater to trickle in."
-    n_adv "A radar speed gun was propped on the window frame, supported by a makeshift harness. With each passing vehicle, the red digital numbers fluctuated slightly."
-    n_adv "Munching on a biscuit, I peered into the open sky as rows upon rows of buildings gradually lit up, signaling the shift into the ever-familiar scene of a nighttime metropolis."
-    n_adv "My car was parked in an empty lot by the roadside, just behind an intersection. The engine was turned off."
-    n_adv "Being a cop had its ups and downs. Sometimes I had to fill out headache-inducing paperwork. Other times, I get to relax while watching numbers fluctuate. Today was one of the latter. As part of my patrol routine, I was stationed here."
-    n_adv "I peeked inside the box of biscuits strewn on the passenger seat. Yeah... five pieces wouldn’t last me through the remaining two hours of my shift. These packaging sizes were getting more and more outrageously misleading."
-    n_adv "I know I said patrolling was relaxed and nice, but there was still one major challenge present. Namely, boredom. There’s only so many passing vehicles you can stare at before your mind starts to get numb."
-    n_adv "I stretched my palm out the window, letting the raindrops revitalize my sore muscles. Maybe I should stop by a convenience store, I thought as I grabbed another biscuit. Either that, or I hope something interesting happens tonight."
+    show hiraku neutral at someright
+    sHirakuN neutral_dark "A pleasant tune hummed from the radio, my feet tapping along to it. The chilly night breeze flowed in through the open window, inviting along stray drops of rainwater to trickle in."
+    sHirakuN neutral_dark "A radar speed gun was propped on the window frame, supported by a makeshift harness. With each passing vehicle, the red digital numbers fluctuated slightly."
+    sHirakuN neutral_dark "Munching on a biscuit, I peered into the open sky as rows upon rows of buildings gradually lit up, signaling the shift into the ever-familiar scene of a nighttime metropolis."
+    sHirakuN neutral_dark "My car was parked in an empty lot by the roadside, just behind an intersection. The engine was turned off."
+    sHirakuN neutral_dark "Being a cop had its ups and downs. Sometimes I had to fill out headache-inducing paperwork. Other times, I get to relax while watching numbers fluctuate." 
+    sHirakuN neutral_dark "Today was one of the latter. As part of my patrol routine, I was stationed here."
+    sHirakuN neutral_dark "I peeked inside the box of biscuits strewn on the passenger seat. Yeah... five pieces wouldn’t last me through the remaining two hours of my shift. These packaging sizes were getting more and more outrageously misleading."
+    sHirakuN neutral_dark "I know I said patrolling was relaxed and nice, but there was still one major challenge present. Namely, boredom. There’s only so many passing vehicles you can stare at before your mind starts to get numb."
+    sHirakuN neutral_dark "I stretched my palm out the window, letting the raindrops revitalize my sore muscles. Maybe I should stop by a convenience store, I thought as I grabbed another biscuit. Either that, or I hope something interesting happens tonight."
     
-    show hiraku neutral
-    Hiraku "\"...?\""
-    show hiraku neutral_dark 
-    n_adv "Out of the corner of my vision, I spotted a young man sporting a red traditional hakama walking by the roadside. Accompanied by several men in black suits, he turned heads wherever he passed."
-    n_adv "What an odd outfit in this day and age. Was there some kind of festival going on? Before long, they disappeared into a corner."
-    show hiraku neutral
-    Hiraku "\"Hmm..\""
-    show hiraku neutral_dark
-    n_adv "I couldn’t quite put my finger on it, but his outfit looked familiar. Where had I seen him before? Just as I was trying to jog my memory, something else caught my attention."
+    # show hiraku neutral at someright
+    sHiraku neutral "\"...?\""
+    # show hiraku neutral_dark 
+    sHirakuN neutral_dark "Out of the corner of my vision, I spotted a young man sporting a red traditional hakama walking by the roadside. Accompanied by several men in black suits, he turned heads wherever he passed."
+    sHirakuN neutral_dark "What an odd outfit in this day and age. Was there some kind of festival going on? Before long, they disappeared into a corner."
+    # show hiraku neutral
+    sHiraku neutral"\"Hmm..\""
+    # show hiraku neutral_dark
+    sHirakuN neutral_dark "I couldn’t quite put my finger on it, but his outfit looked familiar. Where had I seen him before? Just as I was trying to jog my memory, something else caught my attention."
     
     stop ambient fadeout 1.0
     stop music fadeout 1.0
     play music audio.kamikaze fadein 1.0
 
-    n_adv "Through the rearview mirror, I noticed a sedan bolting through the street at high speed, swerving around oncoming traffic. That...didn’t even require a radar confirmation. It was clearly far above the speed limit!"
-    n_adv "I got up to action immediately."
-    n_adv "Just as a formality and for the paperwork registration later, I pointed the radar towards the car anyway. 81 — it registered — on a 60 zone freeway. Following proper procedure, I picked up the transceiver and switched the mic on."
-    show hiraku neutral
-    Hiraku "\"HQ, you there? Inoue Hiraku from patrol car 17 here.\""
-    show hiraku neutral_dark
+    sHirakuN neutral_dark "Through the rearview mirror, I noticed a sedan bolting through the street at high speed, swerving around oncoming traffic. That...didn’t even require a radar confirmation. It was clearly far above the speed limit!"
+    sHirakuN neutral_dark "I got up to action immediately."
+    sHirakuN neutral_dark "Just as a formality and for the paperwork registration later, I pointed the radar towards the car anyway. 81 — it registered — on a 60 zone freeway. Following proper procedure, I picked up the transceiver and switched the mic on."
+    # show hiraku neutral
+    sHiraku neutral "\"HQ, you there? Inoue Hiraku from patrol car 17 here.\""
+    # show hiraku neutral_dark
     play se1 "static" fadein 1.0
     
-    n_adv "After a slight pause, a static voice replied."
-    Radio "\"Inoue-san, this is Tenma Station. What’s the matter?\""
-    show hiraku neutral
-    Hiraku "\"I’m on patrol around West Tenma, and there’s a black sedan recklessly speeding. Can I get some roadblocks assistance?\""
-    show hiraku neutral_dark
-    Radio "\"Can you tell us the car model and license plate number?\""
-    n_adv "I squinted to get a better look, but the glare was too bright and the sedan was swerving too much."
-    show hiraku neutral
-    Hiraku "\"I can’t get a good look.\""
-    show hiraku neutral_dark
-    n_adv "Even as it approached the intersection, it showed no signs of slowing down."
-    show hiraku neutral
-    Hiraku "\"...!\""
-    show hiraku neutral_dark
-    n_adv "The sedan nearly brushed against another car as it switched lanes. My body tensed up. That’s just too reckless! Soon it would overtake my position."
-    Radio "\"Negative. The nearest available cruiser is five kilometers to your southeast.\""
-    n_adv "Huh. Normally, there should’ve been at least another patrol unit in this area. Were they all occupied? Either way, boredom was about to become the least of my worries tonight."
-    show hiraku neutral
-    Hiraku "\"Then, requesting permission to engage in a pursuit.\""
-    show hiraku neutral_dark
-    n_adv "Speeding on a country road was one thing, but on a busy street? Like hell I was about to let this guy loose. There was a pause, and then I heard a low groan from the transceiver."
-    n_adv "I knew they would rather avoid a pursuit if they could help it, that’s just how our system was. However, that would mean letting the lawbreaker unpunished."    
+    sHirakuN neutral_dark "After a slight pause, a static voice replied."
+    rHirakuN neutral_dark "\"Inoue-san, this is Tenma Station. What’s the matter?\""
+    # show hiraku neutral
+    sHiraku neutral "\"I’m on patrol around West Tenma, and there’s a black sedan recklessly speeding. Can I get some roadblocks assistance?\""
+    # show hiraku neutral_dark
+    rHirakuN neutral_dark "\"Can you tell us the car model and license plate number?\""
+    sHirakuN neutral_dark "I squinted to get a better look, but the glare was too bright and the sedan was swerving too much."
+    # show hiraku neutral
+    sHiraku neutral "\"I can’t get a good look.\""
+    # show hiraku neutral_dark
+    sHirakuN neutral_dark "Even as it approached the intersection, it showed no signs of slowing down."
+    # show hiraku neutral
+    sHiraku neutral "\"...!\""
+    # show hiraku neutral_dark
+    sHirakuN neutral_dark "The sedan nearly brushed against another car as it switched lanes. My body tensed up. That’s just too reckless! Soon it would overtake my position."
+    rHirakuN neutral_dark "\"Negative. The nearest available cruiser is five kilometers to your southeast.\""
+    sHirakuN neutral_dark "Huh. Normally, there should’ve been at least another patrol unit in this area. Were they all occupied? Either way, boredom was about to become the least of my worries tonight."
+    # show hiraku neutral
+    sHiraku neutral "\"Then, requesting permission to engage in a pursuit.\""
+    # show hiraku neutral_dark
+    sHirakuN neutral_dark "Speeding on a country road was one thing, but on a busy street? Like hell I was about to let this guy loose. There was a pause, and then I heard a low groan from the transceiver."
+    sHirakuN neutral_dark "I knew they would rather avoid a pursuit if they could help it, that’s just how our system was. However, that would mean letting the lawbreaker unpunished."    
     
     play se1 "watersplash" fadein 0.5
     
-    n_adv "In a blur, the sedan darted past my position, spraying water onto my windshield."
-    show hiraku neutral
-    Hiraku "\"This guy..!\""
-    show hiraku neutral_dark
-    n_adv "The gall!"
-    n_adv "With a loud skid, it sharply turned left on the intersection ahead, leaving behind a messy scene of honking and braking cars."
-    n_adv "I unclasped the speed gun and threw it onto the passenger seat. Revving the engine up, I waited in bated breath. Cmon, say the magic word already."
-    n_adv "HQ finally responded in resignation."
-    Radio "\"Pursuit authorized. We will provide directional assistance from HQ.\""
+    sHirakuN neutral_dark "In a blur, the sedan darted past my position, spraying water onto my windshield."
+    # show hiraku neutral
+    sHiraku neutral "\"This guy..!\""
+    # show hiraku neutral_dark
+    sHirakuN neutral_dark "The gall!"
+    sHirakuN neutral_dark "With a loud skid, it sharply turned left on the intersection ahead, leaving behind a messy scene of honking and braking cars."
+    sHirakuN neutral_dark "I unclasped the speed gun and threw it onto the passenger seat. Revving the engine up, I waited in bated breath. Cmon, say the magic word already."
+    sHirakuN neutral_dark "HQ finally responded in resignation."
+    rHirakuN neutral_dark "\"Pursuit authorized. We will provide directional assistance from HQ.\""
     
     stop music fadeout 2.0
     play music audio.blue fadein 2.0
     play ambient "car_on_road"
     
-    n_adv "A smirk rose to my lips."
-    show hiraku neutral
-    Hiraku "\"Roger that.\""
-    show hiraku neutral_dark
-    n_adv "Putting the transceiver back in its slot, I flicked on one of the numerous switches in the middle compartment. In response, the speaker on the roof activated and started blaring the ever-familiar wail of police siren."
-    n_adv "Without waiting for another second, I stepped on the gas pedal. The evening’s about to get a whole lot rowdier. The car skidded off as I turned the corner in pursuit of the sedan."
-    hide hiraku with Dissolve(0.25)
+    sHirakuN neutral_dark "A smirk rose to my lips."
+    # show hiraku neutral
+    sHiraku neutral "\"Roger that.\""
+    # show hiraku neutral_dark
+    sHirakuN neutral_dark "Putting the transceiver back in its slot, I flicked on one of the numerous switches in the middle compartment. In response, the speaker on the roof activated and started blaring the ever-familiar wail of police siren."
+    sHirakuN neutral_dark "Without waiting for another second, I stepped on the gas pedal. The evening’s about to get a whole lot rowdier. The car skidded off as I turned the corner in pursuit of the sedan."
+    # hide hiraku with Dissolve(0.25)
     scene bg road1_night
     show rain_particle
     with fade
@@ -306,95 +310,98 @@ label ch3:
     python:
         set_info_location("05")
     
-    n_adv "Upon hearing the siren, the other cars began to part away, opening a clear path in the middle for me."
-    Hiraku "\"Heh.\""
-    n_adv "As a teen, I’ve always fantasized about this. And even after seven years, the feeling never gets old. I pressed the pedal even lower."
+    sHirakuN neutral_dark "Upon hearing the siren, the other cars began to part away, opening a clear path in the middle for me."
+    sHiraku neutral "\"Heh.\""
+    sHirakuN neutral_dark "As a teen, I’ve always fantasized about this. And even after seven years, the feeling never gets old. I pressed the pedal even lower."
     
     play se1 "gear_shift"
     play ambient "car_on_road" fadein 1.0
     
-    n_adv "My chest tightened from the sheer pressure of inertia. Silhouettes of the city skyline flew past quicker and quicker as my car rapidly accelerated."
-    Hiraku "\"...!\""
-    n_adv "I could finally spot the sedan! It was quite far ahead, still swerving wildly around traffic, but I was slowly gaining ground!"
+    sHirakuN neutral_dark "My chest tightened from the sheer pressure of inertia. Silhouettes of the city skyline flew past quicker and quicker as my car rapidly accelerated."
+    sHiraku neutral "\"...!\""
+    sHirakuN neutral_dark "I could finally spot the sedan! It was quite far ahead, still swerving wildly around traffic, but I was slowly gaining ground!"
     
     play se1 "gear_shift"
     
-    n_adv "I kicked the clutch as I pushed for even faster. The rain blocked my vision a little, but I’ve had my fair share of similar situations. Just had to rely on familiarity."
-    n_adv "Keeping my eyes focused ahead, I chased after the fleeing black sedan."
-    Hiraku "\"...!\""
-    n_adv "The license plate was coming into sight!"
-    Hiraku "\"HQ, here’s the license plate! Chi(ち) 6… 3… 1… and…7!\""
-    Radio "\"That license plate is unregistered.\""
-    Hiraku "\"Unregistered?\""
-    n_adv "Damnit, did I get it wrong? I squinted once more."
-    Hiraku "\"...!\""
-    n_adv "No, it wasn’t that I got it wrong, but rather—"
-    Hiraku "\"It’s a paper plate!\""
-    n_adv "There’s only ever two reasons a car would have one. Either it’s brand new…or the car’s being used for illegal purposes. Either way, looks like pursuit was the right call."
-    n_adv "The sedan took another sharp turn, and I followed suit."
-    Hiraku "\"...!\""
-    n_adv "Over in the next crossroad, the traffic lights just turned red. The sedan wasn’t slowing down in the slightest. Did it plan to run through?"
-    Radio "\"Inoue-san, we’re switching the traffic lamp back to green!\""
-    Hiraku "\"Thanks!\""
-    n_adv "Even so, it’s still absurdly dangerous. I pressed a button on the dashboard."
-    Hiraku "\"This is the police!\""
-    n_adv "My voice blared through the speaker above."
-    Hiraku "\"Pull over your car! I repeat, this is the police! Pull over your—\""
-    Hiraku "\"!!!\""
-    n_adv "Right before the lights turned back green, a bus appeared from the left side of the junction! My eyes widened in horror."
-    n_adv "The sedan was still going at full speed, running headfirst into the bus! What’s it gonna do!? What should I do!?"
-    n_adv "Hesitantly, I released the gas pedal. But what about the sedan?"
-    n_adv "Finally noticing the rampant sedan, the bus pumped on the brakes, tires grinding into asphalt."
+    sHirakuN neutral_dark "I kicked the clutch as I pushed for even faster. The rain blocked my vision a little, but I’ve had my fair share of similar situations. Just had to rely on familiarity."
+    sHirakuN neutral_dark "Keeping my eyes focused ahead, I chased after the fleeing black sedan."
+    sHiraku neutral "\"...!\""
+    sHirakuN neutral_dark "The license plate was coming into sight!"
+    sHiraku neutral "\"HQ, here’s the license plate! Chi(ち) 6… 3… 1… and…7!\""
+    rHirakuN neutral_dark "\"That license plate is unregistered.\""
+    sHiraku neutral "\"Unregistered?\""
+    sHirakuN neutral_dark "Damnit, did I get it wrong? I squinted once more."
+    sHiraku neutral "\"...!\""
+    sHirakuN neutral_dark "No, it wasn’t that I got it wrong, but rather—"
+    sHiraku neutral "\"It’s a paper plate!\""
+    sHirakuN neutral_dark "There’s only ever two reasons a car would have one. Either it’s brand new…or the car’s being used for illegal purposes. Either way, looks like pursuit was the right call."
+    sHirakuN neutral_dark "The sedan took another sharp turn, and I followed suit."
+    sHiraku neutral "\"...!\""
+    sHirakuN neutral_dark "Over in the next crossroad, the traffic lights just turned red. The sedan wasn’t slowing down in the slightest. Did it plan to run through?"
+    rHirakuN neutral_dark "\"Inoue-san, we’re switching the traffic lamp back to green!\""
+    sHiraku neutral "\"Thanks!\""
+    sHirakuN neutral_dark "Even so, it’s still absurdly dangerous. I pressed a button on the dashboard."
+    sHiraku neutral "\"This is the police!\""
+    sHirakuN neutral_dark "My voice blared through the speaker above."
+    sHiraku neutral "\"Pull over your car! I repeat, this is the police! Pull over your—\""
+    sHiraku neutral "\"!!!\""
+    sHirakuN neutral_dark "Right before the lights turned back green, a bus appeared from the left side of the junction! My eyes widened in horror."
+    sHirakuN neutral_dark "The sedan was still going at full speed, running headfirst into the bus! What’s it gonna do!? What should I do!?"
+    sHirakuN neutral_dark "Hesitantly, I released the gas pedal. But what about the sedan?"
+    sHirakuN neutral_dark "Finally noticing the rampant sedan, the bus pumped on the brakes, tires grinding into asphalt."
     
     play se1 "truck_horn"
     
-    n_adv "But the sedan was already too close! It was too late!"
-    Hiraku "\"!?\""
-    n_adv "But instead of braking…the sedan swerved right!"
-    n_adv "By a hair’s breadth, it bolted past the front of the bus…and managed to slip through! The bus ground to a halt just in the nick of time."
-    n_adv "The sedan raced all the way to the other end of the intersection. Tires screeched as a whole line of cars ahead had to pump their brakes."
-    Hiraku "\"Crazy bastard ...tsk!\""
+    sHirakuN neutral_dark "But the sedan was already too close! It was too late!"
+    sHiraku neutral "\"!?\""
+    sHirakuN neutral_dark "But instead of braking…the sedan swerved right!"
+    sHirakuN neutral_dark "By a hair’s breadth, it bolted past the front of the bus…and managed to slip through! The bus ground to a halt just in the nick of time."
+    sHirakuN neutral_dark "The sedan raced all the way to the other end of the intersection. Tires screeched as a whole line of cars ahead had to pump their brakes."
+    sHiraku neutral "\"Crazy bastard ...tsk!\""
     
     play se1 "gear_shift"
     
-    n_adv "My heart hammering, I banked on the clutch and stepped back on the gas pedal. Using the opening the sedan created, I barreled past the bus, past the headlights of stunned drivers, and…made it through!"
-    Hiraku "\"Sorry, everyone!\""
-    n_adv "My voice blared one last time before I switched the microphone off. This sedan driver was insane! It’s practically a miracle we didn’t collide into anything. I could only pray nobody else crashed back there."
+    sHirakuN neutral_dark "My heart hammering, I banked on the clutch and stepped back on the gas pedal. Using the opening the sedan created, I barreled past the bus, past the headlights of stunned drivers, and…made it through!"
+    sHiraku neutral "\"Sorry, everyone!\""
+    sHirakuN neutral_dark "My voice blared one last time before I switched the microphone off. This sedan driver was insane! It’s practically a miracle we didn’t collide into anything. I could only pray nobody else crashed back there."
     
     scene bg road2_night
     show rain_particle
     with fade
     
-    n_adv "As we entered this relatively empty road, the sedan began to accelerate in a straight line. Trying to beat me in a contest of speed?"
-    Hiraku "\"You wish.\""    
+    sHirakuN neutral_dark "As we entered this relatively empty road, the sedan began to accelerate in a straight line. Trying to beat me in a contest of speed?"
+    sHiraku neutral "\"You wish.\""    
     play se1 "gear_shift"
     
-    n_adv "I floored the pedal in response, the accelerometer needle soaring. The city skyline outside blended into a long string of blur."
-    n_adv "Passing through intersection after intersection, the sedan kept going straight. Had it given up on shaking me off? The gap was gradually closing once more."
-    Radio "\"Inoue-san, it looks like the sedan is trying to escape to Yodogawa Ward through Nagara Bridge. We’ve already contacted their police station. They’re prepared to intercept at their end of the bridge. We need you to lead him to that point.\""
-    Hiraku "\"Nagara Bridge… Roger, I’ll keep pressuring them from this side.\""
-    n_adv "The game of tag continued as our cars darted down the road at blazing speeds." 
-    n_adv "Rain droplets on my windshield cascaded into parting trails, swept away by the rushing wind. Without any of the twists and turns, gripping the steering wheel almost felt…serene, peaceful."
-    Hiraku "\"...\""
+    sHirakuN neutral_dark "I floored the pedal in response, the accelerometer needle soaring. The city skyline outside blended into a long string of blur."
+    sHirakuN neutral_dark "Passing through intersection after intersection, the sedan kept going straight. Had it given up on shaking me off? The gap was gradually closing once more."
+    rHirakuN neutral_dark "\"Inoue-san, it looks like the sedan is trying to escape to Yodogawa Ward through Nagara Bridge. We’ve already contacted their police station. They’re prepared to intercept at their end of the bridge. We need you to lead him to that point.\""
+    sHiraku neutral "\"Nagara Bridge… Roger, I’ll keep pressuring them from this side.\""
+    sHirakuN neutral_dark "The game of tag continued as our cars darted down the road at blazing speeds." 
+    sHirakuN neutral_dark "Rain droplets on my windshield cascaded into parting trails, swept away by the rushing wind. Without any of the twists and turns, gripping the steering wheel almost felt…serene, peaceful."
+    sHiraku neutral "\"...\""
 
     scene bg road3_night
     show rain_particle
     with fade
 
-    n_adv "The sedan blazed through the final intersection leading to the bridge."
-    n_adv "Past this point, there was nowhere else to go. All I had to do was leisurely follow behind. I slowed down a little, wiping the sweat off my brow. My tense shoulders finally got a chance to relax."
-    n_adv "I was nearing the limit of my focus. Especially after that close encounter earlier."
+    sHirakuN neutral_dark "The sedan blazed through the final intersection leading to the bridge."
+    sHirakuN neutral_dark "Past this point, there was nowhere else to go. All I had to do was leisurely follow behind. I slowed down a little, wiping the sweat off my brow. My tense shoulders finally got a chance to relax."
+    sHirakuN neutral_dark "I was nearing the limit of my focus. Especially after that close encounter earlier."
     
     scene bg road4_night
     show rain_particle
     with fade 
     stop ambient fadeout 1.0
 
-    Hiraku "\"The sedan has reached the bridge. I repeat, the sedan is on the bridge.\""
-    Radio "\"Good work, Inoue-san. Standby over there in case it tries to turn around.\""
-    Hiraku "\"Roger.\""
-    n_adv "From the edge of my vision, I spotted two police SUVs at the end of the bridge blocking the path. There’s no space for the sedan to pass through. It’s checkmate! I could already imagine the newspaper headlines."
-    n_adv "..."
+    sHiraku neutral "\"The sedan has reached the bridge. I repeat, the sedan is on the bridge.\""
+    rHirakuN neutral_dark "\"Good work, Inoue-san. Standby over there in case it tries to turn around.\""
+    sHiraku neutral "\"Roger.\""
+    sHirakuN neutral_dark "From the edge of my vision, I spotted two police SUVs at the end of the bridge blocking the path. There’s no space for the sedan to pass through. It’s checkmate! I could already imagine the newspaper headlines."
+    sHirakuN neutral_dark "..."
+
+
+    $ side_picture = False
 
     stop music fadeout 1.0
     scene bg bridge_night
@@ -440,7 +447,7 @@ label ch4:
         set_info_date(10, "Sep", "thu")
         set_info_time("night")
 
-    scene ito_takumi
+    scene takumi_cc
     with fade
     pause 2.0
 
@@ -630,19 +637,45 @@ label ch5:
         set_info_date(10, "Sep", "thu")
         set_info_time("night")
 
-    scene inoue_hiraku
-    with fade
-    pause 2.0
+    # scene bg office_eve
+    # show takumi_cc
+    # with fade
+    # pause 2.0
+
+    # show placehold
+    # scene bg office_eve
+    # play music audio.window fadein 3.0
+    # scene bg office_eve
+    # show takumi_cc
+    # with fade
+    # pause 2.0
+
+    # show takumi_cc
+    # scene bg office_eve
+    # play music audio.window fadein 3.0
+
+    # $ show_date()
+    # show takumi neutral at someleft
 
     scene bg bridge_night
     show rain_particle
+    show inoue_cc
     with fade
+    pause 2.0
+
+    show inoue_cc
+    scene bg bridge_night
+    show rain_particle
+
+    
+    
+    # with fade
     play ambient "rain" fadein 2.0 volume 0.50
     play music audio.rainfall fadein 1.0
     
     $ show_date()
 
-    show hiraku neutral_dark
+    show hiraku neutral_dark at someright
     n_adv "…Why? Why did they throw away their life? I pondered as red lights flashed all around me."
     n_adv "Standing under the callous rain, my legs remained rooted in place. Droplets of rainwater slid off my hair, creating ripples as they fell to the ground. In front of my eyes…lay the scene of the terrible accident."
     n_adv "The sedan had crashed into the police cruiser at full speed. It combusted almost instantaneously, despite the heavy rain. The resulting fire was too intense and suffocating for anyone to attempt an immediate rescue."

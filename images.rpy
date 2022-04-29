@@ -656,10 +656,10 @@ init:
     image ito_genji:
         "images/chapter_cards/ito_genji.png"
 
-    image ito_takumi:
+    image takumi_cc:
         "images/chapter_cards/takumi.png"
 
-    image inoue_hiraku:
+    image inoue_cc:
         "images/chapter_cards/inoue.png"
 
     image genji:
@@ -672,10 +672,30 @@ init:
 ### Sprites #################################
 
 
+
+image placehold:
+    "gui/unknown.png"
+
+image sprite:
+    "gui/sprite.png"
+
+
 ### TAKUMI ###
 
 image takumi neutral:
     "images/Takumi/takumi_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
+    # yoffset -2.5
+
+image takumi1 neutral:
+    "images/Takumi/takumi_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
+    # yoffset -2.5
+
+image Stakumi neutral:
+    "images/Takumi/takumi_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
+    size(750, 1080)
+
+image side takumi neutral:
+    Crop((-50, 100, 400, 400), "Stakumi neutral")
 
 image takumi neutral_dark:
     "images/Takumi/takumi_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
@@ -685,8 +705,24 @@ image takumi neutral_dark:
 image hiraku neutral:
     "images/Hiraku/hiraku_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
 
+image Shiraku neutral:
+    "images/Hiraku/hiraku_neutral.png" with renpy.transition(Dissolve(0.25), layer="master")
+    size(500, 720)
+
+image side hiraku neutral:
+    Crop((50, 100, 400, 400), "Shiraku neutral")
+    xzoom -1
+
 image hiraku neutral_dark:
     "images/Hiraku/hiraku_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
+
+image Shiraku neutral_dark:
+    "images/Hiraku/hiraku_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
+    size(500, 720)
+
+image side hiraku neutral_dark:
+    Crop((50, 100, 400, 400), "Shiraku neutral_dark")
+    xzoom -1
 
 ### GENJI ###
 
@@ -695,6 +731,13 @@ image genji neutral:
 
 image genji neutral_dark:
     "images/Genji/genji_neutral_dark.png" with renpy.transition(Dissolve(0.25), layer="master")
+
+# SIDE
+
+
+
+
+
 
 ### Cases Page ##############################
 

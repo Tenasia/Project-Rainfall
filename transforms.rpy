@@ -8,11 +8,28 @@ transform game_menu_info_appear(delay=0):
         pause delay
         ease_back .5 alpha 1.0 xoffset 0
 
+
+# transform change_transform(old, new):
+#     contains:
+#         old
+#         yalign 1.0
+#         xpos 0.0 xanchor 0.0
+#         linear 0.2 xanchor 1.0
+#     contains:
+#         new
+#         yalign 1.0
+#         xpos 0.0 xanchor 1.0
+#         linear 0.2 xanchor 0.0
+
+# define config.side_image = renpy.transition(Dissolve(0.25), layer="master")
+
 transform someleft:
-        xalign 0.15
+        xalign 0.10
+        yalign 1.0
 
 transform someright:
-        xalign 0.0
+        xalign 0.90
+        yalign 1.0
 
 transform chapters_appear(delay=0):
         # alpha 0

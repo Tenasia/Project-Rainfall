@@ -340,6 +340,10 @@ init:
     define tip9 = False
     define tip10 = False
 
+
+init:
+
+    define side_picture = False
 init -5:
 
     define times = {
