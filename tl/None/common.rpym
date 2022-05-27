@@ -439,7 +439,7 @@ translate None strings:
 
     # renpy/common/00gui.rpy:386
     old "Are you sure you want to overwrite your save?"
-    new "Are you sure you want to overwrite your save?"
+    new "Overwrite your save file?"
 
     # renpy/common/00gui.rpy:387
     old "Loading will lose unsaved progress.\nAre you sure you want to do this?"

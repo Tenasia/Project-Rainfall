@@ -282,11 +282,14 @@ style input:
 
 screen choice(items):
     style_prefix "choice"
-
+    # $ hovered_choice = True
     vbox:
+        # ysize 50
+        
         for i in items:
-            textbutton i.caption action i.action
-
+                textbutton i.caption action i.action:
+                    hover_sound "audio/sfx/clickcool.wav"
+                    activate_sound None
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
@@ -299,10 +302,11 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 270
+    yalign 0.35
     yanchor 0.5
+    
 
-    spacing gui.choice_spacing
+    spacing 50
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
@@ -310,6 +314,12 @@ style choice_button is default:
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
+style choice_button_text:
+    color "#FFFFFF"
+    hover_color "#000000"
+    selected_color "#000000"
+# style choice_button_text.hover_color = 
+# style choice_button_text.selected_color = 
 
 ## Quick Menu screen ###########################################################
 
@@ -1896,8 +1906,9 @@ screen preferences():
         background "gui/game_frames/settings_frame_wide.png"
         xalign 0.5
         yalign 0.5
-        yoffset -249.5
-        xoffset 71
+        # yoffset -224.5
+        yoffset -250
+        xoffset 77
         style_prefix "mailbox_button"
 
         
@@ -1908,21 +1919,24 @@ screen preferences():
             vbox:
 
                 xoffset 75
-                yoffset 55
+                yoffset 50
                 hbox:
-                    text "DISPLAY WINDOW" xalign 0.5 yoffset -5 color "#ffffff"
+                    text "DISPLAY WINDOW" xalign 0.5 yoffset -5 size 35 color "#ffffff"
                 hbox:
                     yoffset 32.5
-                    text "SKIP MODE" xalign 0.5 yoffset 20 color "#ffffff"
+                    text "SKIP MODE" xalign 0.5 yoffset 20 size 35 color "#ffffff"
+                # hbox:
+                #     yoffset 100
+                #     text "FONT" xalign 0.5 yoffset 20 size 35 color "#ffffff"
             vbox:
                 xalign 0.5
                 yalign 0.5
-
+                yoffset 30
                 
                 hbox:
                     xalign 0.5
                     yalign 0.5
-                    yoffset 22.5
+                    yoffset 22.5 - 30
                     xoffset 250
                     xsize 200
                     ysize 50
@@ -1936,6 +1950,8 @@ screen preferences():
                                 hover ("gui/gui_buttons/GUI system_settings/selected_windowed_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_windowed_hovered.png")
                                 selected_idle "gui/gui_buttons/GUI system_settings/selected_windowed.png"
                                 selected_hover "gui/gui_buttons/GUI system_settings/selected_windowed.png"
+                                hover_sound None
+                                activate_sound "audio/sfx/clicknorm.mp3"
                                 action Preference("display", "window")
 
                     hbox:
@@ -1948,12 +1964,16 @@ screen preferences():
                                 hover ("gui/gui_buttons/GUI system_settings/selected_fullscreen_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_fullscreen_hovered.png")
                                 selected_idle "gui/gui_buttons/GUI system_settings/selected_fullscreen.png"
                                 selected_hover "gui/gui_buttons/GUI system_settings/selected_fullscreen.png"
+                                hover_sound None
+                                activate_sound "audio/sfx/clicknorm.mp3"
                                 action Preference("display", "fullscreen")
+                    
+                    
 
                 hbox: 
                     xalign 0.5
                     yalign 0.5
-                    yoffset 80
+                    yoffset 80 - 30
                     xoffset 250
                     xsize 200
                     ysize 50
@@ -1967,6 +1987,8 @@ screen preferences():
                                 hover ("gui/gui_buttons/GUI system_settings/selected_skipall_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_skipall_hovered.png")
                                 selected_idle "gui/gui_buttons/GUI system_settings/selected_skipall.png"
                                 selected_hover "gui/gui_buttons/GUI system_settings/selected_skipall.png"
+                                hover_sound None
+                                activate_sound "audio/sfx/clicknorm.mp3"
                                 action Preference("skip", "all")
                     hbox:
                         xoffset 50
@@ -1978,7 +2000,72 @@ screen preferences():
                                 hover ("gui/gui_buttons/GUI system_settings/selected_skipseen_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_skipseen_hovered.png")
                                 selected_idle "gui/gui_buttons/GUI system_settings/selected_skipseen.png"
                                 selected_hover "gui/gui_buttons/GUI system_settings/selected_skipseen.png"
+                                hover_sound None
+                                activate_sound "audio/sfx/clicknorm.mp3"
                                 action Preference("skip", "seen")
+                # hbox: 
+                #     xalign 0.5
+                #     yalign 0.5
+                #     yoffset 110
+                #     xoffset 250
+                #     xsize 200
+                #     ysize 50
+                #     spacing 150
+                #     hbox:
+                #         $ font_text = None
+                #         default mouse_clicked = False
+                #         fixed at KeymapTransform([('mousedown_1', SetScreenVariable('mouse_clicked', True)), ('mouseup_1', SetScreenVariable('mouse_clicked', False))]):
+                
+                #             imagebutton:
+                #                 idle "gui/gui_buttons/GUI system_settings/text_skipall.png" xalign 0.5 yalign 0.5 yoffset 27.5
+                #                 hover ("gui/gui_buttons/GUI system_settings/selected_skipall_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_skipall_hovered.png")
+                #                 selected_idle "gui/gui_buttons/GUI system_settings/selected_skipall.png"
+                #                 selected_hover "gui/gui_buttons/GUI system_settings/selected_skipall.png"
+                #                 action SetVariable(font_text, "Arial")
+                #     hbox:
+                #         xoffset 50
+                #         default mouse_clicked = False
+                #         fixed at KeymapTransform([('mousedown_1', SetScreenVariable('mouse_clicked', True)), ('mouseup_1', SetScreenVariable('mouse_clicked', False))]):
+                
+                #             imagebutton:
+                #                 idle "gui/gui_buttons/GUI system_settings/text_skipseen.png" xalign 0.5 yalign 0.5 yoffset 27.5
+                #                 hover ("gui/gui_buttons/GUI system_settings/selected_skipseen_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_skipseen_hovered.png")
+                #                 selected_idle "gui/gui_buttons/GUI system_settings/selected_skipseen.png"
+                #                 selected_hover "gui/gui_buttons/GUI system_settings/selected_skipseen.png"
+                #                 action SetVariable(font_text, None)
+                    
+                # hbox: 
+                #     xalign 0.5
+                #     yalign 0.5
+                #     yoffset 110
+                #     xoffset 250
+                #     xsize 200
+                #     ysize 50
+                #     spacing 150
+                #     hbox:
+                        
+                #         default mouse_clicked = False
+                #         fixed at KeymapTransform([('mousedown_1', SetScreenVariable('mouse_clicked', True)), ('mouseup_1', SetScreenVariable('mouse_clicked', False))]):
+                
+                #             imagebutton:
+                #                 idle "gui/gui_buttons/GUI system_settings/text_skipall.png" xalign 0.5 yalign 0.5 yoffset 27.5
+                #                 hover ("gui/gui_buttons/GUI system_settings/selected_skipall_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_skipall_hovered.png")
+                #                 selected_idle "gui/gui_buttons/GUI system_settings/selected_skipall.png"
+                #                 selected_hover "gui/gui_buttons/GUI system_settings/selected_skipall.png"
+                #                 action Preference("skip", "all")
+                #     hbox:
+                #         xoffset 50
+                #         default mouse_clicked = False
+                #         fixed at KeymapTransform([('mousedown_1', SetScreenVariable('mouse_clicked', True)), ('mouseup_1', SetScreenVariable('mouse_clicked', False))]):
+                
+                #             imagebutton:
+                #                 idle "gui/gui_buttons/GUI system_settings/text_skipseen.png" xalign 0.5 yalign 0.5 yoffset 27.5
+                #                 hover ("gui/gui_buttons/GUI system_settings/selected_skipseen_clicked.png" if mouse_clicked else "gui/gui_buttons/GUI system_settings/selected_skipseen_hovered.png")
+                #                 selected_idle "gui/gui_buttons/GUI system_settings/selected_skipseen.png"
+                #                 selected_hover "gui/gui_buttons/GUI system_settings/selected_skipseen.png"
+                #                 action Preference("skip", "seen")    
+
+                    
         # hbox:
         #     textbutton "low rain":
         #         action SetVariable(current_rain_volume, "low_rain_volume")
@@ -2271,9 +2358,11 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
     
-    add "gui/game_frames/right_click_bg.png"
+    add "gui/game_frames/right_click_bg_confirm.png"
     frame:
         background None
+        # xalign 0.5
+        # yalign 0.5
         vbox:
             xalign .5
             yalign .5

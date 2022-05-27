@@ -77,7 +77,18 @@ label ch2:
     n_adv "Usually, I would’ve lingered even longer, but a nasty headache assaulted me earlier. I’ll take it a little easier today."
     hide takumi
     play ambient "longrain" fadein 0.5
-    
+    menu:
+        "Where do you want to go?"
+
+        "The beach":
+            n_adv "You went to the beach, It's hot"
+        "The mountains":
+            n_adv "You went to the mountains. It's pleasantly cool."
+
+        "Inside":
+            n_adv "You went home..."
+            jump be1 
+
     n_adv "{i}Tap tap tap{/i}"
     with circlewipe
     n_adv "Misty droplets knocked on the windowpanes. It was drizzling outside."
