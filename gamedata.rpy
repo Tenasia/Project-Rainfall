@@ -344,13 +344,15 @@ init:
 init:
 
     define side_picture = False
+
+    default persistent.be_counter = 0
 init -5:
 
     define times = {
         None : { "label" : "", "icon" : None},
-        "morning" : { "label" : _("朝"), "icon" : "gui/game_menu_icons/sunrise.png" },
-        "day" : { "label" : _("昼"), "icon" : "gui/game_menu_icons/midday.png" },
-        "evening" : { "label" : _("夕方"), "icon" : "gui/game_menu_icons/sunset.png" },
-        "night" : { "label" : _("夜"), "icon" : "gui/game_menu_icons/midnight.png" },
+        "morning" : { "label" : _("morning"), "icon" : "gui/game_menu_icons/sunrise.png" },
+        "day" : { "label" : _("day"), "icon" : "gui/game_menu_icons/midday.png" },
+        "evening" : { "label" : _("evening"), "icon" : "gui/game_menu_icons/sunset.png" },
+        "night" : { "label" : _("night"), "icon" : "gui/game_menu_icons/midnight.png" },
     }
 

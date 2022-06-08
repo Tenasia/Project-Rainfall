@@ -1,5 +1,5 @@
 label ch1:
-    
+    $ persistent.be_counter = 0
     $ notebook_info = None
     $ nvl_mod = True
     stop music fadeout 1.0

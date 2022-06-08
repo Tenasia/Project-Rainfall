@@ -643,8 +643,9 @@ screen game_menu():
                 yoffset 0
                 xoffset 200
                 text "[hours_played]:[minutes_played]:[seconds_played]" color "#000" font "fonts/Kalam-Regular.ttf" size 35
-        else:
-            text ""    
+        else:  
+            text ""
+            text str(persistent.be_counter)
     imagebutton:
         xalign 0.95
         yalign 0.925
